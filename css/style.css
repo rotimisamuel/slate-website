@@ -2052,6 +2052,7 @@ canvas {
   margin: 15px 0;
   padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fefeff;
 }
 .icon-content-block figure {
   width: 100%;
@@ -2179,8 +2180,8 @@ canvas {
   margin-bottom: 10px;
 }
 .awards h4 {
-  font-size: 12px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
