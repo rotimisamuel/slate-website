@@ -14,16 +14,16 @@ try {
     //Server settings
     //$mail->SMTPDebug = 2;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
-    $mail->Host       = 'smtp.mail.yahoo.com';  			// Specify main and backup SMTP servers
+    $mail->Host       = 'smtp.mail.google.com';  			// Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'katmerayt@yahoo.com';                     // SMTP username
+    $mail->Username   = 'rotimi.ogunsakin@gmail.com';                     // SMTP username
     $mail->Password   = 'mypassword';                               // SMTP password
     $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('katmerayt@yahoo.com');
-    $mail->addAddress('katmerayt@yahoo.com');     // Add a recipient
+    $mail->setFrom('rotimi.ogunsakin@gmail.com');
+    $mail->addAddress('rotimi.ogunsakin@gmail.com');     // Add a recipient
     $mail->addReplyTo($_REQUEST['email'], $_REQUEST['name']);
 
     // Content
