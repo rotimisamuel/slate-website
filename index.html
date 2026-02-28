@@ -1,494 +1,333 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#4237ef"/>
-<meta name="HandheldFriendly" content="true" />
-<title>Slate | New Generation Technologies</title>
-<meta name="author" content="Slate Technologies">
-<meta name="description" content="Slate | New Generation Technologies">
-<meta name="keywords" content="digital technologies, slate, mobile phones, slate mobile phones, laptops, slate laptops, Nigeria, United Kingdom, enterprise solutions, digital strategy, digital transformation, students, NPF-DLP">
-
-<!-- SOCIAL MEDIA META -->
-<meta property="og:description" content="Slate | New Generation Technologies">
-<meta property="og:image" content="http://www.slateworld.io">
-<meta property="og:site_name" content="Slate Technologies">
-<meta property="og:title" content="Slate">
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://www.slateworld.io">
-
-<!-- TWITTER META -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@slateworld">
-<meta name="twitter:creator" content="@annusa">
-<meta name="twitter:title" content="Slate Technologies">
-<meta name="twitter:description" content="Slate | New Generation Technologies">
-<meta name="twitter:image" content="http://www.slateworld.io">
-
-<!-- FAVICON FILES -->
-<link href="ico/apple-touch-icon-180-precomposed.png" rel="apple-touch-icon" sizes="180x180">
-<link href="ico/apple-touch-icon-152-precomposed.png" rel="apple-touch-icon" sizes="152x152">
-<link href="ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
-<link href="ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
-<link href="ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
-<link href="ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
-<link href="ico/favicon.png" rel="shortcut icon">
-
-<!-- CSS FILES -->
-<link rel="stylesheet" href="css/fontawesome.min.css">
-<link rel="stylesheet" href="css/bundle.min.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slate Technology — Powering Africa Forward</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080808;--white:#F2F0EC;--gold:#D4AE58;--gold2:#B8963C;
+  --stone:#64605A;--mid:#1A1816;--panel:#111010;
+  --border:rgba(212,174,88,.18);--border2:rgba(242,240,236,.08);
+  --fs-hero:clamp(3rem,7.5vw,7.5rem);--fs-h2:clamp(1.9rem,3.8vw,3.4rem);
+  --fs-h3:clamp(1.2rem,2vw,1.8rem);--fs-body:clamp(.87rem,1.1vw,1rem);
+  --fs-label:.7rem;--fs-tag:.68rem;--pad:clamp(1.5rem,5vw,5rem);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jura',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none}
+body::before{content:'';position:fixed;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.025;pointer-events:none}
+.cursor{position:fixed;top:0;left:0;z-index:9999;pointer-events:none}
+.cursor-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;position:absolute;transform:translate(-50%,-50%)}
+.cursor-ring{width:32px;height:32px;border:1px solid rgba(212,174,88,.5);border-radius:50%;position:absolute;transform:translate(-50%,-50%);transition:width .35s cubic-bezier(.23,1,.32,1),height .35s cubic-bezier(.23,1,.32,1)}
+.cursor-expand .cursor-ring{width:52px;height:52px}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.4rem var(--pad);border-bottom:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
+nav.scrolled{background:rgba(8,8,8,.9);border-color:var(--border2);backdrop-filter:blur(20px)}
+.nav-logo{display:flex;align-items:center;gap:.9rem;text-decoration:none;cursor:none}
+.nav-mark{width:34px;height:38px;flex-shrink:0}
+.nav-wordmark{font-family:'Jura',sans-serif;font-weight:300;font-size:1.1rem;letter-spacing:.35em;color:var(--white);text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.nav-links a{font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;color:rgba(242,240,236,.6);text-decoration:none;transition:color .2s;position:relative;cursor:none}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-links a.active{color:var(--white)}
+.nav-links a.active::after{width:100%}
+.nav-cta{color:var(--black)!important;background:var(--gold);padding:.6rem 1.4rem;transition:background .2s!important}
+.nav-cta:hover{background:var(--white)!important;color:var(--black)!important}
+.nav-cta::after{display:none!important}
+#home{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:0 var(--pad);padding-top:6rem}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(212,174,88,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,174,88,.04) 1px,transparent 1px);background-size:80px 80px}
+.hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,174,88,.12) 0%,transparent 70%);top:-200px;right:-100px;animation:glow-pulse 6s ease-in-out infinite}
+@keyframes glow-pulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+.hero-left{position:relative;z-index:2;padding-right:4rem}
+.hero-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:2rem;opacity:0;animation:fadeUp .8s .3s forwards}
+.hero-eyebrow-line{width:36px;height:1px;background:var(--gold)}
+.hero-eyebrow span{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+h1.hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-hero);line-height:1.05;margin-bottom:2rem;opacity:0;animation:fadeUp .9s .5s forwards}
+h1.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:clamp(.9rem,1.3vw,1.05rem);font-weight:300;line-height:1.8;color:rgba(242,240,236,.65);max-width:480px;margin-bottom:3rem;opacity:0;animation:fadeUp .9s .7s forwards}
+.hero-actions{display:flex;gap:1.2rem;align-items:center;opacity:0;animation:fadeUp .9s .9s forwards}
+.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--black);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;position:relative;overflow:hidden;cursor:none;transition:color .2s}
+.btn-primary::before{content:'';position:absolute;inset:0;background:var(--white);transform:translateX(-101%);transition:transform .3s cubic-bezier(.23,1,.32,1)}
+.btn-primary:hover::before{transform:translateX(0)}
+.btn-primary span,.btn-primary svg{position:relative;z-index:1}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-primary svg{transition:transform .3s}
+.btn-ghost{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(242,240,236,.25);color:rgba(242,240,236,.75);font-family:'Jura',sans-serif;font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:border-color .2s,color .2s;cursor:none}
+.btn-ghost:hover{border-color:var(--gold);color:var(--white)}
+.hero-right{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;opacity:0;animation:fadeLeft .9s .6s forwards}
+.hero-device-frame{width:100%;max-width:520px;aspect-ratio:4/3;background:var(--mid);border:1px solid var(--border);position:relative;overflow:hidden}
+.hero-device-screen{position:absolute;inset:2px;background:linear-gradient(135deg,#0D0C0B 0%,#1A1714 60%,#0D0C0B 100%);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.hero-device-tagline{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);margin-top:1rem}
+.hero-device-shine{position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);animation:shine 4s 2s ease-in-out infinite}
+@keyframes shine{0%{left:-60%}50%,100%{left:120%}}
+.hero-stats{position:absolute;bottom:2rem;left:0;right:0;display:flex;justify-content:center;gap:3rem;z-index:2;opacity:0;animation:fadeUp .9s 1.1s forwards}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--gold);display:block;line-height:1}
+.hero-stat-label{font-size:var(--fs-tag);letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-top:.3rem;display:block;text-align:center}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeLeft{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+.ticker-wrap{border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);background:var(--panel);overflow:hidden;padding:.9rem 0}
+.ticker-track{display:flex;animation:ticker 28s linear infinite;white-space:nowrap;width:max-content}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{font-size:var(--fs-label);letter-spacing:.2em;text-transform:uppercase;color:var(--stone);padding:0 2.5rem;flex-shrink:0}
+.ticker-dot{color:var(--gold);padding:0 .3rem}
+section{position:relative}
+.section-inner{max-width:1440px;margin:0 auto;padding:clamp(4rem,8vw,9rem) var(--pad)}
+.section-header{display:flex;align-items:flex-start;gap:3rem;margin-bottom:5rem}
+.section-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:rgba(212,174,88,.15);line-height:1;flex-shrink:0;margin-top:-.5rem}
+.section-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem}
+h2.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h2);line-height:1.15}
+h2.section-title em{font-style:italic;color:var(--gold)}
+#about{background:var(--black)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.about-body{font-size:var(--fs-body);line-height:1.9;color:rgba(242,240,236,.7)}
+.about-body p+p{margin-top:1.4rem}
+.about-body strong{color:var(--white);font-weight:500}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;border:1px solid var(--border2)}
+.value-card{padding:2rem 1.6rem;background:var(--panel);border-right:1px solid var(--border2);border-bottom:1px solid var(--border2);transition:background .25s}
+.value-card:hover{background:var(--mid)}
+.value-icon{font-size:1.4rem;margin-bottom:.8rem;display:block}
+.value-name{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem}
+.value-desc{font-size:.82rem;line-height:1.65;color:rgba(242,240,236,.55)}
+#mission{background:linear-gradient(180deg,var(--black) 0%,var(--panel) 100%)}
+.mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.mv-card{padding:4rem 3.5rem;background:var(--mid);position:relative;overflow:hidden}
+.mv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.mv-card.mission::before{background:var(--gold)}
+.mv-card.vision::before{background:linear-gradient(90deg,var(--gold2),var(--gold))}
+.mv-bg-num{position:absolute;bottom:-1.5rem;right:1rem;font-family:'Cormorant Garamond',serif;font-size:12rem;font-weight:300;color:rgba(212,174,88,.04);line-height:1;pointer-events:none;user-select:none}
+.mv-label{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.5rem}
+.mv-text{font-family:'Jura',sans-serif;font-weight:300;font-size:clamp(1rem,1.4vw,1.12rem);line-height:1.9;color:rgba(242,240,236,.8)}
+.objectives-wrap{margin-top:2px;background:var(--panel);padding:4rem 3.5rem}
+.obj-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:2rem}
+.obj-list{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;list-style:none}
+.obj-item{display:flex;gap:1rem;align-items:flex-start;padding:1.5rem;border:1px solid var(--border2);transition:border-color .25s,background .25s}
+.obj-item:hover{border-color:var(--border);background:var(--mid)}
+.obj-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold2);line-height:1;flex-shrink:0}
+.obj-text{font-size:.85rem;line-height:1.7;color:rgba(242,240,236,.65);padding-top:.35rem}
+#why{background:var(--black);overflow:hidden}
+.why-marquee-wrap{overflow:hidden;margin-bottom:5rem;border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);padding:1.5rem 0}
+.why-marquee{display:flex;gap:4rem;animation:ticker 30s linear infinite;white-space:nowrap;width:max-content}
+.why-marquee-item{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;font-style:italic;color:rgba(212,174,88,.2);flex-shrink:0}
+.why-marquee-item.active{color:var(--gold)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.why-card{padding:3rem 2.5rem;border-right:1px solid var(--border2);border-bottom:1px solid var(--border2);transition:background .25s}
+.why-card:nth-child(3n){border-right:none}
+.why-card:hover{background:var(--mid)}
+.why-icon{font-size:1.8rem;margin-bottom:1.5rem;display:block}
+.why-title{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem}
+.why-text{font-size:.85rem;line-height:1.75;color:rgba(242,240,236,.55)}
+#cta{background:var(--gold);padding:clamp(4rem,6vw,7rem) var(--pad)}
+.cta-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+.cta-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:rgba(8,8,8,.55);display:block;margin-bottom:.8rem}
+.cta-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,3rem);color:var(--black);line-height:1.15}
+.cta-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-dark{display:inline-flex;align-items:center;gap:.6rem;background:var(--black);color:var(--gold);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:background .2s,color .2s;cursor:none}
+.btn-dark:hover{background:var(--white);color:var(--black)}
+.btn-outline-dark{display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid rgba(8,8,8,.35);color:rgba(8,8,8,.8);font-family:'Jura',sans-serif;font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:border-color .2s,color .2s;cursor:none}
+.btn-outline-dark:hover{border-color:var(--black);color:var(--black)}
+footer{background:var(--mid);border-top:1px solid var(--border2)}
+.footer-inner{max-width:1440px;margin:0 auto;padding:clamp(3rem,5vw,6rem) var(--pad) 2rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid var(--border2);margin-bottom:2.5rem}
+.footer-brand-desc{font-size:.84rem;line-height:1.8;color:rgba(242,240,236,.45);margin-top:1.5rem}
+.footer-col-title{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.5rem}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.8rem}
+.footer-links a{font-size:.84rem;color:rgba(242,240,236,.45);text-decoration:none;transition:color .2s;letter-spacing:.05em;cursor:none}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:.72rem;letter-spacing:.1em;color:rgba(242,240,236,.25)}
+.footer-legal{display:flex;gap:2rem}
+.footer-legal a{font-size:.72rem;letter-spacing:.1em;color:rgba(242,240,236,.25);text-decoration:none;transition:color .2s;cursor:none}
+.footer-legal a:hover{color:var(--stone)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+@media(max-width:900px){
+  #home{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding-right:0}
+  .about-grid,.mv-grid{grid-template-columns:1fr;gap:2px}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr 1fr}.nav-links li:not(:last-child){display:none}
+  .section-header{flex-direction:column;gap:1rem}.section-num{font-size:3rem}
+  .cta-inner{flex-direction:column;align-items:flex-start}
+  .obj-list{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .why-grid,.values-grid,.obj-list{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:2.5rem}
+  body{cursor:auto}.cursor{display:none}
+}
+</style>
 </head>
 <body>
-<div class="cursor js-cursor"></div>
-<!-- end cursor -->
-<div class="preloader" id="preloader"> <span></span> <span></span> <span></span> <span></span>
-  <div class="inner">
-    <canvas class="progress-bar" id="progress-bar" width="280" height="70"></canvas>
-    <img src="images/logo.png" srcset="images/logo_slate.png" alt="Image"> </div>
-  <!-- end inner --> 
-</div>
-<!-- end preloder -->
-<div class="page-transition"> <span></span> <span></span> <span></span> <span></span> </div>
-<!-- end page-transition -->
-<div class="site-navigation">
-  <ul>
-    <li><b><a href="index.html" data-text="Home">Home</a></b>
-      <!-- <ul>
-        <li><a href="index-kinetic-slider.html">Kinetic Slider</a></li>
-        <li><a href="index-video-bg.html">Video Background</a></li>
-      </ul> -->
-    </li>
-    <li><b><a href="services.html" data-text="Services">Services</a></b></li>
-    <!-- <li><b><a href="cases.html" data-text="Cases">Cases</a></b></li> -->
-    <li><b><a href="products.html" data-text="Products">Products</a></b></li>
-    <li><b><a href="contactus.html" data-text="Contact Us">Contact Us</a></b></li>
-  </ul>
-</div>
-<!-- edn site-navigation -->
-<nav class="navbar">
-  <div class="logo"> <a href="index.html"><img src="images/logo.png" srcset="images/logo@2x.png" alt="Image"> </a> </div>
-  <!-- end logo -->
-  <!-- <ul class="languages">
-    <li><a href="#" data-text="Eng">Eng</a></li>
-    <li><a href="#" data-text="Rus">Rus</a></li>
-  </ul> -->
-  <!-- end languages --> 
-  <span class="menu-text">Navigation</span>
-  <div class="sandwich-menu">
-    <div class="sandwich">
-      <div class="sand"> <span></span> <span></span> </div>
-      <!-- end sand -->
-      <div class="closed"> <span></span> <span></span> </div>
-      <!-- end closed --> 
-    </div>
-    <!-- end sandwich --> 
-    
-  </div>
-  <!-- end sandwich-menu --> 
-</nav>
-<!-- end navbar -->
-<header class="slider">
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="slide-inner" data-swiper-parallax="45%">
-          <div class="slide-image" data-background="images/slide04.jpg"></div>
-          <div class="slide-content">
-            <h1></h1>
-            <div class="link-holder"> <a href="services.html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="2 2 100 100" xml:space="preserve">
-                <circle fill="none" stroke="#fff" stroke-width="2" cx="52" cy="52" r="50"></circle>
-              </svg>
-              <span></span> </a> </div>
-            <!-- end link-holder --> 
-          </div>
-          <!-- end slide-content --> 
-        </div>
-        <!-- end slide-inner --> 
-      </div>
-      <!-- end swiper-slide --> 
-      <div class="swiper-slide">
-        <div class="slide-inner" data-swiper-parallax="45%">
-          <div class="slide-image" data-background="images/slide01.jpg"></div>
-          <div class="slide-content">
-            <h1>Product</h1>
-            <h1>Innovation</h1>
-            <div class="link-holder"> <a href="services.html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="2 2 100 100" xml:space="preserve">
-                <circle fill="none" stroke="#fff" stroke-width="2" cx="52" cy="52" r="50"></circle>
-              </svg>
-              <span>DISCOVER</span> </a> </div>
-            <!-- end link-holder --> 
-          </div>
-          <!-- end slide-content --> 
-        </div>
-        <!-- end slide-inner --> 
-      </div>
-      <!-- end swiper-slide -->
-      <div class="swiper-slide">
-        <div class="slide-inner" data-swiper-parallax="45%">
-          <div class="slide-image" data-background="images/slide02.jpg"></div>
-          <div class="slide-content">
-            <!-- <h1>Start Slate, </h1>
-              <h1> Start Fresh</h1> -->
-              <h1>New-Gen </h1>
-              <h1> Technology</h1>
-            <div class="link-holder"> <a href="services.html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="2 2 100 100" xml:space="preserve">
-                <circle fill="none" stroke="#fff" stroke-width="2" cx="52" cy="52" r="50"></circle>
-              </svg>
-              <span>DISCOVER</span> </a> </div>
-            <!-- end link-holder --> 
-          </div>
-          <!-- end slide-content --> 
-        </div>
-        <!-- end slide-inner --> 
-      </div>
-      <!-- end swiper-slide -->
-      <div class="swiper-slide">
-        <div class="slide-inner" data-swiper-parallax="45%">
-          <div class="slide-image" data-background="images/slide03.jpg"></div>
-          <div class="slide-content">
-            <!-- <h1>Switch on, </h1>
-              <h1> Fire Up</h1> -->
-              <h1>Real</h1>
-              <h1> Impact</h1>
-            <div class="link-holder"> <a href="services.html">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="2 2 100 100" xml:space="preserve">
-                <circle fill="none" stroke="#fff" stroke-width="2" cx="52" cy="52" r="50"></circle>
-              </svg>
-              <span>DISCOVER</span> </a> </div>
-            <!-- end link-holder --> 
-          </div>
-          <!-- end slide-content --> 
-        </div>
-        <!-- end slide-inner --> 
-      </div>
-      <!-- end swiper-slide -->
+<div class="cursor" id="cursor"><div class="cursor-ring" id="cursorRing"></div><div class="cursor-dot" id="cursorDot"></div></div>
 
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <svg class="nav-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#F2F0EC"/><polygon points="12,2 20,2 12,10" fill="#080808"/><rect x="2" y="18" width="46" height="12" fill="#D4AE58"/><polygon points="48,18 56,18 48,26" fill="#080808"/><rect x="12" y="34" width="46" height="12" fill="#D4AE58"/><polygon points="12,34 20,34 12,42" fill="#080808"/><rect x="2" y="50" width="46" height="12" fill="#F2F0EC"/><polygon points="48,50 56,50 48,58" fill="#080808"/></svg>
+    <span class="nav-wordmark">Slate</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="sdoi.html">SDOI</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"><div class="hero-grid-lines"></div><div class="hero-glow"></div></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span><span>Africa's Technology Future</span></div>
+    <!--<h1 class="hero-title">Where Africa<br><em>plugs into</em><br>tomorrow</h1>-->
+    <h1 class="hero-title">Power your <br><em>potentials. Own</em><br>your future</h1>
+    <p class="hero-sub">Slate Technology designs and manufactures world-class laptops, smartphones, tablets, desktops, and power systems — engineered for African realities, built to global standards, and accessible to everyone through flexible ownership.</p>
+    <div class="hero-actions">
+      <a href="products.html" class="btn-primary"><span>Explore Products</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="index.html#about" class="btn-ghost">Our Story</a>
     </div>
-    <!-- end swiper-wrapper --> 
   </div>
-  <!-- end swiper-container -->
-  <div class="bottom-bar">
-    <div class="sound">
-      <!-- <div class="equalizer"> <span></span> <span></span> <span></span> <span></span> </div> -->
-      <!-- end equalizer --> 
-      <b></b> </div>
-    <!-- end sound -->
-    <div class="swiper-pagination"></div>
-    <!-- end swiper-pagination -->
-    <!-- <div class="slider-fraction"><span></span>|<span></span></div> -->
-    <!-- end slider-fraction -->
-    <div class="slider-controls">
-      <div class="swiper-button-prev" data-text="Prev"></div>
-      <!-- end swiper-button-prev -->
-      <div class="swiper-button-next" data-text="Next"></div>
-      <!-- end swiper-button-next --> 
+  <div class="hero-right">
+    <div class="hero-device-frame">
+      <div class="hero-device-screen">
+        <svg width="72" height="82" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#F2F0EC" opacity=".9"/><polygon points="12,2 20,2 12,10" fill="#1A1816"/><rect x="2" y="18" width="46" height="12" fill="#D4AE58"/><polygon points="48,18 56,18 48,26" fill="#1A1816"/><rect x="12" y="34" width="46" height="12" fill="#D4AE58"/><polygon points="12,34 20,34 12,42" fill="#1A1816"/><rect x="2" y="50" width="46" height="12" fill="#F2F0EC" opacity=".9"/><polygon points="48,50 56,50 48,58" fill="#1A1816"/></svg>
+        <div class="hero-device-tagline">Technology · Hardware · Intelligence</div>
+      </div>
+      <div class="hero-device-shine"></div>
     </div>
-    <!-- end slider-controls --> 
   </div>
-  <!-- end bottom-bar -->
-  <aside class="left-side">
-    <div class="social-links">
-      <ul>
-        <li><a href="#" data-text="Twitter">Twitter</a></li>
-        <li><a href="#" data-text="Instagram">Instagram</a></li>
-        <li><a href="#" data-text="Facebook">Facebook</a></li>
+  <div class="hero-stats">
+    <div class="hero-stat-item"><span class="hero-stat-num">6+</span><span class="hero-stat-label">Product Lines</span></div>
+    <div class="hero-stat-item"><span class="hero-stat-num">2</span><span class="hero-stat-label">Global Offices</span></div>
+    <div class="hero-stat-item"><span class="hero-stat-num">24mo</span><span class="hero-stat-label">Flexi Pay</span></div>
+    <div class="hero-stat-item"><span class="hero-stat-num">∞</span><span class="hero-stat-label">Ambition</span></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">Laptops<span class="ticker-dot">·</span></span><span class="ticker-item">Smartphones<span class="ticker-dot">·</span></span><span class="ticker-item">Tablets<span class="ticker-dot">·</span></span><span class="ticker-item">Desktops<span class="ticker-dot">·</span></span><span class="ticker-item">UPS Systems<span class="ticker-dot">·</span></span><span class="ticker-item">Power Banks<span class="ticker-dot">·</span></span><span class="ticker-item">Buy Now Pay Later<span class="ticker-dot">·</span></span><span class="ticker-item">Enterprise Solutions<span class="ticker-dot">·</span></span><span class="ticker-item">Student Device Initiative<span class="ticker-dot">·</span></span><span class="ticker-item">Made for Africa<span class="ticker-dot">·</span></span><span class="ticker-item">Laptops<span class="ticker-dot">·</span></span><span class="ticker-item">Smartphones<span class="ticker-dot">·</span></span><span class="ticker-item">Tablets<span class="ticker-dot">·</span></span><span class="ticker-item">Desktops<span class="ticker-dot">·</span></span><span class="ticker-item">UPS Systems<span class="ticker-dot">·</span></span><span class="ticker-item">Power Banks<span class="ticker-dot">·</span></span><span class="ticker-item">Buy Now Pay Later<span class="ticker-dot">·</span></span><span class="ticker-item">Enterprise Solutions<span class="ticker-dot">·</span></span><span class="ticker-item">Student Device Initiative<span class="ticker-dot">·</span></span><span class="ticker-item">Made for Africa<span class="ticker-dot">·</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about"><div class="section-inner">
+  <div class="section-header reveal"><span class="section-num">01</span><div><span class="section-eyebrow">Who We Are</span><h2 class="section-title">Technology that serves <em>real lives</em></h2></div></div>
+  <div class="about-grid">
+    <div class="about-body reveal">
+      <p>Slate Technology Ltd is a homegrown technology company with a singular conviction: access to quality devices should never be a privilege. Founded with offices in Abuja, Nigeria and London, United Kingdom, we design, manufacture, and distribute a comprehensive range of high-performance electronic devices built for the realities of African life — and the ambitions of a global generation.</p>
+      <p>Our philosophy is disarmingly simple: <strong>Technology should be accessible, reliable, and empowering.</strong> Every product we engineer reflects this belief — from the dustproof construction of our field-ready devices to the elegance of our UPS systems that complement a premium interior rather than dominate it.</p>
+      <p>From classrooms in Kano to boardrooms in Lagos, from field engineers in Nairobi to entrepreneurs in London — Slate devices are crafted to make everyday life smarter, more efficient, and more connected. We pair cutting-edge innovation with practical affordability, backed by flexible ownership models that put the best technology within reach of everyone.</p>
+      <p>We are not merely a distributor. We are architects of a <strong>smarter, more connected Africa</strong> — building local capability while meeting global standards, one device at a time.</p>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="values-grid">
+        <div class="value-card"><span class="value-icon">⚡</span><span class="value-name">Innovation</span><p class="value-desc">Constantly pushing boundaries to deliver smarter, more efficient technology solutions.</p></div>
+        <div class="value-card"><span class="value-icon">🔒</span><span class="value-name">Integrity</span><p class="value-desc">Honesty and transparency in every product, every promise, every partnership.</p></div>
+        <div class="value-card"><span class="value-icon">🏆</span><span class="value-name">Excellence</span><p class="value-desc">Top-tier standards in design, manufacture, service, and customer experience.</p></div>
+        <div class="value-card"><span class="value-icon">🎯</span><span class="value-name">Customer Focus</span><p class="value-desc">Our users' needs drive every innovation and service decision we make.</p></div>
+        <div class="value-card"><span class="value-icon">🌍</span><span class="value-name">Accessibility</span><p class="value-desc">Premium technology made affordable and attainable for every African household.</p></div>
+        <div class="value-card"><span class="value-icon">♻️</span><span class="value-name">Sustainability</span><p class="value-desc">Building with the environment in mind — long-lasting, energy-efficient devices.</p></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- MISSION / VISION -->
+<section id="mission">
+  <div class="section-inner" style="padding-bottom:0">
+    <div class="section-header reveal"><span class="section-num">02</span><div><span class="section-eyebrow">Purpose & Direction</span><h2 class="section-title">Guided by a <em>clear north star</em></h2></div></div>
+  </div>
+  <div style="max-width:1440px;margin:0 auto;padding:0 var(--pad) clamp(4rem,8vw,9rem)">
+    <div class="mv-grid reveal">
+      <div class="mv-card mission"><span class="mv-label">Mission</span><p class="mv-text">To empower individuals and organisations with innovative and dependable technology solutions that enhance productivity, creativity, and connectivity — while ensuring affordability and accessibility through flexible ownership models that remove financial barriers to participation in the digital economy.</p><div class="mv-bg-num">M</div></div>
+      <div class="mv-card vision"><span class="mv-label">Vision</span><p class="mv-text">To become Africa's leading and most trusted homegrown technology brand — recognised globally for creating intelligent, durable, and elegantly designed products that meet international standards while honouring local realities, aspirations, and the environments in which our users thrive.</p><div class="mv-bg-num">V</div></div>
+    </div>
+    <div class="objectives-wrap reveal reveal-delay-2">
+      <span class="obj-eyebrow">Strategic Objectives</span>
+      <ul class="obj-list">
+        <li class="obj-item"><span class="obj-num">01</span><p class="obj-text">Bridge the technology accessibility gap by offering innovative devices with flexible, fair ownership plans across all income levels.</p></li>
+        <li class="obj-item"><span class="obj-num">02</span><p class="obj-text">Build durable, high-performing products specifically tailored for African users, climates, and infrastructure conditions.</p></li>
+        <li class="obj-item"><span class="obj-num">03</span><p class="obj-text">Empower education and enterprise through dependable, connected, and energy-efficient devices built for real productivity.</p></li>
+        <li class="obj-item"><span class="obj-num">04</span><p class="obj-text">Maintain an unwavering focus on customer satisfaction through rigorous quality assurance and responsive after-sales support.</p></li>
+        <li class="obj-item"><span class="obj-num">05</span><p class="obj-text">Champion continental digital transformation through local innovation, responsible technology adoption, and sustainable manufacturing practices.</p></li>
+        <li class="obj-item"><span class="obj-num">06</span><p class="obj-text">Establish Slate Technology as Africa's most recognised homegrown tech brand through strategic partnerships, global presence, and community investment.</p></li>
       </ul>
     </div>
-    <!-- end social-links --> 
-  </aside>
-  <!-- end left-side -->
-  <aside class="right-side"> <a href="#" data-text="hello @ annusa.net">hello @ aslateworld.io</a> </aside>
-  <!-- end right-side --> 
-</header>
-<!-- end slider -->
-<section class="content-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="section-title">
-          <h6>Slate Products and Services</h6>
-          <h2>Product and Services</h2>
-        </div>
-        <!-- end section-title --> 
-      </div>
-      <!-- end col-12 -->
-      <div class="col-lg-4">
-        <div class="icon-content-list-block">
-          <figure><img src="images/icon01.png" alt="Image"></figure>
-          <small>01</small>
-          <h5>DIGITAL PRRODUCTS</h5>
-          <p>We create smart, sleek and durable devices that keep
-up with your life and power you forward.</p>
-          <ul>
-            <li>Slate Laptops</li>
-            <li>Slate Mobile Phones</li>
-            <li>Slate Tabs</li>
-            <li>Slate Power Banks</li>
-            <li>Slate AI Devices</li>
-          </ul>
-        </div>
-        <!-- end icon-content-list-block --> 
-      </div>
-      <!-- end col-4 -->
-      <div class="col-lg-4">
-        <div class="icon-content-list-block">
-          <figure><img src="images/icon02.png" alt="Image"></figure>
-          <small>02</small>
-          <h5>SOFTWARE PRODUCTS</h5>
-          <p>We craft powerful, intuitive, and scalable software that adapts to your 
-            needs and keeps your business moving forward.</p>
-          <ul>
-            <li>Productivity Suite</li>
-            <li>Digital Learning Platform</li>
-            <li>Security Software</li>
-            <li>AI Tools</li>
-            <li>Collaboration Apps</li>
-          </ul>
-        </div>
-        <!-- end icon-content-list-block --> 
-      </div>
-      <!-- end col-4 -->
-      <div class="col-lg-4">
-        <div class="icon-content-list-block">
-          <figure><img src="images/icon03.png" alt="Image"></figure>
-          <small>03</small>
-          <h5>CONSULTING SERVICES</h5>
-          <p>We provide tailored strategies & expertise that help you 
-            solve complex business problems & achieve sustainable success</p>
-          <ul>
-            <li>Strategy Consulting</li>
-            <li>Technology Advisory</li>
-            <li>Digital Transformation</li>
-            <li>Data and AI Consulting</li>
-            <li>Enterprise Solutions</li>
-          </ul>
-        </div>
-        <!-- end icon-content-list-block --> 
-      </div>
-      <!-- end col-4 --> 
-       <!-- Read More Button -->
-<div class="col-12 text-center mt-5">
-  <a href="services.html" class="custom-btn light">
-    <svg>
-      <rect width="218" height="56" x="1" y="1" rx="0" fill="none"></rect>
-    </svg>
-    <span>READ MORE</span>
-  </a>
-</div>
-<!-- end col-12 -->
-
-    </div>
-    <!-- end row --> 
   </div>
-  <!-- end container --> 
-</section>
-<!-- end content-section -->
-<section class="content-section no-spacing">
-  <div class="container">
-    <div class="row align-items-center no-gutters">
-      <div class="col-lg-6">
-        <div class="left-side-content">
-          <div class="inner">
-            <h4>RECENT NEWS</h4>
-            <b>New collaboration and tech products</b>
-            <p>Slate is introducing a new range of digital products designed for students across Africa — giving the next generation greater power, style, and reliability.</p>
-            <p>At the same time, we are developing Africa’s largest digital learning platform to serve both the public and private sectors.</p>
-
-            <a href="#" class="custom-btn">
-            <svg>
-              <rect width="218" height="56" x="1" y="1" rx="0" fill="none" stroke="#ffffff"></rect>
-            </svg>
-            <span>READ MORE</span> </a> </div>
-          <!-- inner --> 
-        </div>
-        <!-- end left-side-content --> 
-      </div>
-      <!-- end col-6 -->
-      <div class="col-lg-6">
-        <figure class="right-side-image"> <img src="images/side-image.jpg" alt="Image" class="image">
-          <figcaption><small>New Slate Device</small> </figcaption>
-        </figure>
-        <!-- end right-side-image --> 
-      </div>
-      <!-- end col-6 --> 
-    </div>
-    <!-- end row --> 
-  </div>
-  <!-- end container --> 
-  
-</section>
-<!-- end content-section -->
-<section class="content-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title">
-          <h6>We love to innovate at scale</h6>
-          <h2>Recent Products</h2>
-        </div>
-        <!-- end section-title --> 
-      </div>
-      <!-- end col-12 -->
-      <div class="col-lg-4">
-        <div class="recent-news">
-          <figure> <img src="images/blog01.jpg" alt="Image">
-            <figcaption> <small>SLATE LAPTOP SERIES</small>
-              <h4><a href="#"> Powerful, stylish, and versatile laptops built for students, professionals, and creatives alike — delivering cutting-edge performance in sleek designs with flexible payment options.</a></h4>
-            </figcaption>
-          </figure>
-        </div>
-        <!-- end recent-news --> 
-      </div>
-      <!-- end col-4 -->
-      <div class="col-lg-4">
-        <div class="recent-news">
-          <figure> <img src="images/blog02.jpg" alt="Image">
-            <figcaption> <small>SLATE MOBILE PHONE SERIES</small>
-              <h4><a href="#">Smart, stylish phones built for connection — with long-lasting batteries, crystal-clear cameras, advanced noise-isolating audio, and customizable call tones.</a></h4>
-            </figcaption>
-          </figure>
-        </div>
-        <!-- end recent-news --> 
-      </div>
-      <!-- end col-4 -->
-      <div class="col-lg-4">
-        <div class="recent-news">
-          <figure> <img src="images/blog03.jpg" alt="Image">
-            <figcaption> <small>SLATE TABLET SERIES</small>
-              <h4><a href="#">Lightweight, premium tablets built for managers, entrepreneurs and students alike — offering the perfect balance of portability and power as the bridge between phone and laptop.</a></h4>
-            </figcaption>
-          </figure>
-        </div>
-        <!-- end recent-news --> 
-      </div>
-      <!-- end col-4 --> 
-    </div>
-    <!-- end row --> 
-  </div>
-  <!-- end container --> 
-</section>
-<!-- end content-section -->
-
-<!-- Begin Partners -->
-
-<section class="content-section-temp">
-  <div class="container">
-    <div class="row no-gutters">
-      <div class="col-12">
-        <div class="section-title">
-          <h6>Amazing collabration with amazing brands</h6>
-          <h2>Digital Partners</h2>
-        </div>
-        <!-- end section-title --> 
-      </div>
-      <!-- end col-12 -->
-      <div class="col-lg-3 col-md-4 col-6">
-        <figure class="clients"><img src="images/brand-1.png" alt="Image">
-          <figcaption><a href="#">www.deepslate.co.uk</a></figcaption>
-        </figure>
-      </div>
-      <!-- end col-3 -->
-      <div class="col-lg-3 col-md-4 col-6">
-        <figure class="clients"><img src="images/brand-2.png" alt="Image">
-          <figcaption><a href="#">www.starkville.tech</a></figcaption>
-        </figure>
-      </div>
-      <!-- end col-3 -->
-      <div class="col-lg-3 col-md-4 col-6">
-        <figure class="clients"><img src="images/brand-3.png" alt="Image">
-          <figcaption><a href="#">www.hammathanandwinter.com</a></figcaption>
-        </figure>
-      </div>
-      <!-- end col-3 -->
-      <div class="col-lg-3 col-md-4 col-6">
-        <figure class="clients"><img src="images/brand-4.png" alt="Image">
-          <figcaption><a href="#">www.digital-futures.africa</a></figcaption>
-        </figure>
-      </div>
-      <!-- end col-3 -->
-       
-    </div>
-    <!-- end row --> 
-  </div>
-  <!-- end container --> 
 </section>
 
-<!-- End Partners -->
-
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10">
-        <div class="work-with-us">
-          <h6>Let's start to work together</h6>
-          <h2>Don't be a <span>stranger</span>, talk to us!</h2>
-          <a href="services.html" class="custom-btn">
-          <svg>
-            <rect width="218" height="56" x="1" y="1" rx="0" fill="none" stroke="#ffffff"></rect>
-          </svg>
-          <span>WORK WITH US</span> </a> </div>
-        <!-- end work-with-us --> 
-      </div>
-      <!-- end col-10 -->
-      <div class="col-lg-4">
-        <address>
-        <small>UK Address</small>
-        <p>3rd Floor, 86-90 Paul Street<br>
-          EC2A 4NE, London<br>
-          United Kingdom</p>
-        </address>
-      </div>
-      <!-- end col-4 -->
-      <div class="col-lg-4 col-md-6">
-        <address>
-        <small>Nigeria Address</small>
-        <p>Block 6, Flat 7<br>
-          Kwali Close, Area 8, Garki<br>
-           Abuja, Nigeria</p>
-       
-        </address>
-      </div>
-      <!-- end col-4 -->
-      <div class="col-lg-4 col-md-6">
-        <address>
-        <small>Phone and E-mail</small>
-        <p>+44 737 9499 922</p>
-         <p>+234 806 6977 213</p>
-        <p><a href="#" data-text="hello[at]annusa.net">hello@slateworld.io</a></p>
-        </address>
-      </div>
-      <!-- end col-4 -->
-      <div class="col-12"> </div>
-      <!-- end col-12 -->
-      <div class="col-12">
-        <div class="footer-bottom"> <span>© 2025 Slate Technologies</span>
-          <ul class="footer-menu">
-            <li><a href="products.html" data-text="Products">Products</a></li>
-            <li><a href="services.html" data-text="Services">Services</a></li>
-            <li><a href="contactus.html" data-text="Contact Us">Contact Us</a></li>
-          </ul>
-        </div>
-        <!-- end footer-bottom --> 
-      </div>
-      <!-- end col-12 --> 
+<!-- WHY -->
+<section id="why">
+  <div class="why-marquee-wrap">
+    <div class="why-marquee">
+      <span class="why-marquee-item active">Locally Designed</span><span class="why-marquee-item">·</span><span class="why-marquee-item">Globally Competitive</span><span class="why-marquee-item">·</span><span class="why-marquee-item active">Durability Meets Design</span><span class="why-marquee-item">·</span><span class="why-marquee-item">Energy Efficient</span><span class="why-marquee-item">·</span><span class="why-marquee-item active">Responsive Support</span><span class="why-marquee-item">·</span><span class="why-marquee-item">Flexible Payments</span><span class="why-marquee-item">·</span><span class="why-marquee-item active">Locally Designed</span><span class="why-marquee-item">·</span><span class="why-marquee-item">Globally Competitive</span><span class="why-marquee-item">·</span><span class="why-marquee-item active">Durability Meets Design</span><span class="why-marquee-item">·</span><span class="why-marquee-item">Energy Efficient</span><span class="why-marquee-item">·</span><span class="why-marquee-item active">Responsive Support</span><span class="why-marquee-item">·</span><span class="why-marquee-item">Flexible Payments</span>
     </div>
-    <!-- end row --> 
   </div>
-  <!-- end container --> 
-</footer>
-<!-- end footer --> 
+  <div class="section-inner" style="padding-top:2rem">
+    <div class="section-header reveal"><span class="section-num">03</span><div><span class="section-eyebrow">The Slate Difference</span><h2 class="section-title">Six reasons to choose <em>Slate</em></h2></div></div>
+    <div class="why-grid">
+      <div class="why-card reveal"><span class="why-icon">🌍</span><span class="why-title">Locally Designed, Globally Competitive</span><p class="why-text">Purpose-built originals — engineered with international standards and deep knowledge of African infrastructure, climate, and user behaviour.</p></div>
+      <div class="why-card reveal reveal-delay-1"><span class="why-icon">💳</span><span class="why-title">Flexible Payment Options</span><p class="why-text">Premium technology without financial strain. Our Flexi-Pay model democratises device ownership with transparent fees and zero early-payoff penalties.</p></div>
+      <div class="why-card reveal reveal-delay-2"><span class="why-icon">🔧</span><span class="why-title">Durability Meets Design</span><p class="why-text">Elegant devices engineered to perform under pressure — in the field, in the classroom, in the boardroom — without sacrificing aesthetic refinement.</p></div>
+      <div class="why-card reveal"><span class="why-icon">⚡</span><span class="why-title">Energy-Efficient Hardware</span><p class="why-text">Lower power consumption and longer battery life reduce dependency on unreliable grid electricity — a fundamental design principle, not an afterthought.</p></div>
+      <div class="why-card reveal reveal-delay-1"><span class="why-icon">📞</span><span class="why-title">Responsive After-Sales</span><p class="why-text">Warranty programmes, dedicated support teams, and on-site enterprise servicing ensure our relationship with you extends well beyond purchase day.</p></div>
+      <div class="why-card reveal reveal-delay-2"><span class="why-icon">🎓</span><span class="why-title">Technology for All</span><p class="why-text">From federal university students to tech-hub entrepreneurs — every Slate product delivers efficiency, simplicity, and reliability without compromise on capability.</p></div>
+    </div>
+  </div>
+</section>
 
-<!-- JS FILES --> 
-<script src="js/jquery.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/bundle.js"></script> 
-<script src="js/scripts.js"></script>
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <div><span class="cta-eyebrow">Ready to begin?</span><h2 class="cta-title">Join Africa's technology<br>revolution today.</h2></div>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-dark">Get in Touch<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://slateworld.io" target="_blank" class="btn-outline-dark">Visit slateworld.io</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer><div class="footer-inner">
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="nav-logo" style="display:inline-flex"><svg width="26" height="30" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#F2F0EC" opacity=".5"/><polygon points="12,2 20,2 12,10" fill="#111010"/><rect x="2" y="18" width="46" height="12" fill="#D4AE58" opacity=".6"/><polygon points="48,18 56,18 48,26" fill="#111010"/><rect x="12" y="34" width="46" height="12" fill="#D4AE58" opacity=".6"/><polygon points="12,34 20,34 12,42" fill="#111010"/><rect x="2" y="50" width="46" height="12" fill="#F2F0EC" opacity=".5"/><polygon points="48,50 56,50 48,58" fill="#111010"/></svg><span class="nav-wordmark" style="opacity:.5">Slate</span></a>
+      <p class="footer-brand-desc">Africa's leading homegrown technology company — designing, manufacturing, and distributing intelligent, durable, and elegantly crafted devices that meet global standards and honour local realities.</p>
+    </div>
+    <div><span class="footer-col-title">Products</span><ul class="footer-links"><li><a href="products.html#laptops">Slate Laptops</a></li><li><a href="products.html#smartphones">Slate Smartphones</a></li><li><a href="products.html#tablets">Slate Tablets</a></li><li><a href="products.html#desktops">Slate Desktops</a></li><li><a href="products.html#ups">UPS Systems</a></li><li><a href="products.html#powerbanks">Power Banks</a></li></ul></div>
+    <div><span class="footer-col-title">Services</span><ul class="footer-links"><li><a href="services.html#bnpl">Buy Now, Pay Later</a></li><li><a href="services.html#corporate">Corporate Solutions</a></li><li><a href="services.html#support">Maintenance & Support</a></li><li><a href="sdoi.html">SDOI Partnership</a></li><li><a href="services.html#empowerment">Digital Empowerment</a></li></ul></div>
+    <div><span class="footer-col-title">Company</span><ul class="footer-links"><li><a href="index.html#about">About Slate</a></li><li><a href="index.html#mission">Mission & Vision</a></li><li><a href="index.html#why">Why Slate</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="https://slateworld.io" target="_blank">slateworld.io</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Slate Technology Ltd. All rights reserved. Registered in Nigeria & United Kingdom.</p>
+    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Warranty</a></div>
+  </div>
+</div></footer>
+
+<script>
+const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing'),cur=document.getElementById('cursor');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;dot.style.left=mx+'px';dot.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.classList.add('cursor-expand'));
+  el.addEventListener('mouseleave',()=>cur.classList.remove('cursor-expand'));
+});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>

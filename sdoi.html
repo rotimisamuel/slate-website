@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services — Slate Technology</title>
+<title>SDOI — Student Device Ownership Initiative | Slate Technology</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,14 +39,15 @@ nav.scrolled{background:rgba(8,8,8,.9);border-color:var(--border2);backdrop-filt
 .nav-cta{color:var(--black)!important;background:var(--gold);padding:.6rem 1.4rem;transition:background .2s!important}
 .nav-cta:hover{background:var(--white)!important;color:var(--black)!important}
 .nav-cta::after{display:none!important}
-.page-hero{min-height:38vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:0 var(--pad) 4rem;padding-top:8rem}
+.page-hero{min-height:45vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:0 var(--pad) 4rem;padding-top:8rem;background:linear-gradient(135deg,var(--mid) 0%,#120F0B 100%);border-bottom:1px solid var(--border)}
 .page-hero-bg{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(212,174,88,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,174,88,.04) 1px,transparent 1px);background-size:80px 80px}
-.page-hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,174,88,.1) 0%,transparent 70%);top:-200px;right:-50px}
-.page-hero-content{position:relative;z-index:2}
+.page-hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,174,88,.12) 0%,transparent 70%);top:-200px;right:-50px}
+.page-hero-content{position:relative;z-index:2;max-width:800px}
 .page-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
 .page-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
-h1.page-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-hero);line-height:1.05}
+h1.page-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-hero);line-height:1.05;margin-bottom:1.5rem}
 h1.page-title em{font-style:italic;color:var(--gold)}
+.page-lead{font-family:'Jura',sans-serif;font-weight:300;font-size:clamp(.95rem,1.4vw,1.1rem);line-height:1.9;color:rgba(242,240,236,.65)}
 section{position:relative}
 .section-inner{max-width:1440px;margin:0 auto;padding:clamp(4rem,8vw,9rem) var(--pad)}
 .section-header{display:flex;align-items:flex-start;gap:3rem;margin-bottom:5rem}
@@ -54,25 +55,23 @@ section{position:relative}
 .section-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem}
 h2.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h2);line-height:1.15}
 h2.section-title em{font-style:italic;color:var(--gold)}
-.service-card{padding:3rem;border:1px solid var(--border2);position:relative;overflow:hidden;transition:border-color .3s,background .3s}
-.service-card:hover{border-color:var(--border);background:var(--mid)}
-.service-card.featured{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--mid);border-color:var(--border);margin-bottom:2rem}
-.service-label{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
-h3.service-name{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h3);margin-bottom:1.2rem}
-.service-desc{font-size:.85rem;line-height:1.8;color:rgba(242,240,236,.6)}
-.bnpl-table{width:100%;border-collapse:collapse}
-.bnpl-table th{font-size:var(--fs-tag);letter-spacing:.15em;text-transform:uppercase;color:var(--gold);padding:.7rem 1rem;border-bottom:1px solid var(--border);text-align:left}
-.bnpl-table td{font-size:.83rem;padding:.9rem 1rem;border-bottom:1px solid var(--border2);color:rgba(242,240,236,.7)}
-.bnpl-table tr:last-child td{border-bottom:none}
-.bnpl-table tr:hover td{color:var(--white);background:rgba(212,174,88,.04)}
-.aftersales-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--border2)}
-.as-card{background:var(--panel);padding:2.5rem 2rem;transition:background .25s;position:relative;overflow:hidden}
-.as-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.23,1,.32,1)}
-.as-card:hover{background:var(--mid)}
-.as-card:hover::before{transform:scaleX(1)}
-.as-icon{font-size:1.6rem;margin-bottom:1.2rem;display:block}
-.as-title{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem}
-.as-desc{font-size:.83rem;line-height:1.7;color:rgba(242,240,236,.55)}
+.sdoi-main{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.sdoi-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:3rem}
+.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1.5rem;align-items:start;padding:1.5rem 0;border-bottom:1px solid var(--border2)}
+.step:last-child{border-bottom:none}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--gold2);line-height:1}
+.step-title{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--white);display:block;margin-bottom:.4rem}
+.step-desc{font-size:.83rem;line-height:1.7;color:rgba(242,240,236,.5)}
+.device-table{width:100%;border-collapse:collapse;border:1px solid var(--border2)}
+.device-table thead tr{background:rgba(212,174,88,.08)}
+.device-table th{font-size:var(--fs-tag);letter-spacing:.15em;text-transform:uppercase;color:var(--gold);padding:1rem 1.2rem;text-align:left;border-bottom:1px solid var(--border)}
+.device-table td{font-size:.82rem;padding:1.1rem 1.2rem;border-bottom:1px solid var(--border2);color:rgba(242,240,236,.65);vertical-align:top}
+.device-table tr:last-child td{border-bottom:none}
+.device-table tr:hover td{color:var(--white);background:rgba(212,174,88,.04)}
+.sdoi-benefits{margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.benefit-pill{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.2rem;border:1px solid var(--border2);font-size:.78rem;letter-spacing:.08em;color:rgba(242,240,236,.6);transition:border-color .2s,color .2s}
+.benefit-pill:hover{border-color:var(--border);color:var(--white)}
+.benefit-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
 .btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--black);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;position:relative;overflow:hidden;cursor:none;transition:color .2s}
 .btn-primary::before{content:'';position:absolute;inset:0;background:var(--white);transform:translateX(-101%);transition:transform .3s cubic-bezier(.23,1,.32,1)}
 .btn-primary:hover::before{transform:translateX(0)}
@@ -106,15 +105,14 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
 .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
 @media(max-width:900px){
-  .service-card.featured{grid-template-columns:1fr}
-  .aftersales-grid{grid-template-columns:1fr 1fr}
+  .sdoi-main{grid-template-columns:1fr;gap:3rem}
   .footer-top{grid-template-columns:1fr 1fr}
   .nav-links li:not(:last-child){display:none}
   .section-header{flex-direction:column;gap:1rem}.section-num{font-size:3rem}
   .cta-inner{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:600px){
-  .aftersales-grid{grid-template-columns:1fr}
+  .sdoi-benefits{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr;gap:2.5rem}
   body{cursor:auto}.cursor{display:none}
 }
@@ -131,8 +129,8 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   <ul class="nav-links">
     <li><a href="index.html#about">Home</a></li>
     <li><a href="products.html">Products</a></li>
-    <li><a href="services.html" class="active">Services</a></li>
-    <li><a href="sdoi.html">SDOI</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="sdoi.html" class="active">SDOI</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Get Started</a></li>
   </ul>
@@ -142,99 +140,62 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   <div class="page-hero-bg"></div>
   <div class="page-hero-glow"></div>
   <div class="page-hero-content">
-    <p class="page-eyebrow">What We Offer</p>
-    <h1 class="page-title">Beyond the device —<br>a <em>complete ecosystem</em></h1>
+    <p class="page-eyebrow">Student Programme</p>
+    <h1 class="page-title">Student Device<br><em>Ownership Initiative</em></h1>
+    <p class="page-lead">Device ownership directly correlates with academic performance. The SDOI removes the financial barrier between students and their tools of learning.</p>
   </div>
 </div>
 
-<!-- BNPL -->
-<section id="bnpl"><div class="section-inner">
-  <div class="section-header reveal"><span class="section-num">01</span><div><span class="section-eyebrow">Flagship Programme</span><h2 class="section-title">Buy Now, <em>Pay Later</em></h2></div></div>
-  <div class="service-card featured reveal">
+<!-- MAIN SDOI CONTENT -->
+<section id="programme"><div class="section-inner">
+  <div class="sdoi-main">
     <div>
-      <span class="service-label">Flexi-Pay Ownership Plan</span>
-      <h3 class="service-name">Premium technology, accessible payments</h3>
-      <p class="service-desc">Slate's Flexi-Pay Ownership Plan makes premium technology accessible to everyone. Acquire your device today and spread the cost over 6 to 24 months with a transparent 3% monthly service fee on the declining balance. Settle early at any time — zero penalty, zero surprises.</p>
-      <div style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap">
-        <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(212,174,88,.1);color:var(--gold);border:1px solid var(--border)">0 Penalty Early Payoff</span>
-        <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(212,174,88,.1);color:var(--gold);border:1px solid var(--border)">3% Declining Balance</span>
-        <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(212,174,88,.1);color:var(--gold);border:1px solid var(--border)">6–24 Month Terms</span>
+      <span class="section-eyebrow reveal" style="display:block;margin-bottom:1rem">How It Works</span>
+      <h2 class="section-title reveal" style="margin-bottom:1.5rem;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h2)">Five steps to <em>device ownership</em></h2>
+      <p class="reveal" style="font-size:.9rem;line-height:1.85;color:rgba(242,240,236,.6);margin-bottom:2rem">The SDOI is Slate Technology's flagship partnership programme with universities and colleges across Nigeria. Through institutional partnerships, students receive their Slate device from day one and complete payment before graduation, with no external debt burden.</p>
+      <div class="sdoi-steps">
+        <div class="step reveal"><span class="step-num">01</span><div><span class="step-title">Partnership Agreement</span><p class="step-desc">Slate Technology and the institution sign a Memorandum of Understanding establishing device models, pricing, and support commitments.</p></div></div>
+        <div class="step reveal reveal-delay-1"><span class="step-num">02</span><div><span class="step-title">Student Registration</span><p class="step-desc">Eligible students register via an online portal or campus booth, indicating interest and selecting their preferred device configuration.</p></div></div>
+        <div class="step reveal reveal-delay-2"><span class="step-num">03</span><div><span class="step-title">Verification & Approval</span><p class="step-desc">The institution verifies academic standing and confirms eligibility. Approved students are scheduled for device collection.</p></div></div>
+        <div class="step reveal reveal-delay-3"><span class="step-num">04</span><div><span class="step-title">Device Allocation</span><p class="step-desc">Devices distributed — optionally preloaded with academic tools, learning apps, and institutional software for immediate use.</p></div></div>
+        <div class="step reveal reveal-delay-4"><span class="step-num">05</span><div><span class="step-title">Instalment Payment</span><p class="step-desc">Students pay monthly or semesterly instalments through university channels or directly to Slate, completing full ownership before graduation.</p></div></div>
       </div>
     </div>
     <div>
-      <table class="bnpl-table">
-        <thead><tr><th>Term</th><th>Monthly</th><th>Total</th><th>Fees</th></tr></thead>
+      <span class="section-eyebrow reveal" style="display:block;margin-bottom:1.5rem">Device Options</span>
+      <table class="device-table reveal">
+        <thead><tr><th>Device</th><th>Specification</th><th>Plan</th></tr></thead>
         <tbody>
-          <tr><td>6 months</td><td>₦184</td><td>₦1,104</td><td>₦104</td></tr>
-          <tr><td>12 months</td><td>₦100</td><td>₦1,200</td><td>₦200</td></tr>
-          <tr><td>18 months</td><td>₦72.50</td><td>₦1,305</td><td>₦305</td></tr>
-          <tr><td>24 months</td><td>₦59</td><td>₦1,416</td><td>₦416</td></tr>
+          <tr><td><strong>Student Laptop</strong></td><td>Intel Core i5, 8GB RAM, 256GB SSD, 15.6"</td><td>×12–24 months</td></tr>
+          <tr><td><strong>Study Tablet</strong></td><td>Android 13, 6GB RAM, 128GB, 4G LTE + Stylus</td><td>×12–24 months</td></tr>
+          <tr><td><strong>Academic Phone</strong></td><td>5G, 8GB RAM, 256GB, AI Camera</td><td>×12–24 months</td></tr>
         </tbody>
       </table>
-      <p style="font-size:.7rem;color:var(--stone);margin-top:.8rem;letter-spacing:.06em">*Sample based on ₦1,000 base price. Actual device prices vary.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- AFTER-SALES -->
-<section id="support" style="background:linear-gradient(180deg,var(--panel) 0%,var(--black) 100%)"><div class="section-inner">
-  <div class="section-header reveal"><span class="section-num">02</span><div><span class="section-eyebrow">After-Sales & Support</span><h2 class="section-title">Our commitment<br><em>beyond the sale</em></h2></div></div>
-  <div class="aftersales-grid">
-    <div class="as-card reveal"><span class="as-icon">🛡️</span><span class="as-title">Warranty & Repairs</span><p class="as-desc">Every Slate device includes a full 1-year manufacturer warranty. Extended warranty programmes are available for enterprise and institutional customers with custom SLA agreements.</p></div>
-    <div class="as-card reveal reveal-delay-1"><span class="as-icon">💻</span><span class="as-title">Technical Support</span><p class="as-desc">Dedicated support channels for individuals and enterprise clients. On-site servicing, remote diagnostics, firmware updates, and software maintenance ensuring every device performs optimally throughout its life.</p></div>
-    <div class="as-card reveal reveal-delay-2" id="corporate"><span class="as-icon">🏢</span><span class="as-title">Corporate & Institutional</span><p class="as-desc">Bulk procurement, fleet management, extended SLA warranties, and on-site deployment support for schools, hospitals, government agencies, and large organisations with complex technology mandates.</p></div>
-    <div class="as-card reveal reveal-delay-3" id="empowerment"><span class="as-icon">🌍</span><span class="as-title">Digital Empowerment</span><p class="as-desc">Collaborative initiatives with educational institutions, NGOs, and community organisations to bridge Africa's digital divide — subsidised devices, digital literacy programmes, and startup access schemes.</p></div>
-  </div>
-</div></section>
-
-<!-- CORPORATE SOLUTIONS DETAIL -->
-<section style="background:var(--black)"><div class="section-inner">
-  <div class="section-header reveal"><span class="section-num">03</span><div><span class="section-eyebrow">Enterprise</span><h2 class="section-title">Corporate &amp; institutional <em>solutions</em></h2></div></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem" class="reveal">
-    <div class="service-card" style="border-color:var(--border)">
-      <span class="service-label">Bulk Procurement</span>
-      <h3 class="service-name">Fleet Management</h3>
-      <p class="service-desc">From 10 to 10,000 devices — Slate structures enterprise procurement packages with dedicated account management, unified warranties, and logistics coordination across Nigeria and the UK.</p>
-    </div>
-    <div class="service-card" style="border-color:var(--border)">
-      <span class="service-label">On-Site Deployment</span>
-      <h3 class="service-name">End-to-End Setup</h3>
-      <p class="service-desc">Device imaging, software preloading, network configuration, and staff training delivered by our technical team. We handle the complexity so your organisation can focus on its mission.</p>
-    </div>
-    <div class="service-card" style="border-color:var(--border)">
-      <span class="service-label">SLA Agreements</span>
-      <h3 class="service-name">Service Level Commitments</h3>
-      <p class="service-desc">Custom SLA agreements tailored to your operational requirements — guaranteed response times, priority parts availability, and dedicated support liaisons for enterprise clients.</p>
-    </div>
-    <div class="service-card" style="border-color:var(--border)">
-      <span class="service-label">Sectors We Serve</span>
-      <h3 class="service-name">Industries & Institutions</h3>
-      <p class="service-desc" style="margin-bottom:1.2rem">Our enterprise division serves government agencies, hospitals, universities, retail chains, financial institutions, and NGOs requiring reliable technology infrastructure at scale.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:.5rem">
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Government</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Healthcare</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Education</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Finance</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Retail</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">NGOs</span>
+      <h3 class="reveal" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.4rem;margin:2.5rem 0 1.2rem">Benefits to Universities</h3>
+      <div class="sdoi-benefits">
+        <div class="benefit-pill reveal"><span class="benefit-dot"></span>Enhanced academic performance</div>
+        <div class="benefit-pill reveal reveal-delay-1"><span class="benefit-dot"></span>Digital inclusion for all</div>
+        <div class="benefit-pill reveal reveal-delay-2"><span class="benefit-dot"></span>Tech-forward brand image</div>
+        <div class="benefit-pill reveal"><span class="benefit-dot"></span>Zero admin burden</div>
+        <div class="benefit-pill reveal reveal-delay-1"><span class="benefit-dot"></span>CSR alignment</div>
+        <div class="benefit-pill reveal reveal-delay-2"><span class="benefit-dot"></span>Full deployment support</div>
+        <div class="benefit-pill reveal"><span class="benefit-dot"></span>Extended warranty included</div>
+        <div class="benefit-pill reveal reveal-delay-1"><span class="benefit-dot"></span>On-campus service desk</div>
+      </div>
+      <div class="reveal" style="margin-top:2.5rem;padding:2rem;border:1px solid var(--border)">
+        <p style="font-size:.82rem;line-height:1.8;color:rgba(242,240,236,.6)"><strong style="color:var(--gold);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:.8rem">Ready to Partner?</strong>Slate Technology welcomes Vice Chancellors and academic registrars to discuss a pilot phase of 500–1,000 students. We structure flexible terms aligned with university payment policies and student financial profiles.</p>
+        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem;display:inline-flex"><span>Contact Partnerships Team</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
-  </div>
-  <div style="margin-top:3rem;padding:2.5rem;background:var(--mid);border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem" class="reveal">
-    <div>
-      <span style="font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem">Ready to discuss enterprise pricing?</span>
-      <p style="font-size:.85rem;color:rgba(242,240,236,.6);line-height:1.7">Our enterprise team will build a bespoke package aligned with your organisation's budget, timeline, and operational requirements.</p>
-    </div>
-    <a href="contact.html" class="btn-primary"><span>Contact Enterprise Team</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </div></section>
 
 <!-- CTA -->
 <section id="cta">
   <div class="cta-inner">
-    <div><span class="cta-eyebrow">Ready to begin?</span><h2 class="cta-title">Join Africa's technology<br>revolution today.</h2></div>
+    <div><span class="cta-eyebrow">Partner with Slate</span><h2 class="cta-title">Equip your students.<br><em>Empower the future.</em></h2></div>
     <div class="cta-actions">
-      <a href="contact.html" class="btn-dark">Get in Touch<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="contact.html" class="btn-dark">Start a Conversation<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="https://slateworld.io" target="_blank" class="btn-outline-dark">Visit slateworld.io</a>
     </div>
   </div>
@@ -247,7 +208,7 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
       <p class="footer-brand-desc">Africa's leading homegrown technology company — designing, manufacturing, and distributing intelligent, durable, and elegantly crafted devices.</p>
     </div>
     <div><span class="footer-col-title">Products</span><ul class="footer-links"><li><a href="products.html#laptops">Slate Laptops</a></li><li><a href="products.html#smartphones">Slate Smartphones</a></li><li><a href="products.html#tablets">Slate Tablets</a></li><li><a href="products.html#desktops">Slate Desktops</a></li><li><a href="products.html#ups">UPS Systems</a></li><li><a href="products.html#powerbanks">Power Banks</a></li></ul></div>
-    <div><span class="footer-col-title">Services</span><ul class="footer-links"><li><a href="#bnpl">Buy Now, Pay Later</a></li><li><a href="#corporate">Corporate Solutions</a></li><li><a href="#support">Maintenance & Support</a></li><li><a href="sdoi.html">SDOI Partnership</a></li><li><a href="#empowerment">Digital Empowerment</a></li></ul></div>
+    <div><span class="footer-col-title">Services</span><ul class="footer-links"><li><a href="services.html#bnpl">Buy Now, Pay Later</a></li><li><a href="services.html#corporate">Corporate Solutions</a></li><li><a href="services.html#support">Support</a></li><li><a href="sdoi.html">SDOI Partnership</a></li></ul></div>
     <div><span class="footer-col-title">Company</span><ul class="footer-links"><li><a href="index.html#about">About Slate</a></li><li><a href="index.html#mission">Mission & Vision</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="https://slateworld.io" target="_blank">slateworld.io</a></li></ul></div>
   </div>
   <div class="footer-bottom">

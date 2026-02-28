@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services — Slate Technology</title>
+<title>Contact — Slate Technology</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,26 +54,36 @@ section{position:relative}
 .section-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem}
 h2.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h2);line-height:1.15}
 h2.section-title em{font-style:italic;color:var(--gold)}
-.service-card{padding:3rem;border:1px solid var(--border2);position:relative;overflow:hidden;transition:border-color .3s,background .3s}
-.service-card:hover{border-color:var(--border);background:var(--mid)}
-.service-card.featured{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--mid);border-color:var(--border);margin-bottom:2rem}
-.service-label{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
-h3.service-name{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h3);margin-bottom:1.2rem}
-.service-desc{font-size:.85rem;line-height:1.8;color:rgba(242,240,236,.6)}
-.bnpl-table{width:100%;border-collapse:collapse}
-.bnpl-table th{font-size:var(--fs-tag);letter-spacing:.15em;text-transform:uppercase;color:var(--gold);padding:.7rem 1rem;border-bottom:1px solid var(--border);text-align:left}
-.bnpl-table td{font-size:.83rem;padding:.9rem 1rem;border-bottom:1px solid var(--border2);color:rgba(242,240,236,.7)}
-.bnpl-table tr:last-child td{border-bottom:none}
-.bnpl-table tr:hover td{color:var(--white);background:rgba(212,174,88,.04)}
-.aftersales-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--border2)}
-.as-card{background:var(--panel);padding:2.5rem 2rem;transition:background .25s;position:relative;overflow:hidden}
-.as-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.23,1,.32,1)}
-.as-card:hover{background:var(--mid)}
-.as-card:hover::before{transform:scaleX(1)}
-.as-icon{font-size:1.6rem;margin-bottom:1.2rem;display:block}
-.as-title{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem}
-.as-desc{font-size:.83rem;line-height:1.7;color:rgba(242,240,236,.55)}
-.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--black);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;position:relative;overflow:hidden;cursor:none;transition:color .2s}
+.presence-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:4rem}
+.presence-card{background:var(--panel);padding:3.5rem;position:relative;overflow:hidden}
+.presence-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.presence-flag{font-size:2.5rem;display:block;margin-bottom:1.5rem}
+.presence-country{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+.presence-addr{font-size:.88rem;line-height:1.8;color:rgba(242,240,236,.6)}
+.contact-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:4rem;padding:2.5rem;background:var(--mid);border:1px solid var(--border2)}
+.contact-item{display:flex;flex-direction:column;gap:.3rem}
+.contact-label{font-size:var(--fs-tag);letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
+.contact-val{font-size:.9rem;color:rgba(242,240,236,.8);text-decoration:none;transition:color .2s;cursor:none}
+.contact-val:hover{color:var(--gold)}
+/* CONTACT FORM SECTION */
+.contact-form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:5rem}
+.form-intro-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+.form-intro-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.6rem,2.5vw,2.4rem);line-height:1.2;margin-bottom:1.5rem}
+.form-intro-title em{font-style:italic;color:var(--gold)}
+.form-intro-body{font-size:.88rem;line-height:1.85;color:rgba(242,240,236,.6);margin-bottom:2rem}
+.quick-links{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.quick-link{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;border:1px solid var(--border2);text-decoration:none;color:rgba(242,240,236,.6);font-size:.8rem;letter-spacing:.08em;transition:border-color .2s,color .2s,background .2s;cursor:none}
+.quick-link:hover{border-color:var(--border);color:var(--white);background:var(--mid)}
+.quick-link-icon{font-size:1.1rem;flex-shrink:0}
+.quick-link-label{font-size:var(--fs-tag);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.2rem}
+.form-group{margin-bottom:1.5rem}
+.form-label{font-size:var(--fs-tag);letter-spacing:.18em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:.6rem}
+.form-control{width:100%;background:var(--panel);border:1px solid var(--border2);color:var(--white);font-family:'Jura',sans-serif;font-size:.88rem;padding:.9rem 1.2rem;outline:none;transition:border-color .2s}
+.form-control:focus{border-color:var(--gold)}
+.form-control::placeholder{color:var(--stone)}
+select.form-control{appearance:none;cursor:none}
+textarea.form-control{resize:vertical;min-height:130px}
+.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--black);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;position:relative;overflow:hidden;cursor:none;transition:color .2s;border:none}
 .btn-primary::before{content:'';position:absolute;inset:0;background:var(--white);transform:translateX(-101%);transition:transform .3s cubic-bezier(.23,1,.32,1)}
 .btn-primary:hover::before{transform:translateX(0)}
 .btn-primary span,.btn-primary svg{position:relative;z-index:1}
@@ -84,8 +94,6 @@ h3.service-name{font-family:'Cormorant Garamond',serif;font-weight:300;font-size
 .cta-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:rgba(8,8,8,.55);display:block;margin-bottom:.8rem}
 .cta-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,3rem);color:var(--black);line-height:1.15}
 .cta-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-dark{display:inline-flex;align-items:center;gap:.6rem;background:var(--black);color:var(--gold);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:background .2s,color .2s;cursor:none}
-.btn-dark:hover{background:var(--white);color:var(--black)}
 .btn-outline-dark{display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid rgba(8,8,8,.35);color:rgba(8,8,8,.8);font-family:'Jura',sans-serif;font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:border-color .2s,color .2s;cursor:none}
 .btn-outline-dark:hover{border-color:var(--black);color:var(--black)}
 footer{background:var(--mid);border-top:1px solid var(--border2)}
@@ -106,15 +114,14 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
 .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
 .reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
 @media(max-width:900px){
-  .service-card.featured{grid-template-columns:1fr}
-  .aftersales-grid{grid-template-columns:1fr 1fr}
+  .presence-grid{grid-template-columns:1fr}
+  .contact-form-wrap{grid-template-columns:1fr;gap:3rem}
   .footer-top{grid-template-columns:1fr 1fr}
   .nav-links li:not(:last-child){display:none}
   .section-header{flex-direction:column;gap:1rem}.section-num{font-size:3rem}
   .cta-inner{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:600px){
-  .aftersales-grid{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr;gap:2.5rem}
   body{cursor:auto}.cursor{display:none}
 }
@@ -131,9 +138,9 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   <ul class="nav-links">
     <li><a href="index.html#about">Home</a></li>
     <li><a href="products.html">Products</a></li>
-    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="services.html">Services</a></li>
     <li><a href="sdoi.html">SDOI</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Get Started</a></li>
   </ul>
 </nav>
@@ -142,90 +149,75 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   <div class="page-hero-bg"></div>
   <div class="page-hero-glow"></div>
   <div class="page-hero-content">
-    <p class="page-eyebrow">What We Offer</p>
-    <h1 class="page-title">Beyond the device —<br>a <em>complete ecosystem</em></h1>
+    <p class="page-eyebrow">Where We Are</p>
+    <h1 class="page-title">Two continents.<br><em>One mission.</em></h1>
   </div>
 </div>
 
-<!-- BNPL -->
-<section id="bnpl"><div class="section-inner">
-  <div class="section-header reveal"><span class="section-num">01</span><div><span class="section-eyebrow">Flagship Programme</span><h2 class="section-title">Buy Now, <em>Pay Later</em></h2></div></div>
-  <div class="service-card featured reveal">
-    <div>
-      <span class="service-label">Flexi-Pay Ownership Plan</span>
-      <h3 class="service-name">Premium technology, accessible payments</h3>
-      <p class="service-desc">Slate's Flexi-Pay Ownership Plan makes premium technology accessible to everyone. Acquire your device today and spread the cost over 6 to 24 months with a transparent 3% monthly service fee on the declining balance. Settle early at any time — zero penalty, zero surprises.</p>
-      <div style="margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap">
-        <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(212,174,88,.1);color:var(--gold);border:1px solid var(--border)">0 Penalty Early Payoff</span>
-        <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(212,174,88,.1);color:var(--gold);border:1px solid var(--border)">3% Declining Balance</span>
-        <span style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.4rem 1rem;background:rgba(212,174,88,.1);color:var(--gold);border:1px solid var(--border)">6–24 Month Terms</span>
-      </div>
-    </div>
-    <div>
-      <table class="bnpl-table">
-        <thead><tr><th>Term</th><th>Monthly</th><th>Total</th><th>Fees</th></tr></thead>
-        <tbody>
-          <tr><td>6 months</td><td>₦184</td><td>₦1,104</td><td>₦104</td></tr>
-          <tr><td>12 months</td><td>₦100</td><td>₦1,200</td><td>₦200</td></tr>
-          <tr><td>18 months</td><td>₦72.50</td><td>₦1,305</td><td>₦305</td></tr>
-          <tr><td>24 months</td><td>₦59</td><td>₦1,416</td><td>₦416</td></tr>
-        </tbody>
-      </table>
-      <p style="font-size:.7rem;color:var(--stone);margin-top:.8rem;letter-spacing:.06em">*Sample based on ₦1,000 base price. Actual device prices vary.</p>
-    </div>
+<!-- PRESENCE -->
+<section id="presence"><div class="section-inner">
+  <div class="section-header reveal"><span class="section-num">01</span><div><span class="section-eyebrow">Global Offices</span><h2 class="section-title">Find us across <em>two continents</em></h2></div></div>
+  <div class="presence-grid">
+    <div class="presence-card reveal"><span class="presence-flag">🇳🇬</span><span class="presence-country">Nigeria — Headquarters</span><p class="presence-addr">Block 6, Flat 7<br>Kwali Close, Area 8, Garki<br>Abuja, Nigeria<br><br><a href="tel:+2348066977213" class="contact-val">+234 806 6977 213</a></p></div>
+    <div class="presence-card reveal reveal-delay-2"><span class="presence-flag">🇬🇧</span><span class="presence-country">United Kingdom — International Office</span><p class="presence-addr">3rd Floor, 86–90 Paul Street<br>EC2A 4NE, London<br>United Kingdom<br><br><a href="tel:+447379499922" class="contact-val">+44 737 9499 922</a></p></div>
+  </div>
+  <div class="contact-row reveal">
+    <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:info@slateworld.io" class="contact-val">info@slateworld.io</a></div>
+    <div class="contact-item"><span class="contact-label">Website</span><a href="https://slateworld.io" target="_blank" class="contact-val">slateworld.io</a></div>
+    <div class="contact-item"><span class="contact-label">Nigeria</span><a href="tel:+2348066977213" class="contact-val">+234 806 6977 213</a></div>
+    <div class="contact-item"><span class="contact-label">United Kingdom</span><a href="tel:+447379499922" class="contact-val">+44 737 9499 922</a></div>
   </div>
 </div></section>
 
-<!-- AFTER-SALES -->
-<section id="support" style="background:linear-gradient(180deg,var(--panel) 0%,var(--black) 100%)"><div class="section-inner">
-  <div class="section-header reveal"><span class="section-num">02</span><div><span class="section-eyebrow">After-Sales & Support</span><h2 class="section-title">Our commitment<br><em>beyond the sale</em></h2></div></div>
-  <div class="aftersales-grid">
-    <div class="as-card reveal"><span class="as-icon">🛡️</span><span class="as-title">Warranty & Repairs</span><p class="as-desc">Every Slate device includes a full 1-year manufacturer warranty. Extended warranty programmes are available for enterprise and institutional customers with custom SLA agreements.</p></div>
-    <div class="as-card reveal reveal-delay-1"><span class="as-icon">💻</span><span class="as-title">Technical Support</span><p class="as-desc">Dedicated support channels for individuals and enterprise clients. On-site servicing, remote diagnostics, firmware updates, and software maintenance ensuring every device performs optimally throughout its life.</p></div>
-    <div class="as-card reveal reveal-delay-2" id="corporate"><span class="as-icon">🏢</span><span class="as-title">Corporate & Institutional</span><p class="as-desc">Bulk procurement, fleet management, extended SLA warranties, and on-site deployment support for schools, hospitals, government agencies, and large organisations with complex technology mandates.</p></div>
-    <div class="as-card reveal reveal-delay-3" id="empowerment"><span class="as-icon">🌍</span><span class="as-title">Digital Empowerment</span><p class="as-desc">Collaborative initiatives with educational institutions, NGOs, and community organisations to bridge Africa's digital divide — subsidised devices, digital literacy programmes, and startup access schemes.</p></div>
-  </div>
-</div></section>
-
-<!-- CORPORATE SOLUTIONS DETAIL -->
-<section style="background:var(--black)"><div class="section-inner">
-  <div class="section-header reveal"><span class="section-num">03</span><div><span class="section-eyebrow">Enterprise</span><h2 class="section-title">Corporate &amp; institutional <em>solutions</em></h2></div></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem" class="reveal">
-    <div class="service-card" style="border-color:var(--border)">
-      <span class="service-label">Bulk Procurement</span>
-      <h3 class="service-name">Fleet Management</h3>
-      <p class="service-desc">From 10 to 10,000 devices — Slate structures enterprise procurement packages with dedicated account management, unified warranties, and logistics coordination across Nigeria and the UK.</p>
-    </div>
-    <div class="service-card" style="border-color:var(--border)">
-      <span class="service-label">On-Site Deployment</span>
-      <h3 class="service-name">End-to-End Setup</h3>
-      <p class="service-desc">Device imaging, software preloading, network configuration, and staff training delivered by our technical team. We handle the complexity so your organisation can focus on its mission.</p>
-    </div>
-    <div class="service-card" style="border-color:var(--border)">
-      <span class="service-label">SLA Agreements</span>
-      <h3 class="service-name">Service Level Commitments</h3>
-      <p class="service-desc">Custom SLA agreements tailored to your operational requirements — guaranteed response times, priority parts availability, and dedicated support liaisons for enterprise clients.</p>
-    </div>
-    <div class="service-card" style="border-color:var(--border)">
-      <span class="service-label">Sectors We Serve</span>
-      <h3 class="service-name">Industries & Institutions</h3>
-      <p class="service-desc" style="margin-bottom:1.2rem">Our enterprise division serves government agencies, hospitals, universities, retail chains, financial institutions, and NGOs requiring reliable technology infrastructure at scale.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:.5rem">
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Government</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Healthcare</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Education</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Finance</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">Retail</span>
-        <span style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--border2);color:var(--stone)">NGOs</span>
+<!-- CONTACT FORM -->
+<section id="enquire" style="background:linear-gradient(180deg,var(--panel) 0%,var(--black) 100%)"><div class="section-inner">
+  <div class="section-header reveal"><span class="section-num">02</span><div><span class="section-eyebrow">Send a Message</span><h2 class="section-title">Let's start a <em>conversation</em></h2></div></div>
+  <div class="contact-form-wrap">
+    <div>
+      <span class="form-intro-eyebrow">How can we help?</span>
+      <h3 class="form-intro-title">Whether you're buying,<br><em>partnering, or enquiring</em></h3>
+      <p class="form-intro-body">Our team responds to all enquiries within one business day. For urgent matters, please call your nearest office directly.</p>
+      <div class="quick-links">
+        <a href="products.html" class="quick-link"><span class="quick-link-icon">💻</span><div><span class="quick-link-label">Browse Products</span>Explore our full range of devices</div></a>
+        <a href="services.html#bnpl" class="quick-link"><span class="quick-link-icon">💳</span><div><span class="quick-link-label">Flexi-Pay</span>Learn about our Buy Now, Pay Later plan</div></a>
+        <a href="sdoi.html" class="quick-link"><span class="quick-link-icon">🎓</span><div><span class="quick-link-label">SDOI Partnership</span>University and college enquiries</div></a>
+        <a href="services.html#corporate" class="quick-link"><span class="quick-link-icon">🏢</span><div><span class="quick-link-label">Enterprise Solutions</span>Bulk procurement and fleet management</div></a>
       </div>
     </div>
-  </div>
-  <div style="margin-top:3rem;padding:2.5rem;background:var(--mid);border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem" class="reveal">
-    <div>
-      <span style="font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem">Ready to discuss enterprise pricing?</span>
-      <p style="font-size:.85rem;color:rgba(242,240,236,.6);line-height:1.7">Our enterprise team will build a bespoke package aligned with your organisation's budget, timeline, and operational requirements.</p>
-    </div>
-    <a href="contact.html" class="btn-primary"><span>Contact Enterprise Team</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <form class="reveal" onsubmit="handleSubmit(event)" novalidate>
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" class="form-control" placeholder="Your full name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-control" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" placeholder="+234 or +44...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Enquiry Type</label>
+        <select class="form-control">
+          <option value="">Select an enquiry type</option>
+          <option>Product Purchase</option>
+          <option>Flexi-Pay / BNPL</option>
+          <option>Corporate / Bulk Order</option>
+          <option>SDOI University Partnership</option>
+          <option>Technical Support</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" placeholder="Tell us about your needs..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary"><span>Send Message</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div id="form-success" style="display:none;margin-top:1.5rem;padding:1.2rem 1.5rem;border:1px solid var(--gold);background:rgba(212,174,88,.08)">
+        <p style="font-size:.85rem;color:var(--gold);letter-spacing:.05em">✓ Message received. We'll be in touch within one business day.</p>
+      </div>
+    </form>
   </div>
 </div></section>
 
@@ -234,7 +226,7 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   <div class="cta-inner">
     <div><span class="cta-eyebrow">Ready to begin?</span><h2 class="cta-title">Join Africa's technology<br>revolution today.</h2></div>
     <div class="cta-actions">
-      <a href="contact.html" class="btn-dark">Get in Touch<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="mailto:info@slateworld.io" class="btn-primary"><span>Email Us Directly</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="https://slateworld.io" target="_blank" class="btn-outline-dark">Visit slateworld.io</a>
     </div>
   </div>
@@ -247,7 +239,7 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
       <p class="footer-brand-desc">Africa's leading homegrown technology company — designing, manufacturing, and distributing intelligent, durable, and elegantly crafted devices.</p>
     </div>
     <div><span class="footer-col-title">Products</span><ul class="footer-links"><li><a href="products.html#laptops">Slate Laptops</a></li><li><a href="products.html#smartphones">Slate Smartphones</a></li><li><a href="products.html#tablets">Slate Tablets</a></li><li><a href="products.html#desktops">Slate Desktops</a></li><li><a href="products.html#ups">UPS Systems</a></li><li><a href="products.html#powerbanks">Power Banks</a></li></ul></div>
-    <div><span class="footer-col-title">Services</span><ul class="footer-links"><li><a href="#bnpl">Buy Now, Pay Later</a></li><li><a href="#corporate">Corporate Solutions</a></li><li><a href="#support">Maintenance & Support</a></li><li><a href="sdoi.html">SDOI Partnership</a></li><li><a href="#empowerment">Digital Empowerment</a></li></ul></div>
+    <div><span class="footer-col-title">Services</span><ul class="footer-links"><li><a href="services.html#bnpl">Buy Now, Pay Later</a></li><li><a href="services.html#corporate">Corporate Solutions</a></li><li><a href="services.html#support">Maintenance & Support</a></li><li><a href="sdoi.html">SDOI Partnership</a></li></ul></div>
     <div><span class="footer-col-title">Company</span><ul class="footer-links"><li><a href="index.html#about">About Slate</a></li><li><a href="index.html#mission">Mission & Vision</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="https://slateworld.io" target="_blank">slateworld.io</a></li></ul></div>
   </div>
   <div class="footer-bottom">
@@ -269,6 +261,12 @@ const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('form-success').style.display='block';
+  e.target.reset();
+  setTimeout(()=>document.getElementById('form-success').style.display='none',6000);
+}
 </script>
 </body>
 </html>
