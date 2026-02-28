@@ -117,7 +117,7 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   .presence-grid{grid-template-columns:1fr}
   .contact-form-wrap{grid-template-columns:1fr;gap:3rem}
   .footer-top{grid-template-columns:1fr 1fr}
-  .nav-links li:not(:last-child){display:none}
+  
   .section-header{flex-direction:column;gap:1rem}.section-num{font-size:3rem}
   .cta-inner{flex-direction:column;align-items:flex-start}
 }
@@ -125,12 +125,71 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   .footer-top{grid-template-columns:1fr;gap:2.5rem}
   body{cursor:auto}.cursor{display:none}
 }
+
+/* ── HAMBURGER ── */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:910;position:relative}
+.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--white);transition:transform .3s,opacity .3s,background .3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* ── MOBILE DRAWER ── */
+.mobile-nav{position:fixed;inset:0;left:auto;width:min(320px,85vw);z-index:950;background:var(--mid);border-left:1px solid var(--border);transform:translateX(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);overflow-y:auto;padding:6rem 2rem 3rem}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav-inner ul{list-style:none;display:flex;flex-direction:column;gap:0}
+.mobile-nav-inner ul li a{display:block;font-size:.95rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,240,236,.7);text-decoration:none;padding:1.1rem 0;border-bottom:1px solid var(--border2);transition:color .2s}
+.mobile-nav-inner ul li a:hover{color:var(--gold)}
+.mobile-nav-overlay{position:fixed;inset:0;z-index:940;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .4s}
+.mobile-nav-overlay.open{opacity:1;pointer-events:all}
+
+/* ── GLOBAL MOBILE ── */
+@media(max-width:480px){
+  :root{--pad:1.2rem}
+  nav{padding:1rem var(--pad)}
+  .nav-hamburger{display:flex}
+  .nav-links{display:none}
+  .section-inner{padding:3rem var(--pad)}
+  .section-header{margin-bottom:2.5rem}
+  h2.section-title{font-size:clamp(1.6rem,7vw,2.4rem)}
+  h1.hero-title{font-size:clamp(2.4rem,10vw,4rem)}
+  .hero-stats{gap:1.2rem;flex-wrap:wrap;justify-content:center;bottom:1rem}
+  .hero-stat-num{font-size:1.6rem}
+  .hero-stat-label{font-size:.58rem}
+  .btn-primary,.btn-ghost,.btn-dark,.btn-outline-dark{padding:.85rem 1.4rem;font-size:.65rem}
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:.8rem}
+  .footer-top{grid-template-columns:1fr!important;gap:2rem}
+  .footer-legal{flex-wrap:wrap;gap:1rem}
+  .cta-inner{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .ticker-item{font-size:.6rem;padding:0 1.5rem}
+  .section-num{font-size:2.5rem!important}
+  #home{padding-top:5rem;min-height:auto;padding-bottom:6rem}
+  .hero-left{padding-right:0}
+  .hero-sub{font-size:.88rem}
+}
+@media(max-width:900px){
+  .nav-hamburger{display:flex}
+  .nav-links{display:none}
+}
+
+
+@media(max-width:480px){
+  .presence-grid{grid-template-columns:1fr}
+  .contact-form-wrap{grid-template-columns:1fr;gap:2rem}
+  .contact-row{flex-direction:column;gap:1.5rem}
+  .quick-links{display:none}
+  .form-control{font-size:.88rem}
+  .page-hero{min-height:30vh;padding-bottom:3rem}
+}
+
 </style>
 </head>
 <body>
 <div class="cursor" id="cursor"><div class="cursor-ring" id="cursorRing"></div><div class="cursor-dot" id="cursorDot"></div></div>
 
 <nav id="nav">
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
   <a href="index.html" class="nav-logo">
     <svg class="nav-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#F2F0EC"/><polygon points="12,2 20,2 12,10" fill="#080808"/><rect x="2" y="18" width="46" height="12" fill="#D4AE58"/><polygon points="48,18 56,18 48,26" fill="#080808"/><rect x="12" y="34" width="46" height="12" fill="#D4AE58"/><polygon points="12,34 20,34 12,42" fill="#080808"/><rect x="2" y="50" width="46" height="12" fill="#F2F0EC"/><polygon points="48,50 56,50 48,58" fill="#080808"/></svg>
     <span class="nav-wordmark">Slate</span>
@@ -145,6 +204,20 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   </ul>
 </nav>
 
+<!-- MOBILE NAV DRAWER -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-inner">
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="sdoi.html">SDOI</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn-primary" style="margin-top:2rem;width:100%;justify-content:center"><span>Get Started</span></a>
+  </div>
+</div>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 <div class="page-hero">
   <div class="page-hero-bg"></div>
   <div class="page-hero-glow"></div>
@@ -267,6 +340,21 @@ function handleSubmit(e){
   e.target.reset();
   setTimeout(()=>document.getElementById('form-success').style.display='none',6000);
 }
+
+// Hamburger menu
+const hamburger=document.getElementById('navHamburger');
+const mobileNav=document.getElementById('mobileNav');
+const mobileOverlay=document.getElementById('mobileNavOverlay');
+function toggleMenu(open){
+  hamburger.classList.toggle('open',open);
+  mobileNav.classList.toggle('open',open);
+  mobileOverlay.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+hamburger.addEventListener('click',()=>toggleMenu(!mobileNav.classList.contains('open')));
+mobileOverlay.addEventListener('click',()=>toggleMenu(false));
+document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+
 </script>
 </body>
 </html>
