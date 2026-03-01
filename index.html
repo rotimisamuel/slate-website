@@ -40,7 +40,7 @@ nav.scrolled{background:rgba(8,8,8,.9);border-color:var(--border2);backdrop-filt
 .nav-cta{color:var(--black)!important;background:var(--gold);padding:.6rem 1.4rem;transition:background .2s!important}
 .nav-cta:hover{background:var(--white)!important;color:var(--black)!important}
 .nav-cta::after{display:none!important}
-#home{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:0 var(--pad);padding-top:6rem}
+#home{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;padding:0 var(--pad);padding-top:6rem;padding-bottom:5rem}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(212,174,88,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,174,88,.04) 1px,transparent 1px);background-size:80px 80px}
 .hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(212,174,88,.12) 0%,transparent 70%);top:-200px;right:-100px;animation:glow-pulse 6s ease-in-out infinite}
@@ -67,7 +67,10 @@ h1.hero-title em{font-style:italic;color:var(--gold)}
 .hero-device-tagline{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--stone);margin-top:1rem}
 .hero-device-shine{position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);animation:shine 4s 2s ease-in-out infinite}
 @keyframes shine{0%{left:-60%}50%,100%{left:120%}}
-.hero-stats{position:absolute;bottom:2rem;left:0;right:0;display:flex;justify-content:center;gap:3rem;z-index:2;opacity:0;animation:fadeUp .9s 1.1s forwards}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border2);opacity:0;animation:fadeUp .9s 1.1s forwards}
+@media(max-width:1100px){
+  #home{align-items:start;padding-top:8rem;padding-bottom:4rem;min-height:auto}
+}
 .hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--gold);display:block;line-height:1}
 .hero-stat-label{font-size:var(--fs-tag);letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-top:.3rem;display:block;text-align:center}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
@@ -190,7 +193,7 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   .section-header{margin-bottom:2.5rem}
   h2.section-title{font-size:clamp(1.6rem,7vw,2.4rem)}
   h1.hero-title{font-size:clamp(2.4rem,10vw,4rem)}
-  .hero-stats{gap:1.2rem;flex-wrap:wrap;justify-content:center;bottom:1rem}
+  .hero-stats{margin-top:2rem;padding-top:1.5rem;gap:1.5rem}
   .hero-stat-num{font-size:1.6rem}
   .hero-stat-label{font-size:.58rem}
   .btn-primary,.btn-ghost,.btn-dark,.btn-outline-dark{padding:.85rem 1.4rem;font-size:.65rem}
@@ -200,7 +203,7 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
   .cta-inner{flex-direction:column;align-items:flex-start;gap:1.5rem}
   .ticker-item{font-size:.6rem;padding:0 1.5rem}
   .section-num{font-size:2.5rem!important}
-  #home{padding-top:5rem;min-height:auto;padding-bottom:6rem}
+  #home{padding-top:5rem;min-height:auto}
   .hero-left{padding-right:0}
   .hero-sub{font-size:.88rem}
 }
@@ -250,7 +253,7 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-inner">
     <ul>
-      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#about">Home</a></li>
       <li><a href="products.html">Products</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="sdoi.html">SDOI</a></li>
@@ -272,6 +275,7 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
       <a href="products.html" class="btn-primary"><span>Explore Products</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="index.html#about" class="btn-ghost">Our Story</a>
     </div>
+
   </div>
   <div class="hero-right">
     <div class="hero-device-frame">
@@ -281,12 +285,6 @@ footer{background:var(--mid);border-top:1px solid var(--border2)}
       </div>
       <div class="hero-device-shine"></div>
     </div>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stat-item"><span class="hero-stat-num">6+</span><span class="hero-stat-label">Product Lines</span></div>
-    <div class="hero-stat-item"><span class="hero-stat-num">2</span><span class="hero-stat-label">Global Offices</span></div>
-    <div class="hero-stat-item"><span class="hero-stat-num">24mo</span><span class="hero-stat-label">Flexi Pay</span></div>
-    <div class="hero-stat-item"><span class="hero-stat-num">∞</span><span class="hero-stat-label">Ambition</span></div>
   </div>
 </section>
 
