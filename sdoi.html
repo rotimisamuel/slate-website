@@ -3,321 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SDOI — Student Device Ownership Initiative | Slate Technology</title>
+<title>SDOI — Slate</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --black:#080808;--white:#F2F0EC;--gold:#D4AE58;--gold2:#B8963C;
-  --stone:#64605A;--mid:#1A1816;--panel:#111010;
-  --border:rgba(212,174,88,.18);--border2:rgba(242,240,236,.08);
-  --fs-hero:clamp(2.5rem,5vw,5.5rem);--fs-h2:clamp(1.9rem,3.8vw,3.4rem);
-  --fs-h3:clamp(1.2rem,2vw,1.8rem);--fs-body:clamp(.87rem,1.1vw,1rem);
-  --fs-label:.7rem;--fs-tag:.68rem;--pad:clamp(1.5rem,5vw,5rem);
-}
-html{scroll-behavior:smooth}
-body{font-family:'Jura',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none}
-body::before{content:'';position:fixed;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.025;pointer-events:none}
-.cursor{position:fixed;top:0;left:0;z-index:9999;pointer-events:none}
-.cursor-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;position:absolute;transform:translate(-50%,-50%)}
-.cursor-ring{width:32px;height:32px;border:1px solid rgba(212,174,88,.5);border-radius:50%;position:absolute;transform:translate(-50%,-50%);transition:width .35s cubic-bezier(.23,1,.32,1),height .35s cubic-bezier(.23,1,.32,1)}
-.cursor-expand .cursor-ring{width:52px;height:52px}
-nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.4rem var(--pad);border-bottom:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
-nav.scrolled{background:rgba(8,8,8,.9);border-color:var(--border2);backdrop-filter:blur(20px)}
-.nav-logo{display:flex;align-items:center;gap:.9rem;text-decoration:none;cursor:none}
-.nav-mark{width:34px;height:38px;flex-shrink:0}
-.nav-wordmark{font-family:'Jura',sans-serif;font-weight:300;font-size:1.1rem;letter-spacing:.35em;color:var(--white);text-transform:uppercase}
-.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
-.nav-links a{font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;color:rgba(242,240,236,.6);text-decoration:none;transition:color .2s;position:relative;cursor:none}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
-.nav-links a:hover{color:var(--white)}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-links a.active{color:var(--white)}
-.nav-cta{color:var(--black)!important;background:var(--gold);padding:.6rem 1.4rem;transition:background .2s!important}
-.nav-cta:hover{background:var(--white)!important;color:var(--black)!important}
-.nav-cta::after{display:none!important}
-.page-hero{min-height:45vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:0 var(--pad) 4rem;padding-top:8rem;background:linear-gradient(135deg,var(--mid) 0%,#120F0B 100%);border-bottom:1px solid var(--border)}
-.page-hero-bg{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(212,174,88,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,174,88,.04) 1px,transparent 1px);background-size:80px 80px}
-.page-hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,174,88,.12) 0%,transparent 70%);top:-200px;right:-50px}
-.page-hero-content{position:relative;z-index:2;max-width:800px}
-.page-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
-.page-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
-h1.page-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-hero);line-height:1.05;margin-bottom:1.5rem}
-h1.page-title em{font-style:italic;color:var(--gold)}
-.page-lead{font-family:'Jura',sans-serif;font-weight:300;font-size:clamp(.95rem,1.4vw,1.1rem);line-height:1.9;color:rgba(242,240,236,.65)}
-section{position:relative}
-.section-inner{max-width:1440px;margin:0 auto;padding:clamp(4rem,8vw,9rem) var(--pad)}
-.section-header{display:flex;align-items:flex-start;gap:3rem;margin-bottom:5rem}
-.section-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:rgba(212,174,88,.15);line-height:1;flex-shrink:0;margin-top:-.5rem}
-.section-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem}
-h2.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h2);line-height:1.15}
-h2.section-title em{font-style:italic;color:var(--gold)}
-.sdoi-main{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-.sdoi-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:3rem}
-.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1.5rem;align-items:start;padding:1.5rem 0;border-bottom:1px solid var(--border2)}
-.step:last-child{border-bottom:none}
-.step-num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--gold2);line-height:1}
-.step-title{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--white);display:block;margin-bottom:.4rem}
-.step-desc{font-size:.83rem;line-height:1.7;color:rgba(242,240,236,.5)}
-.device-table{width:100%;border-collapse:collapse;border:1px solid var(--border2)}
-.device-table thead tr{background:rgba(212,174,88,.08)}
-.device-table th{font-size:var(--fs-tag);letter-spacing:.15em;text-transform:uppercase;color:var(--gold);padding:1rem 1.2rem;text-align:left;border-bottom:1px solid var(--border)}
-.device-table td{font-size:.82rem;padding:1.1rem 1.2rem;border-bottom:1px solid var(--border2);color:rgba(242,240,236,.65);vertical-align:top}
-.device-table tr:last-child td{border-bottom:none}
-.device-table tr:hover td{color:var(--white);background:rgba(212,174,88,.04)}
-.sdoi-benefits{margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.benefit-pill{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.2rem;border:1px solid var(--border2);font-size:.78rem;letter-spacing:.08em;color:rgba(242,240,236,.6);transition:border-color .2s,color .2s}
-.benefit-pill:hover{border-color:var(--border);color:var(--white)}
-.benefit-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
-.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--black);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;position:relative;overflow:hidden;cursor:none;transition:color .2s}
-.btn-primary::before{content:'';position:absolute;inset:0;background:var(--white);transform:translateX(-101%);transition:transform .3s cubic-bezier(.23,1,.32,1)}
-.btn-primary:hover::before{transform:translateX(0)}
-.btn-primary span,.btn-primary svg{position:relative;z-index:1}
-.btn-primary svg{transition:transform .3s}
-.btn-primary:hover svg{transform:translateX(4px)}
-#cta{background:var(--gold);padding:clamp(4rem,6vw,7rem) var(--pad)}
-.cta-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
-.cta-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:rgba(8,8,8,.55);display:block;margin-bottom:.8rem}
-.cta-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,3rem);color:var(--black);line-height:1.15}
-.cta-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-dark{display:inline-flex;align-items:center;gap:.6rem;background:var(--black);color:var(--gold);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:background .2s,color .2s;cursor:none}
-.btn-dark:hover{background:var(--white);color:var(--black)}
-.btn-outline-dark{display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid rgba(8,8,8,.35);color:rgba(8,8,8,.8);font-family:'Jura',sans-serif;font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:border-color .2s,color .2s;cursor:none}
-.btn-outline-dark:hover{border-color:var(--black);color:var(--black)}
-footer{background:var(--mid);border-top:1px solid var(--border2)}
-.footer-inner{max-width:1440px;margin:0 auto;padding:clamp(3rem,5vw,6rem) var(--pad) 2rem}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid var(--border2);margin-bottom:2.5rem}
-.footer-brand-desc{font-size:.84rem;line-height:1.8;color:rgba(242,240,236,.45);margin-top:1.5rem}
-.footer-col-title{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.5rem}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.8rem}
-.footer-links a{font-size:.84rem;color:rgba(242,240,236,.45);text-decoration:none;transition:color .2s;letter-spacing:.05em;cursor:none}
-.footer-links a:hover{color:var(--white)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.72rem;letter-spacing:.1em;color:rgba(242,240,236,.25)}
-.footer-legal{display:flex;gap:2rem}
-.footer-legal a{font-size:.72rem;letter-spacing:.1em;color:rgba(242,240,236,.25);text-decoration:none;transition:color .2s;cursor:none}
-.footer-legal a:hover{color:var(--stone)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
-@media(max-width:900px){
-  .sdoi-main{grid-template-columns:1fr;gap:3rem}
-  .footer-top{grid-template-columns:1fr 1fr}
-  
-  .section-header{flex-direction:column;gap:1rem}.section-num{font-size:3rem}
-  .cta-inner{flex-direction:column;align-items:flex-start}
-}
-@media(max-width:600px){
-  .sdoi-benefits{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr;gap:2.5rem}
-  body{cursor:auto}.cursor{display:none}
-}
-
-/* ── HAMBURGER ── */
-.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:910;position:relative}
-.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--white);transition:transform .3s,opacity .3s,background .3s}
-.nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.nav-hamburger.open span:nth-child(2){opacity:0}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-/* ── MOBILE DRAWER ── */
-.mobile-nav{position:fixed;inset:0;left:auto;width:min(320px,85vw);z-index:950;background:var(--mid);border-left:1px solid var(--border);transform:translateX(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);overflow-y:auto;padding:6rem 2rem 3rem}
-.mobile-nav.open{transform:translateX(0)}
-.mobile-nav-inner ul{list-style:none;display:flex;flex-direction:column;gap:0}
-.mobile-nav-inner ul li a{display:block;font-size:.95rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,240,236,.7);text-decoration:none;padding:1.1rem 0;border-bottom:1px solid var(--border2);transition:color .2s}
-.mobile-nav-inner ul li a:hover{color:var(--gold)}
-.mobile-nav-overlay{position:fixed;inset:0;z-index:940;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .4s}
-.mobile-nav-overlay.open{opacity:1;pointer-events:all}
-
-/* ── GLOBAL MOBILE ── */
-@media(max-width:480px){
-  :root{--pad:1.2rem}
-  nav{padding:1rem var(--pad)}
-  .nav-hamburger{display:flex}
-  .nav-links{display:none}
-  .section-inner{padding:3rem var(--pad)}
-  .section-header{margin-bottom:2.5rem}
-  h2.section-title{font-size:clamp(1.6rem,7vw,2.4rem)}
-  h1.hero-title{font-size:clamp(2.4rem,10vw,4rem)}
-  .hero-stats{gap:1.2rem;flex-wrap:wrap;justify-content:center;bottom:1rem}
-  .hero-stat-num{font-size:1.6rem}
-  .hero-stat-label{font-size:.58rem}
-  .btn-primary,.btn-ghost,.btn-dark,.btn-outline-dark{padding:.85rem 1.4rem;font-size:.65rem}
-  .hero-actions{flex-direction:column;align-items:flex-start;gap:.8rem}
-  .footer-top{grid-template-columns:1fr!important;gap:2rem}
-  .footer-legal{flex-wrap:wrap;gap:1rem}
-  .cta-inner{flex-direction:column;align-items:flex-start;gap:1.5rem}
-  .ticker-item{font-size:.6rem;padding:0 1.5rem}
-  .section-num{font-size:2.5rem!important}
-  #home{padding-top:5rem;min-height:auto;padding-bottom:6rem}
-  .hero-left{padding-right:0}
-  .hero-sub{font-size:.88rem}
-}
-@media(max-width:900px){
-  .nav-hamburger{display:flex}
-  .nav-links{display:none}
-}
-
-
-@media(max-width:480px){
-  .sdoi-main{grid-template-columns:1fr;gap:2rem}
-  .sdoi-benefits{grid-template-columns:1fr!important}
-  .device-table th,.device-table td{padding:.7rem .8rem;font-size:.75rem}
-  .step{grid-template-columns:2rem 1fr;gap:1rem}
-  .page-hero{min-height:auto;padding-bottom:3rem}
-  .page-lead{font-size:.88rem}
-}
-
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div class="cursor" id="cursor"><div class="cursor-ring" id="cursorRing"></div><div class="cursor-dot" id="cursorDot"></div></div>
-
-<nav id="nav">
-  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-  <a href="index.html" class="nav-logo">
-    <svg class="nav-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#F2F0EC"/><polygon points="12,2 20,2 12,10" fill="#080808"/><rect x="2" y="18" width="46" height="12" fill="#D4AE58"/><polygon points="48,18 56,18 48,26" fill="#080808"/><rect x="12" y="34" width="46" height="12" fill="#D4AE58"/><polygon points="12,34 20,34 12,42" fill="#080808"/><rect x="2" y="50" width="46" height="12" fill="#F2F0EC"/><polygon points="48,50 56,50 48,58" fill="#080808"/></svg>
-    <span class="nav-wordmark">Slate</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html#about">Home</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="sdoi.html" class="active">SDOI</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
-  </ul>
+<body><nav class="site-nav" id="siteNav">
+  <div class="nav-bar">
+    <a href="index.html" class="nav-brand"><svg class="nav-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#0B1C33"/><polygon points="12,2 20,2 12,10" fill="#fff"/><rect x="2" y="18" width="46" height="12" fill="#BF8A2E"/><polygon points="48,18 56,18 48,26" fill="#fff"/><rect x="12" y="34" width="46" height="12" fill="#BF8A2E"/><polygon points="12,34 20,34 12,42" fill="#fff"/><rect x="2" y="50" width="46" height="12" fill="#0B1C33"/><polygon points="48,50 56,50 48,58" fill="#fff"/></svg><span class="nav-wordmark">SLATE<span class="dot">.</span></span></a>
+    <nav class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta-btn">Get Started</a></nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
-
-<!-- MOBILE NAV DRAWER -->
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-inner">
-    <ul>
-      <li><a href="index.html#about">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="sdoi.html">SDOI</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="contact.html" class="btn-primary" style="margin-top:2rem;width:100%;justify-content:center"><span>Get Started</span></a>
-  </div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="services.html">Services</a></li><li></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="btn btn-black" style="margin-top:2rem;width:100%;justify-content:center">Get Started</a>
 </div>
-<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-<div class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-glow"></div>
-  <div class="page-hero-content">
-    <p class="page-eyebrow">Student Programme</p>
-    <h1 class="page-title">Student Device<br><em>Ownership Initiative</em></h1>
-    <p class="page-lead">Device ownership directly correlates with academic performance. The SDOI removes the financial barrier between students and their tools of learning.</p>
+<div class="drawer-overlay" id="drawerOverlay"></div><div class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-label"><span class="label-tag gold">SDOI Programme</span></div>
+    <h1 class="page-hero-title">Student Device<br><em style="font-family:var(--f-serif);font-style:italic;text-transform:none;color:var(--c-gold)">Ownership Initiative.</em></h1>
+    <p class="page-hero-sub">A university partnership programme putting world-class technology in every student's hands — zero upfront cost, flexible monthly payments.</p>
   </div>
-</div>
-
-<!-- MAIN SDOI CONTENT -->
-<section id="programme"><div class="section-inner">
-  <div class="sdoi-main">
-    <div>
-      <span class="section-eyebrow reveal" style="display:block;margin-bottom:1rem">How It Works</span>
-      <h2 class="section-title reveal" style="margin-bottom:1.5rem;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h2)">Five steps to <em>device ownership</em></h2>
-      <p class="reveal" style="font-size:.9rem;line-height:1.85;color:rgba(242,240,236,.6);margin-bottom:2rem">The SDOI is Slate Technology's flagship partnership programme with universities and colleges across Nigeria. Through institutional partnerships, students receive their Slate device from day one and complete payment before graduation, with no external debt burden.</p>
-      <div class="sdoi-steps">
-        <div class="step reveal"><span class="step-num">01</span><div><span class="step-title">Partnership Agreement</span><p class="step-desc">Slate Technology and the institution sign a Memorandum of Understanding establishing device models, pricing, and support commitments.</p></div></div>
-        <div class="step reveal reveal-delay-1"><span class="step-num">02</span><div><span class="step-title">Student Registration</span><p class="step-desc">Eligible students register via an online portal or campus booth, indicating interest and selecting their preferred device configuration.</p></div></div>
-        <div class="step reveal reveal-delay-2"><span class="step-num">03</span><div><span class="step-title">Verification & Approval</span><p class="step-desc">The institution verifies academic standing and confirms eligibility. Approved students are scheduled for device collection.</p></div></div>
-        <div class="step reveal reveal-delay-3"><span class="step-num">04</span><div><span class="step-title">Device Allocation</span><p class="step-desc">Devices distributed — optionally preloaded with academic tools, learning apps, and institutional software for immediate use.</p></div></div>
-        <div class="step reveal reveal-delay-4"><span class="step-num">05</span><div><span class="step-title">Instalment Payment</span><p class="step-desc">Students pay monthly or semesterly instalments through university channels or directly to Slate, completing full ownership before graduation.</p></div></div>
+</div><section style="padding:clamp(5rem,9vw,9rem) 0;background:var(--c-white)">
+  <div class="wrap">
+    <div class="sdoi-layout">
+      <div class="reveal">
+        <span class="label-tag">How It Works</span>
+        <h2 style="font-family:var(--f-display);font-size:clamp(2.2rem,4.5vw,4rem);line-height:0.93;text-transform:uppercase;color:var(--c-black);margin:0.5rem 0 1.5rem">Flexible ownership<br><em style="font-family:var(--f-serif);font-style:italic;text-transform:none;color:var(--c-gold)">for every student.</em></h2>
+        <p style="font-size:var(--t-body);color:var(--c-muted);line-height:1.85;margin-bottom:0.5rem">The Student Device Ownership Initiative (SDOI) is Slate's flagship partnership programme with universities and colleges across Nigeria and the UK. Students receive a premium device on day one and pay over time through a transparent, fair instalment plan.</p>
+        <div class="sdoi-steps" style="margin-top:2rem">
+          <div class="sdoi-step"><span class="sdoi-step-num">01</span><div><span class="sdoi-step-title">University Enrols</span><p class="sdoi-step-desc">The institution partners with Slate by signing a zero-obligation MoU, granting students access to the programme.</p></div></div>
+          <div class="sdoi-step"><span class="sdoi-step-num">02</span><div><span class="sdoi-step-title">Student Registers</span><p class="sdoi-step-desc">Eligible students register using their student ID. No credit check, no guarantor, no upfront payment required.</p></div></div>
+          <div class="sdoi-step"><span class="sdoi-step-num">03</span><div><span class="sdoi-step-title">Device Delivered</span><p class="sdoi-step-desc">Students receive their chosen device — laptop, tablet, or smartphone — on campus, fully set up by our team.</p></div></div>
+          <div class="sdoi-step"><span class="sdoi-step-num">04</span><div><span class="sdoi-step-title">Pay Monthly</span><p class="sdoi-step-desc">Repayments over 12–24 months at a transparent 3% monthly fee on the declining balance. Settle early any time.</p></div></div>
+        </div>
       </div>
-    </div>
-    <div>
-      <span class="section-eyebrow reveal" style="display:block;margin-bottom:1.5rem">Device Options</span>
-      <table class="device-table reveal">
-        <thead><tr><th>Device</th><th>Specification</th><th>Plan</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Student Laptop</strong></td><td>Intel Core i5, 8GB RAM, 256GB SSD, 15.6"</td><td>×12–24 months</td></tr>
-          <tr><td><strong>Study Tablet</strong></td><td>Android 13, 6GB RAM, 128GB, 4G LTE + Stylus</td><td>×12–24 months</td></tr>
-          <tr><td><strong>Academic Phone</strong></td><td>5G, 8GB RAM, 256GB, AI Camera</td><td>×12–24 months</td></tr>
-        </tbody>
-      </table>
-      <h3 class="reveal" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.4rem;margin:2.5rem 0 1.2rem">Benefits to Universities</h3>
-      <div class="sdoi-benefits">
-        <div class="benefit-pill reveal"><span class="benefit-dot"></span>Enhanced academic performance</div>
-        <div class="benefit-pill reveal reveal-delay-1"><span class="benefit-dot"></span>Digital inclusion for all</div>
-        <div class="benefit-pill reveal reveal-delay-2"><span class="benefit-dot"></span>Tech-forward brand image</div>
-        <div class="benefit-pill reveal"><span class="benefit-dot"></span>Zero admin burden</div>
-        <div class="benefit-pill reveal reveal-delay-1"><span class="benefit-dot"></span>CSR alignment</div>
-        <div class="benefit-pill reveal reveal-delay-2"><span class="benefit-dot"></span>Full deployment support</div>
-        <div class="benefit-pill reveal"><span class="benefit-dot"></span>Extended warranty included</div>
-        <div class="benefit-pill reveal reveal-delay-1"><span class="benefit-dot"></span>On-campus service desk</div>
-      </div>
-      <div class="reveal" style="margin-top:2.5rem;padding:2rem;border:1px solid var(--border)">
-        <p style="font-size:.82rem;line-height:1.8;color:rgba(242,240,236,.6)"><strong style="color:var(--gold);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:.8rem">Ready to Partner?</strong>Slate Technology welcomes Vice Chancellors and academic registrars to discuss a pilot phase of 500–1,000 students. We structure flexible terms aligned with university payment policies and student financial profiles.</p>
-        <a href="contact.html" class="btn-primary" style="margin-top:1.5rem;display:inline-flex"><span>Contact Partnerships Team</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="reveal d2">
+        <span class="label-tag" style="display:block;margin-bottom:1.2rem">Device Options</span>
+        <table class="device-table" style="margin-bottom:2rem">
+          <thead><tr><th>Device</th><th>Specification</th><th>Plan</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Student Laptop</strong></td><td>Intel Core i5, 8GB RAM, 256GB SSD, 15.6"</td><td>12–24 months</td></tr>
+            <tr><td><strong>Study Tablet</strong></td><td>Android 13, 6GB RAM, 128GB, 4G LTE + Stylus</td><td>12–24 months</td></tr>
+            <tr><td><strong>Academic Phone</strong></td><td>5G, 8GB RAM, 256GB, AI Camera</td><td>12–24 months</td></tr>
+          </tbody>
+        </table>
+        <h3 style="font-family:var(--f-display);font-size:1.4rem;text-transform:uppercase;letter-spacing:0.01em;color:var(--c-black);margin-bottom:1rem">Benefits to Universities</h3>
+        <div class="benefits-grid">
+          <div class="benefit-item"><span class="b-dot"></span>Enhanced academic performance</div>
+          <div class="benefit-item"><span class="b-dot"></span>Digital inclusion for all</div>
+          <div class="benefit-item"><span class="b-dot"></span>Tech-forward brand image</div>
+          <div class="benefit-item"><span class="b-dot"></span>Zero administrative burden</div>
+          <div class="benefit-item"><span class="b-dot"></span>Strong CSR alignment</div>
+          <div class="benefit-item"><span class="b-dot"></span>Full deployment support</div>
+          <div class="benefit-item"><span class="b-dot"></span>Extended warranty included</div>
+          <div class="benefit-item"><span class="b-dot"></span>On-campus service desk</div>
+        </div>
+        <div class="partner-box" style="margin-top:2rem">
+          <p><strong>Ready to partner?</strong> We welcome Vice Chancellors and academic registrars to discuss a pilot phase of 500–1,000 students. We structure flexible terms aligned with university payment policies and student financial profiles.</p>
+          <a href="contact.html" class="btn btn-black">Contact Partnerships Team <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
     </div>
   </div>
-</div></section>
-
-<!-- CTA -->
-<section id="cta">
-  <div class="cta-inner">
-    <div><span class="cta-eyebrow">Partner with Slate</span><h2 class="cta-title">Equip your students.<br><em>Empower the future.</em></h2></div>
-    <div class="cta-actions">
-      <a href="contact.html" class="btn-dark">Start a Conversation<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="https://slateworld.io" target="_blank" class="btn-outline-dark">Visit slateworld.io</a>
+</section><section class="cta-band"><div class="wrap"><div class="cta-band-inner">
+  <div class="reveal"><h2 class="cta-band-title">Equip your students.<br><em>Empower the future.</em></h2><p class="cta-band-sub">Start a conversation with our partnerships team today.</p></div>
+  <div class="cta-band-btns reveal d2"><a href="contact.html" class="btn btn-gold">Start a Conversation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="products.html" class="btn btn-outline-white">View Devices</a></div>
+</div></div></section><footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand-logo"><svg class="footer-brand-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="rgba(255,255,255,.6)"/><polygon points="12,2 20,2 12,10" fill="#0C0C0C"/><rect x="2" y="18" width="46" height="12" fill="#BF8A2E"/><polygon points="48,18 56,18 48,26" fill="#0C0C0C"/><rect x="12" y="34" width="46" height="12" fill="#BF8A2E"/><polygon points="12,34 20,34 12,42" fill="#0C0C0C"/><rect x="2" y="50" width="46" height="12" fill="rgba(255,255,255,.6)"/><polygon points="48,50 56,50 48,58" fill="#0C0C0C"/></svg><span class="footer-brand-name">SLATE<span class="dot">.</span></span></a>
+        <p class="footer-desc">Software development, technology solutions, and digital transformation. AI strategy, e-learning, custom software, and intelligent hardware for Africa and beyond.</p>
+        <p class="footer-reg">Slate Technologies Limited<br>Registered in Nigeria &amp; United Kingdom</p>
+      </div>
+      <div class="footer-col"><span class="footer-col-title">Products</span><ul><li><a href="products.html#laptops">Slate Laptops</a></li><li><a href="products.html#smartphones">Smartphones</a></li><li><a href="products.html#tablets">Tablets</a></li><li><a href="products.html#desktops">Desktops</a></li><li><a href="products.html#ups">UPS Systems</a></li><li><a href="products.html#powerbanks">Power Banks</a></li></ul></div>
+      <div class="footer-col"><span class="footer-col-title">Services</span><ul><li><a href="service-software.html">Custom Software</a></li><li><a href="service-transformation.html">Digital Transformation</a></li><li><a href="service-ai.html">AI Strategy</a></li><li><a href="service-elearning.html">E-Learning</a></li><li><a href="service-consulting.html">Consulting</a></li><li><a href="service-hardware.html">Buy Now, Pay Later</a></li><li></li></ul></div>
+      <div class="footer-col"><span class="footer-col-title">Company</span><ul><li><a href="index.html#about-stmt">About Slate</a></li><li><a href="index.html#mission">Mission &amp; Vision</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://slateworld.io" target="_blank">slateworld.io ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Slate Technologies Limited. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Warranty</a></div>
     </div>
   </div>
-</section>
-
-<footer><div class="footer-inner">
-  <div class="footer-top">
-    <div>
-      <a href="index.html" class="nav-logo" style="display:inline-flex"><svg width="26" height="30" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#F2F0EC" opacity=".5"/><polygon points="12,2 20,2 12,10" fill="#111010"/><rect x="2" y="18" width="46" height="12" fill="#D4AE58" opacity=".6"/><polygon points="48,18 56,18 48,26" fill="#111010"/><rect x="12" y="34" width="46" height="12" fill="#D4AE58" opacity=".6"/><polygon points="12,34 20,34 12,42" fill="#111010"/><rect x="2" y="50" width="46" height="12" fill="#F2F0EC" opacity=".5"/><polygon points="48,50 56,50 48,58" fill="#111010"/></svg><span class="nav-wordmark" style="opacity:.5">Slate</span></a>
-      <p class="footer-brand-desc">Africa's leading homegrown technology company — designing, manufacturing, and distributing intelligent, durable, and elegantly crafted devices.</p>
-    </div>
-    <div><span class="footer-col-title">Products</span><ul class="footer-links"><li><a href="products.html#laptops">Slate Laptops</a></li><li><a href="products.html#smartphones">Slate Smartphones</a></li><li><a href="products.html#tablets">Slate Tablets</a></li><li><a href="products.html#desktops">Slate Desktops</a></li><li><a href="products.html#ups">UPS Systems</a></li><li><a href="products.html#powerbanks">Power Banks</a></li></ul></div>
-    <div><span class="footer-col-title">Services</span><ul class="footer-links"><li><a href="services.html#bnpl">Buy Now, Pay Later</a></li><li><a href="services.html#corporate">Corporate Solutions</a></li><li><a href="services.html#support">Support</a></li><li><a href="sdoi.html">SDOI Partnership</a></li></ul></div>
-    <div><span class="footer-col-title">Company</span><ul class="footer-links"><li><a href="index.html#about">About Slate</a></li><li><a href="index.html#mission">Mission & Vision</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="https://slateworld.io" target="_blank">slateworld.io</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">© 2026 Slate Technology Ltd. All rights reserved. Registered in Nigeria & United Kingdom.</p>
-    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Warranty</a></div>
-  </div>
-</div></footer>
-
-<script>
-const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing'),cur=document.getElementById('cursor');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;dot.style.left=mx+'px';dot.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('a,button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>cur.classList.add('cursor-expand'));
-  el.addEventListener('mouseleave',()=>cur.classList.remove('cursor-expand'));
-});
-const nav=document.getElementById('nav');
+</footer><script>
+const nav=document.getElementById('siteNav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// Hamburger menu
-const hamburger=document.getElementById('navHamburger');
-const mobileNav=document.getElementById('mobileNav');
-const mobileOverlay=document.getElementById('mobileNavOverlay');
-function toggleMenu(open){
-  hamburger.classList.toggle('open',open);
-  mobileNav.classList.toggle('open',open);
-  mobileOverlay.classList.toggle('open',open);
-  document.body.style.overflow=open?'hidden':'';
-}
-hamburger.addEventListener('click',()=>toggleMenu(!mobileNav.classList.contains('open')));
-mobileOverlay.addEventListener('click',()=>toggleMenu(false));
-document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
-
-</script>
-</body>
-</html>
+const tog=document.getElementById('navToggle'),drw=document.getElementById('mobileDrawer'),ovl=document.getElementById('drawerOverlay');
+const open=o=>{tog.classList.toggle('open',o);drw.classList.toggle('open',o);ovl.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''};
+tog.addEventListener('click',()=>open(!drw.classList.contains('open')));
+ovl.addEventListener('click',()=>open(false));
+drw.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>open(false)));
+</script></body></html>

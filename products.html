@@ -3,585 +3,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products — Slate Technology</title>
+<title>Products — Slate</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --black:#080808;--white:#F2F0EC;--gold:#D4AE58;--gold2:#B8963C;
-  --stone:#64605A;--mid:#1A1816;--panel:#111010;
-  --border:rgba(212,174,88,.18);--border2:rgba(242,240,236,.08);
-  --fs-hero:clamp(2.5rem,5vw,5.5rem);--fs-h2:clamp(1.9rem,3.8vw,3.4rem);
-  --fs-h3:clamp(1.2rem,2vw,1.8rem);--fs-body:clamp(.87rem,1.1vw,1rem);
-  --fs-label:.7rem;--fs-tag:.68rem;--pad:clamp(1.5rem,5vw,5rem);
-}
-html{scroll-behavior:smooth}
-body{font-family:'Jura',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none}
-body::before{content:'';position:fixed;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.025;pointer-events:none}
-.cursor{position:fixed;top:0;left:0;z-index:9999;pointer-events:none}
-.cursor-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;position:absolute;transform:translate(-50%,-50%)}
-.cursor-ring{width:32px;height:32px;border:1px solid rgba(212,174,88,.5);border-radius:50%;position:absolute;transform:translate(-50%,-50%);transition:width .35s cubic-bezier(.23,1,.32,1),height .35s cubic-bezier(.23,1,.32,1)}
-.cursor-expand .cursor-ring{width:52px;height:52px}
-nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:1.4rem var(--pad);border-bottom:1px solid transparent;transition:background .4s,border-color .4s,backdrop-filter .4s}
-nav.scrolled{background:rgba(8,8,8,.9);border-color:var(--border2);backdrop-filter:blur(20px)}
-.nav-logo{display:flex;align-items:center;gap:.9rem;text-decoration:none;cursor:none}
-.nav-mark{width:34px;height:38px;flex-shrink:0}
-.nav-wordmark{font-family:'Jura',sans-serif;font-weight:300;font-size:1.1rem;letter-spacing:.35em;color:var(--white);text-transform:uppercase}
-.nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none}
-.nav-links a{font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;color:rgba(242,240,236,.6);text-decoration:none;transition:color .2s;position:relative;cursor:none}
-.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
-.nav-links a:hover{color:var(--white)}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-links a.active{color:var(--white)}
-.nav-cta{color:var(--black)!important;background:var(--gold);padding:.6rem 1.4rem;transition:background .2s!important}
-.nav-cta:hover{background:var(--white)!important;color:var(--black)!important}
-.nav-cta::after{display:none!important}
-/* PAGE HERO */
-.page-hero{min-height:38vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;padding:0 var(--pad) 4rem;padding-top:8rem}
-.page-hero-bg{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(212,174,88,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,174,88,.04) 1px,transparent 1px);background-size:80px 80px}
-.page-hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,174,88,.1) 0%,transparent 70%);top:-200px;right:-50px}
-.page-hero-content{position:relative;z-index:2}
-.page-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem}
-.page-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
-h1.page-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-hero);line-height:1.05}
-h1.page-title em{font-style:italic;color:var(--gold)}
-/* PRODUCT GRID */
-section{position:relative}
-.section-inner{max-width:1440px;margin:0 auto;padding:clamp(4rem,8vw,9rem) var(--pad)}
-.section-header{display:flex;align-items:flex-start;gap:3rem;margin-bottom:5rem}
-.section-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;color:rgba(212,174,88,.15);line-height:1;flex-shrink:0;margin-top:-.5rem}
-.section-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem}
-h2.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h2);line-height:1.15}
-h2.section-title em{font-style:italic;color:var(--gold)}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
-.product-card{background:var(--panel);padding:3rem 2.5rem;border-bottom:1px solid var(--border2);position:relative;overflow:hidden;transition:background .3s;cursor:none;text-decoration:none;color:inherit;display:block}
-.product-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.23,1,.32,1)}
-.product-card:hover{background:var(--mid)}
-.product-card:hover::after{transform:scaleX(1)}
-.product-icon-wrap{width:56px;height:56px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:2rem;font-size:1.5rem;transition:border-color .3s}
-.product-card:hover .product-icon-wrap{border-color:var(--gold2)}
-.product-category{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.7rem}
-h3.product-name{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--fs-h3);margin-bottom:1.2rem}
-.product-desc{font-size:.84rem;line-height:1.75;color:rgba(242,240,236,.55);margin-bottom:1.8rem}
-.product-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-.product-tag{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .8rem;border:1px solid var(--border2);color:rgba(242,240,236,.45);transition:border-color .2s,color .2s}
-.product-card:hover .product-tag{border-color:rgba(212,174,88,.25);color:rgba(212,174,88,.7)}
-.product-series{display:flex;gap:.5rem;margin-top:1.5rem}
-.series-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .7rem;background:var(--border2);color:var(--stone);border-radius:2px}
-.product-arrow{position:absolute;bottom:2rem;right:2rem;width:32px;height:32px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s,border-color .3s}
-.product-card:hover .product-arrow{opacity:1;transform:translateX(0);border-color:var(--border)}
-/* PRODUCT DETAIL SECTIONS */
-.product-detail{background:var(--black);border-top:1px solid var(--border2)}
-.product-detail:nth-child(even){background:linear-gradient(180deg,var(--panel) 0%,var(--black) 100%)}
-.pd-inner{max-width:1100px;margin:0 auto;padding:clamp(5rem,9vw,10rem) var(--pad)}
-.pd-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
-.pd-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.5rem,6vw,5rem);line-height:1.08;margin-bottom:1.5rem}
-.pd-title em{font-style:italic;color:var(--gold)}
-.pd-lead{font-family:'Jura',sans-serif;font-weight:300;font-size:clamp(.95rem,1.4vw,1.1rem);line-height:1.9;color:rgba(242,240,236,.7);max-width:700px;margin-bottom:4rem;border-left:2px solid var(--gold);padding-left:1.5rem}
-.pd-section-label{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.8rem}
-.pd-specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;border:1px solid var(--border2);margin-bottom:3rem}
-.pd-spec{padding:1.5rem 1.8rem;background:var(--panel)}
-.pd-spec-label{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:.4rem}
-.pd-spec-val{font-size:.95rem;color:var(--white)}
-.pd-models-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-bottom:3rem}
-.pd-model{padding:2.5rem;border:1px solid var(--border2);transition:border-color .25s,background .25s}
-.pd-model:hover{border-color:var(--border);background:var(--mid)}
-.pd-model-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--gold);margin-bottom:.8rem}
-.pd-model-desc{font-size:.83rem;line-height:1.7;color:rgba(242,240,236,.55)}
-.pd-benefits{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:3rem}
-.pd-benefit{display:flex;align-items:flex-start;gap:1rem;padding:1.5rem;border:1px solid var(--border2)}
-.pd-benefit-icon{font-size:1.2rem;flex-shrink:0;margin-top:.1rem}
-.pd-benefit-title{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--white);display:block;margin-bottom:.3rem}
-.pd-benefit-desc{font-size:.82rem;line-height:1.65;color:rgba(242,240,236,.5)}
-.pd-ideal{padding:2.5rem;background:var(--mid);border:1px solid var(--border);margin-bottom:2rem}
-.pd-ideal-label{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
-.pd-ideal-pills{display:flex;flex-wrap:wrap;gap:.6rem}
-.pd-ideal-pill{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border:1px solid var(--border);color:rgba(242,240,236,.65)}
-.pd-cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border2)}
-.pd-back-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border2)}
-.pd-back{display:inline-flex;align-items:center;gap:.6rem;font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;color:rgba(242,240,236,.5);text-decoration:none;transition:color .2s;cursor:none}
-.pd-back:hover{color:var(--gold)}
-.pd-back svg{transition:transform .3s}
-.pd-back:hover svg{transform:translateX(-4px)}
-.pd-nav{display:flex;gap:2rem}
-.pd-nav a{font-size:var(--fs-tag);letter-spacing:.15em;text-transform:uppercase;color:rgba(242,240,236,.35);text-decoration:none;transition:color .2s;cursor:none}
-.pd-nav a:hover,.pd-nav a.active{color:var(--gold)}
-/* SHARED UTILS */
-.btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:var(--gold);color:var(--black);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;position:relative;overflow:hidden;cursor:none;transition:color .2s}
-.btn-primary::before{content:'';position:absolute;inset:0;background:var(--white);transform:translateX(-101%);transition:transform .3s cubic-bezier(.23,1,.32,1)}
-.btn-primary:hover::before{transform:translateX(0)}
-.btn-primary span,.btn-primary svg{position:relative;z-index:1}
-.btn-primary:hover svg{transform:translateX(4px)}
-.btn-primary svg{transition:transform .3s}
-.btn-ghost{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(242,240,236,.25);color:rgba(242,240,236,.75);font-family:'Jura',sans-serif;font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:border-color .2s,color .2s;cursor:none}
-.btn-ghost:hover{border-color:var(--gold);color:var(--white)}
-/* CTA */
-#cta{background:var(--gold);padding:clamp(4rem,6vw,7rem) var(--pad)}
-.cta-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
-.cta-eyebrow{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:rgba(8,8,8,.55);display:block;margin-bottom:.8rem}
-.cta-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,3rem);color:var(--black);line-height:1.15}
-.cta-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-dark{display:inline-flex;align-items:center;gap:.6rem;background:var(--black);color:var(--gold);font-family:'Jura',sans-serif;font-size:var(--fs-label);font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:background .2s,color .2s;cursor:none}
-.btn-dark:hover{background:var(--white);color:var(--black)}
-.btn-outline-dark{display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid rgba(8,8,8,.35);color:rgba(8,8,8,.8);font-family:'Jura',sans-serif;font-size:var(--fs-label);letter-spacing:.18em;text-transform:uppercase;padding:1rem 2rem;text-decoration:none;transition:border-color .2s,color .2s;cursor:none}
-.btn-outline-dark:hover{border-color:var(--black);color:var(--black)}
-footer{background:var(--mid);border-top:1px solid var(--border2)}
-.footer-inner{max-width:1440px;margin:0 auto;padding:clamp(3rem,5vw,6rem) var(--pad) 2rem}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid var(--border2);margin-bottom:2.5rem}
-.footer-brand-desc{font-size:.84rem;line-height:1.8;color:rgba(242,240,236,.45);margin-top:1.5rem}
-.footer-col-title{font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.5rem}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.8rem}
-.footer-links a{font-size:.84rem;color:rgba(242,240,236,.45);text-decoration:none;transition:color .2s;letter-spacing:.05em;cursor:none}
-.footer-links a:hover{color:var(--white)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.72rem;letter-spacing:.1em;color:rgba(242,240,236,.25)}
-.footer-legal{display:flex;gap:2rem}
-.footer-legal a{font-size:.72rem;letter-spacing:.1em;color:rgba(242,240,236,.25);text-decoration:none;transition:color .2s;cursor:none}
-.footer-legal a:hover{color:var(--stone)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
-@media(max-width:900px){
-  .products-grid{grid-template-columns:1fr 1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
-  
-  .section-header{flex-direction:column;gap:1rem}.section-num{font-size:3rem}
-  .cta-inner{flex-direction:column;align-items:flex-start}
-  .pd-benefits{grid-template-columns:1fr}
-}
-@media(max-width:600px){
-  .products-grid{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr;gap:2.5rem}
-  .pd-benefits,.pd-specs-grid{grid-template-columns:1fr}
-  body{cursor:auto}.cursor{display:none}
-}
-
-/* ── HAMBURGER ── */
-.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:910;position:relative}
-.nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--white);transition:transform .3s,opacity .3s,background .3s}
-.nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.nav-hamburger.open span:nth-child(2){opacity:0}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-
-/* ── MOBILE DRAWER ── */
-.mobile-nav{position:fixed;inset:0;left:auto;width:min(320px,85vw);z-index:950;background:var(--mid);border-left:1px solid var(--border);transform:translateX(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);overflow-y:auto;padding:6rem 2rem 3rem}
-.mobile-nav.open{transform:translateX(0)}
-.mobile-nav-inner ul{list-style:none;display:flex;flex-direction:column;gap:0}
-.mobile-nav-inner ul li a{display:block;font-size:.95rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(242,240,236,.7);text-decoration:none;padding:1.1rem 0;border-bottom:1px solid var(--border2);transition:color .2s}
-.mobile-nav-inner ul li a:hover{color:var(--gold)}
-.mobile-nav-overlay{position:fixed;inset:0;z-index:940;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .4s}
-.mobile-nav-overlay.open{opacity:1;pointer-events:all}
-
-/* ── GLOBAL MOBILE ── */
-@media(max-width:480px){
-  :root{--pad:1.2rem}
-  nav{padding:1rem var(--pad)}
-  .nav-hamburger{display:flex}
-  .nav-links{display:none}
-  .section-inner{padding:3rem var(--pad)}
-  .section-header{margin-bottom:2.5rem}
-  h2.section-title{font-size:clamp(1.6rem,7vw,2.4rem)}
-  h1.hero-title{font-size:clamp(2.4rem,10vw,4rem)}
-  .hero-stats{gap:1.2rem;flex-wrap:wrap;justify-content:center;bottom:1rem}
-  .hero-stat-num{font-size:1.6rem}
-  .hero-stat-label{font-size:.58rem}
-  .btn-primary,.btn-ghost,.btn-dark,.btn-outline-dark{padding:.85rem 1.4rem;font-size:.65rem}
-  .hero-actions{flex-direction:column;align-items:flex-start;gap:.8rem}
-  .footer-top{grid-template-columns:1fr!important;gap:2rem}
-  .footer-legal{flex-wrap:wrap;gap:1rem}
-  .cta-inner{flex-direction:column;align-items:flex-start;gap:1.5rem}
-  .ticker-item{font-size:.6rem;padding:0 1.5rem}
-  .section-num{font-size:2.5rem!important}
-  #home{padding-top:5rem;min-height:auto;padding-bottom:6rem}
-  .hero-left{padding-right:0}
-  .hero-sub{font-size:.88rem}
-}
-@media(max-width:900px){
-  .nav-hamburger{display:flex}
-  .nav-links{display:none}
-}
-
-
-@media(max-width:480px){
-  .products-grid{grid-template-columns:1fr!important}
-  .product-card{padding:2rem 1.5rem}
-  .pd-inner{padding:3rem var(--pad)}
-  .pd-back-bar{flex-direction:column;gap:1rem;align-items:flex-start}
-  .pd-nav{flex-wrap:wrap;gap:.5rem}
-  .pd-nav a{font-size:.6rem;padding:.3rem .6rem;border:1px solid var(--border2)}
-  .pd-title{font-size:clamp(2rem,8vw,3.5rem)}
-  .pd-specs-grid{grid-template-columns:1fr 1fr!important}
-  .pd-models-grid{grid-template-columns:1fr!important}
-  .pd-benefits{grid-template-columns:1fr!important}
-  .page-hero{min-height:30vh;padding-bottom:3rem}
-}
-
+.prod-hero{background:var(--c-white);padding-top:clamp(6rem,12vw,10rem);padding-bottom:0;border-bottom:1px solid var(--c-border)}
+.prod-cat-nav{display:flex;margin-top:3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--c-border);scrollbar-width:none}
+.prod-cat-nav::-webkit-scrollbar{display:none}
+.pnav-link{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted);padding:.85rem 1.4rem;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;text-decoration:none;flex-shrink:0}
+.pnav-link:hover,.pnav-link.active{color:var(--c-black);border-bottom-color:var(--c-gold)}
+.prod-section{padding:clamp(4rem,7vw,7rem) 0;border-bottom:1px solid var(--c-border)}
+.prod-section:last-child{border-bottom:none}
+.prod-section-head{margin-bottom:2.5rem}
+.prod-section-label{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;color:var(--c-gold);display:block;margin-bottom:.4rem}
+.prod-section-title{font-family:var(--f-display);font-size:clamp(2rem,4vw,3.5rem);line-height:.93;letter-spacing:.01em;text-transform:uppercase;color:var(--c-black)}
+.prod-grid{display:grid;gap:1.5rem}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+/* Card — overflow hidden on wrapper, NOT on card itself so transform works */
+.prod-card{border:1px solid var(--c-border);background:var(--c-white);display:flex;flex-direction:column;transition:border-color .25s,transform .25s,box-shadow .25s}
+.prod-card:hover{border-color:var(--c-gold);transform:translateY(-4px);box-shadow:0 10px 36px rgba(191,138,46,.12)}
+/* Image wrapper handles overflow so scale doesn't bleed */
+.prod-card:hover .prod-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
+.prod-cat{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c-gold);display:block;margin-bottom:.4rem}
+.prod-name{font-family:var(--f-display);font-size:clamp(1.1rem,1.8vw,1.4rem);letter-spacing:.01em;text-transform:uppercase;color:var(--c-black);line-height:1.1;margin-bottom:.5rem}
+.prod-spec{font-size:.8rem;color:var(--c-muted);line-height:1.62;margin-bottom:1.2rem;flex:1}
+@media(max-width:900px){.g3,.g2{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.g3,.g2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="cursor" id="cursor"><div class="cursor-ring" id="cursorRing"></div><div class="cursor-dot" id="cursorDot"></div></div>
 
-<nav id="nav">
-  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-  <a href="index.html" class="nav-logo">
-    <svg class="nav-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#F2F0EC"/><polygon points="12,2 20,2 12,10" fill="#080808"/><rect x="2" y="18" width="46" height="12" fill="#D4AE58"/><polygon points="48,18 56,18 48,26" fill="#080808"/><rect x="12" y="34" width="46" height="12" fill="#D4AE58"/><polygon points="12,34 20,34 12,42" fill="#080808"/><rect x="2" y="50" width="46" height="12" fill="#F2F0EC"/><polygon points="48,50 56,50 48,58" fill="#080808"/></svg>
-    <span class="nav-wordmark">Slate</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html#about">Home</a></li>
-    <li><a href="products.html" class="active">Products</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="sdoi.html">SDOI</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="contact.html" class="nav-cta">Get Started</a></li>
-  </ul>
+<nav class="site-nav" id="siteNav">
+  <div class="nav-bar">
+    <a href="index.html" class="nav-brand">
+      <svg class="nav-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#0B1C33"/><polygon points="12,2 20,2 12,10" fill="#fff"/><rect x="2" y="18" width="46" height="12" fill="#BF8A2E"/><polygon points="48,18 56,18 48,26" fill="#fff"/><rect x="12" y="34" width="46" height="12" fill="#BF8A2E"/><polygon points="12,34 20,34 12,42" fill="#fff"/><rect x="2" y="50" width="46" height="12" fill="#0B1C33"/><polygon points="48,50 56,50 48,58" fill="#fff"/></svg>
+      <span class="nav-wordmark">SLATE<span class="dot">.</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" >Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="services.html" >Services</a>
+      <a href="contact.html" >Contact</a>
+      <a href="contact.html" class="nav-cta-btn">Get Started</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
-
-<!-- MOBILE NAV DRAWER -->
-<div class="mobile-nav" id="mobileNav">
-  <div class="mobile-nav-inner">
-    <ul>
-      <li><a href="index.html#about">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="sdoi.html">SDOI</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a href="contact.html" class="btn-primary" style="margin-top:2rem;width:100%;justify-content:center"><span>Get Started</span></a>
-  </div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="btn btn-black" style="margin-top:2rem;width:100%;justify-content:center">Get Started</a>
 </div>
-<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-glow"></div>
-  <div class="page-hero-content">
-    <p class="page-eyebrow">Our Range</p>
-    <h1 class="page-title">Built for every<br><em>ambition</em></h1>
-  </div>
-</div>
+<div class="drawer-overlay" id="drawerOverlay"></div>
 
-<!-- PRODUCT GRID OVERVIEW -->
-<section id="overview"><div class="section-inner" style="padding-top:3rem">
-  <div class="products-grid">
-    <a class="product-card reveal" href="#laptops">
-      <div class="product-icon-wrap">💻</div><span class="product-category">Computing</span>
-      <h3 class="product-name">Slate Laptops</h3>
-      <p class="product-desc">Peak performance, tropical-climate engineering, and long-lasting batteries — for professionals, entrepreneurs, and students who refuse to compromise.</p>
-      <div class="product-tags"><span class="product-tag">Intel Core Series</span><span class="product-tag">Long Battery</span><span class="product-tag">Dust Resistant</span></div>
-      <div class="product-series"><span class="series-badge">Essential</span><span class="series-badge">Pro</span><span class="series-badge">Ultra Slim</span></div>
-      <div class="product-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-    <a class="product-card reveal reveal-delay-1" href="#smartphones">
-      <div class="product-icon-wrap">📱</div><span class="product-category">Mobile</span>
-      <h3 class="product-name">Slate Smartphones</h3>
-      <p class="product-desc">AI audio isolation, IP54 protection, and intelligent battery management — delivering crystal-clear communication regardless of environment.</p>
-      <div class="product-tags"><span class="product-tag">5G Ready</span><span class="product-tag">AI Audio</span><span class="product-tag">IP54 Rated</span></div>
-      <div class="product-series"><span class="series-badge">Classic</span><span class="series-badge">Nova</span><span class="series-badge">Elite</span></div>
-      <div class="product-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-    <a class="product-card reveal reveal-delay-2" href="#tablets">
-      <div class="product-icon-wrap">🖥️</div><span class="product-category">Mobility</span>
-      <h3 class="product-name">Slate Tablets</h3>
-      <p class="product-desc">Smart stylus precision, extended battery, and 4G LTE independence — bridging the gap between phone and laptop for creatives and consultants.</p>
-      <div class="product-tags"><span class="product-tag">Stylus Support</span><span class="product-tag">4G LTE</span><span class="product-tag">All-day Battery</span></div>
-      <div class="product-series"><span class="series-badge">Classic</span><span class="series-badge">Business</span><span class="series-badge">Elite</span></div>
-      <div class="product-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-    <a class="product-card reveal" href="#desktops">
-      <div class="product-icon-wrap">🖱️</div><span class="product-category">Workstation</span>
-      <h3 class="product-name">Slate Desktops</h3>
-      <p class="product-desc">Three configurations from compact all-in-ones to high-performance towers — energy-efficient workstations for the modern African office and classroom.</p>
-      <div class="product-tags"><span class="product-tag">Touchscreen</span><span class="product-tag">All-in-One</span><span class="product-tag">Energy Efficient</span></div>
-      <div class="product-series"><span class="series-badge">LITE</span><span class="series-badge">PRO</span><span class="series-badge">PRO LITE</span></div>
-      <div class="product-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-    <a class="product-card reveal reveal-delay-1" href="#ups">
-      <div class="product-icon-wrap">⚡</div><span class="product-category">Power Systems</span>
-      <h3 class="product-name">Slate UPS Systems</h3>
-      <p class="product-desc">Voice alerts, pre-generator cutover switching, and décor-conscious design — redefining power protection for the African home and office.</p>
-      <div class="product-tags"><span class="product-tag">Voice Alerts</span><span class="product-tag">Auto Cutover</span><span class="product-tag">Surge Protection</span></div>
-      <div class="product-series"><span class="series-badge">650VA</span><span class="series-badge">1000VA</span><span class="series-badge">2000VA</span></div>
-      <div class="product-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-    <a class="product-card reveal reveal-delay-2" href="#powerbanks">
-      <div class="product-icon-wrap">🔋</div><span class="product-category">Portable Power</span>
-      <h3 class="product-name">Slate Power Banks</h3>
-      <p class="product-desc">Smart reserve technology with a 10% emergency backup, multi-device simultaneous charging, and travel-safe certification for professionals in motion.</p>
-      <div class="product-tags"><span class="product-tag">Smart Reserve</span><span class="product-tag">65W Fast Charge</span><span class="product-tag">Multi-Device</span></div>
-      <div class="product-series"><span class="series-badge">MIN 10K</span><span class="series-badge">MAX 20K</span><span class="series-badge">ULTRA 30K</span></div>
-      <div class="product-arrow"><svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    </a>
-  </div>
-</div></section>
-
-<!-- LAPTOPS -->
-<div class="product-detail" id="laptops">
-  <div class="pd-inner">
-    <div class="pd-back-bar">
-      <a href="#overview" class="pd-back"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 13l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>All Products</a>
-      <div class="pd-nav"><a href="#laptops" class="active">Laptops</a><a href="#smartphones">Phones</a><a href="#tablets">Tablets</a><a href="#desktops">Desktops</a><a href="#ups">UPS</a><a href="#powerbanks">Power Banks</a></div>
-    </div>
-    <span class="pd-eyebrow">Computing</span>
-    <h2 class="pd-title">Slate <em>Laptops</em></h2>
-    <p class="pd-lead">Peak performance, tropical-climate engineering, and long-lasting batteries — crafted for professionals, students, entrepreneurs, and creatives who refuse to let their environment determine their potential.</p>
-    <span class="pd-section-label">Core Specifications</span>
-    <div class="pd-specs-grid">
-      <div class="pd-spec"><span class="pd-spec-label">Processor</span><span class="pd-spec-val">Intel Core i5 / i7</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Memory</span><span class="pd-spec-val">8GB – 16GB RAM</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Storage</span><span class="pd-spec-val">256GB – 1TB SSD</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Display</span><span class="pd-spec-val">15.6" FHD IPS</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Battery</span><span class="pd-spec-val">Up to 12 hours</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Build</span><span class="pd-spec-val">Aluminium chassis</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Cooling</span><span class="pd-spec-val">Advanced dual-fan</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Warranty</span><span class="pd-spec-val">1 year + extended</span></div>
-    </div>
-    <span class="pd-section-label">Series</span>
-    <div class="pd-models-grid">
-      <div class="pd-model"><div class="pd-model-name">Essential</div><p class="pd-model-desc">The everyday workhorse. Balanced performance for students, office professionals, and small business owners who need dependable computing without excess.</p></div>
-      <div class="pd-model"><div class="pd-model-name">Pro</div><p class="pd-model-desc">Engineered for power users. Higher RAM, faster SSD, and thermally optimised chassis designed for sustained multitasking, content creation, and development.</p></div>
-      <div class="pd-model"><div class="pd-model-name">Ultra Slim</div><p class="pd-model-desc">Travel-first design without compromise. Featherweight aluminium build, premium display, and all-day battery for executives always in motion.</p></div>
-    </div>
-    <span class="pd-section-label">Why Slate Laptops</span>
-    <div class="pd-benefits">
-      <div class="pd-benefit"><span class="pd-benefit-icon">🌡️</span><div><span class="pd-benefit-title">Tropical Climate Engineering</span><p class="pd-benefit-desc">Advanced thermal management for sub-Saharan heat and high humidity — purpose-built, not adapted.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">🔋</span><div><span class="pd-benefit-title">Extended Battery Life</span><p class="pd-benefit-desc">Up to 12 hours real-world use, engineered for environments with intermittent power supply.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">⚡</span><div><span class="pd-benefit-title">Fast Charge Technology</span><p class="pd-benefit-desc">60% charge in under 45 minutes — critical when power windows are short.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">🛡️</span><div><span class="pd-benefit-title">Dust & Impact Resistance</span><p class="pd-benefit-desc">MIL-grade chassis withstands dust ingress and accidental drops encountered in field and campus use.</p></div></div>
-    </div>
-    <div class="pd-ideal"><span class="pd-ideal-label">Ideal For</span><div class="pd-ideal-pills"><span class="pd-ideal-pill">University Students</span><span class="pd-ideal-pill">Business Professionals</span><span class="pd-ideal-pill">Content Creators</span><span class="pd-ideal-pill">Software Developers</span><span class="pd-ideal-pill">Educators</span><span class="pd-ideal-pill">Entrepreneurs</span></div></div>
-    <div class="pd-cta-row"><a href="mailto:info@slateworld.io" class="btn-primary"><span>Enquire About Laptops</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="sdoi.html" class="btn-ghost">Student Plan Available</a></div>
+<div class="prod-hero">
+  <div class="wrap">
+    <span class="label-tag gold">Hardware Solutions</span>
+    <h1 style="font-family:var(--f-display);font-size:clamp(3rem,7vw,7rem);line-height:.93;letter-spacing:.01em;text-transform:uppercase;color:var(--c-black);margin-top:.5rem;max-width:800px">Devices built for Africa.<br><em style="font-family:var(--f-serif);font-style:italic;text-transform:none;color:var(--c-gold)">Built for the world.</em></h1>
+    <p style="font-size:var(--t-body);color:var(--c-muted);max-width:560px;margin-top:1.2rem;line-height:1.8">Engineered for African infrastructure and climatic realities, meeting global performance standards — accessible through our Flexi-Pay ownership model.</p>
+    <nav class="prod-cat-nav">
+      <a href="#laptops" class="pnav-link active">Laptops</a>
+      <a href="#smartphones" class="pnav-link">Smartphones</a>
+      <a href="#tablets" class="pnav-link">Tablets</a>
+      <a href="#desktops" class="pnav-link">Desktops</a>
+      <a href="#ups" class="pnav-link">UPS Systems</a>
+      <a href="#powerbanks" class="pnav-link">Power Banks</a>
+    </nav>
   </div>
 </div>
 
-<!-- SMARTPHONES -->
-<div class="product-detail" id="smartphones">
-  <div class="pd-inner">
-    <div class="pd-back-bar">
-      <a href="#overview" class="pd-back"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 13l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>All Products</a>
-      <div class="pd-nav"><a href="#laptops">Laptops</a><a href="#smartphones" class="active">Phones</a><a href="#tablets">Tablets</a><a href="#desktops">Desktops</a><a href="#ups">UPS</a><a href="#powerbanks">Power Banks</a></div>
-    </div>
-    <span class="pd-eyebrow">Mobile</span>
-    <h2 class="pd-title">Slate <em>Smartphones</em></h2>
-    <p class="pd-lead">AI-powered audio isolation, IP54 resilience, and intelligent battery management — delivering crystal-clear communication whether you're in a quiet boardroom or a bustling Lagos market.</p>
-    <span class="pd-section-label">Core Specifications</span>
-    <div class="pd-specs-grid">
-      <div class="pd-spec"><span class="pd-spec-label">Connectivity</span><span class="pd-spec-val">5G / 4G LTE</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Memory</span><span class="pd-spec-val">6GB – 12GB RAM</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Storage</span><span class="pd-spec-val">128GB – 512GB</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Display</span><span class="pd-spec-val">6.5" AMOLED 120Hz</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Camera</span><span class="pd-spec-val">AI Triple Lens</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Protection</span><span class="pd-spec-val">IP54 Water & Dust</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Audio</span><span class="pd-spec-val">AI Noise Isolation</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Battery</span><span class="pd-spec-val">5,000mAh + 65W Fast</span></div>
-    </div>
-    <span class="pd-section-label">Series</span>
-    <div class="pd-models-grid">
-      <div class="pd-model"><div class="pd-model-name">Classic</div><p class="pd-model-desc">Reliable everyday performance. Clean design, solid camera, and dependable AI audio for the professional who values consistency.</p></div>
-      <div class="pd-model"><div class="pd-model-name">Nova</div><p class="pd-model-desc">Mid-tier excellence with premium touches. Enhanced camera, larger display, and customisable call profiles for users who demand more.</p></div>
-      <div class="pd-model"><div class="pd-model-name">Elite</div><p class="pd-model-desc">The flagship. Uncompromising specifications, premium materials, and the full suite of AI-optimised capabilities.</p></div>
-    </div>
-    <span class="pd-section-label">Why Slate Smartphones</span>
-    <div class="pd-benefits">
-      <div class="pd-benefit"><span class="pd-benefit-icon">🎙️</span><div><span class="pd-benefit-title">AI Audio Isolation</span><p class="pd-benefit-desc">Intelligent noise suppression separates your voice from ambient sound — critical for clear communication in busy African urban environments.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">💧</span><div><span class="pd-benefit-title">IP54 Rated</span><p class="pd-benefit-desc">Water and dust resistance for rain, dust storms, and humid coastal environments that conventional devices simply cannot handle.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">🔋</span><div><span class="pd-benefit-title">Intelligent Battery AI</span><p class="pd-benefit-desc">Battery AI learns your usage pattern and optimises consumption — maximising screen-on time based on how you actually use your phone.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">📞</span><div><span class="pd-benefit-title">Call Profile Customisation</span><p class="pd-benefit-desc">Business, casual, and field modes configure audio handling and notification behaviour automatically per context.</p></div></div>
-    </div>
-    <div class="pd-ideal"><span class="pd-ideal-label">Ideal For</span><div class="pd-ideal-pills"><span class="pd-ideal-pill">Executives</span><span class="pd-ideal-pill">Field Workers</span><span class="pd-ideal-pill">Students</span><span class="pd-ideal-pill">Entrepreneurs</span><span class="pd-ideal-pill">Digital Creatives</span><span class="pd-ideal-pill">Frequent Travellers</span></div></div>
-    <div class="pd-cta-row"><a href="mailto:info@slateworld.io" class="btn-primary"><span>Enquire About Smartphones</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-  </div>
-</div>
+<div style="background:var(--c-white)"><div class="wrap">
 
-<!-- TABLETS -->
-<div class="product-detail" id="tablets">
-  <div class="pd-inner">
-    <div class="pd-back-bar">
-      <a href="#overview" class="pd-back"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 13l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>All Products</a>
-      <div class="pd-nav"><a href="#laptops">Laptops</a><a href="#smartphones">Phones</a><a href="#tablets" class="active">Tablets</a><a href="#desktops">Desktops</a><a href="#ups">UPS</a><a href="#powerbanks">Power Banks</a></div>
+  <!-- LAPTOPS -->
+  <section class="prod-section" id="laptops">
+    <div class="prod-section-head">
+      <span class="prod-section-label">01</span>
+      <h2 class="prod-section-title">Slate Laptops</h2>
     </div>
-    <span class="pd-eyebrow">Mobility</span>
-    <h2 class="pd-title">Slate <em>Tablets</em></h2>
-    <p class="pd-lead">Smart stylus precision, extended battery, and 4G LTE independence — bridging the gap between phone and laptop for students, consultants, and creatives who need versatility without bulk.</p>
-    <span class="pd-section-label">Core Specifications</span>
-    <div class="pd-specs-grid">
-      <div class="pd-spec"><span class="pd-spec-label">OS</span><span class="pd-spec-val">Android 13+</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Memory</span><span class="pd-spec-val">6GB – 8GB RAM</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Storage</span><span class="pd-spec-val">128GB – 256GB</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Display</span><span class="pd-spec-val">10.5" – 12" IPS</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Connectivity</span><span class="pd-spec-val">Wi-Fi + 4G LTE</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Stylus</span><span class="pd-spec-val">Smart Stylus Compatible</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Battery</span><span class="pd-spec-val">8,000 – 10,000mAh</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Weight</span><span class="pd-spec-val">From 450g</span></div>
+    <div class="prod-grid g3 reveal">
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Professional</span><div class="prod-name">Slate Pro 15</div><p class="prod-spec">Intel Core i7 · 16GB RAM · 512GB SSD · 15.6" FHD · Dustproof Build</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Business</span><div class="prod-name">Slate Business 14</div><p class="prod-spec">Intel Core i5 · 8GB RAM · 256GB SSD · 14" FHD · Long Battery Life</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Student</span><div class="prod-name">Slate Student 13</div><p class="prod-spec">Intel Core i3 · 8GB RAM · 256GB SSD · 13.3" · Flexi-Pay Eligible</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
     </div>
-    <span class="pd-section-label">Series</span>
-    <div class="pd-models-grid">
-      <div class="pd-model"><div class="pd-model-name">Classic</div><p class="pd-model-desc">Entry-level excellence for students and everyday use. Crisp display, reliable 4G, and generous battery life.</p></div>
-      <div class="pd-model"><div class="pd-model-name">Business</div><p class="pd-model-desc">Keyboard attachment support, enterprise security, and enhanced connectivity for the mobile professional.</p></div>
-      <div class="pd-model"><div class="pd-model-name">Elite</div><p class="pd-model-desc">High-refresh display, advanced stylus precision, and maximum RAM for designers, architects, and digital artists.</p></div>
-    </div>
-    <span class="pd-section-label">Why Slate Tablets</span>
-    <div class="pd-benefits">
-      <div class="pd-benefit"><span class="pd-benefit-icon">✏️</span><div><span class="pd-benefit-title">Smart Stylus Precision</span><p class="pd-benefit-desc">4,096 levels of pressure sensitivity for natural writing, annotation, and design — replacing paper notebooks with digital intelligence.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">📶</span><div><span class="pd-benefit-title">4G LTE Independent</span><p class="pd-benefit-desc">Works without Wi-Fi — students and field professionals remain connected without fixed broadband access.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">⏱️</span><div><span class="pd-benefit-title">All-Day Battery</span><p class="pd-benefit-desc">Up to 14 hours from a single charge — covering a full academic day or field session without anxiety.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">🎒</span><div><span class="pd-benefit-title">Ultra-Portable Build</span><p class="pd-benefit-desc">Starting from 450g — fits in any bag without adding fatigue to long commutes or travel-heavy careers.</p></div></div>
-    </div>
-    <div class="pd-ideal"><span class="pd-ideal-label">Ideal For</span><div class="pd-ideal-pills"><span class="pd-ideal-pill">Students</span><span class="pd-ideal-pill">Consultants</span><span class="pd-ideal-pill">Field Engineers</span><span class="pd-ideal-pill">Architects</span><span class="pd-ideal-pill">Digital Artists</span><span class="pd-ideal-pill">Mobile Professionals</span></div></div>
-    <div class="pd-cta-row"><a href="mailto:info@slateworld.io" class="btn-primary"><span>Enquire About Tablets</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-  </div>
-</div>
+  </section>
 
-<!-- DESKTOPS -->
-<div class="product-detail" id="desktops">
-  <div class="pd-inner">
-    <div class="pd-back-bar">
-      <a href="#overview" class="pd-back"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 13l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>All Products</a>
-      <div class="pd-nav"><a href="#laptops">Laptops</a><a href="#smartphones">Phones</a><a href="#tablets">Tablets</a><a href="#desktops" class="active">Desktops</a><a href="#ups">UPS</a><a href="#powerbanks">Power Banks</a></div>
+  <!-- SMARTPHONES -->
+  <section class="prod-section" id="smartphones">
+    <div class="prod-section-head">
+      <span class="prod-section-label">02</span>
+      <h2 class="prod-section-title">Slate Smartphones</h2>
     </div>
-    <span class="pd-eyebrow">Workstation</span>
-    <h2 class="pd-title">Slate <em>Desktops</em></h2>
-    <p class="pd-lead">Three architectures, one philosophy — the workstation should fit the work. From compact all-in-ones for classrooms and CBT centres to high-performance towers for architects and researchers, Slate Desktops redefine fixed computing in Africa.</p>
-    <span class="pd-section-label">Models</span>
-    <div class="pd-models-grid">
-      <div class="pd-model"><div class="pd-model-name">LITE</div><p class="pd-model-desc">All-in-one compact built for space-constrained environments. Ideal for CBT centres, classrooms, and reception areas where footprint matters as much as performance.</p></div>
-      <div class="pd-model"><div class="pd-model-name">PRO</div><p class="pd-model-desc">Tower plus monitor delivering maximum processing power. For programmers, data analysts, architects, and research labs that push hardware to its limit.</p></div>
-      <div class="pd-model"><div class="pd-model-name">PRO LITE</div><p class="pd-model-desc">All-in-one touchscreen with premium aesthetics — the modern face of an enterprise office: interactive, elegant, and powerful.</p></div>
+    <div class="prod-grid g3 reveal">
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Flagship</span><div class="prod-name">Slate X1 Pro</div><p class="prod-spec">5G · 12GB RAM · 256GB · AI Triple Camera · 6.7" AMOLED Display</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Mid-Range</span><div class="prod-name">Slate A5</div><p class="prod-spec">4G · 8GB RAM · 128GB · 48MP Camera · 5000mAh Battery</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Essential</span><div class="prod-name">Slate E3</div><p class="prod-spec">4G · 4GB RAM · 64GB · Dual SIM · 4500mAh · Rugged Build</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
     </div>
-    <span class="pd-section-label">Specification Range</span>
-    <div class="pd-specs-grid">
-      <div class="pd-spec"><span class="pd-spec-label">Processor</span><span class="pd-spec-val">Intel Core i5 to i9</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Memory</span><span class="pd-spec-val">8GB – 32GB RAM</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Storage</span><span class="pd-spec-val">512GB – 2TB SSD</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Display</span><span class="pd-spec-val">21.5" – 27" FHD/4K</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Touch</span><span class="pd-spec-val">Available on PRO LITE</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Connectivity</span><span class="pd-spec-val">Wi-Fi 6 + Gigabit LAN</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Power</span><span class="pd-spec-val">Energy-efficient PSU</span></div>
-      <div class="pd-spec"><span class="pd-spec-label">Warranty</span><span class="pd-spec-val">1–3 year options</span></div>
-    </div>
-    <div class="pd-ideal"><span class="pd-ideal-label">Ideal For</span><div class="pd-ideal-pills"><span class="pd-ideal-pill">CBT Centres</span><span class="pd-ideal-pill">Corporate Offices</span><span class="pd-ideal-pill">Training Centres</span><span class="pd-ideal-pill">Research Labs</span><span class="pd-ideal-pill">Architects</span><span class="pd-ideal-pill">Schools</span></div></div>
-    <div class="pd-cta-row"><a href="mailto:info@slateworld.io" class="btn-primary"><span>Request a Quote</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-  </div>
-</div>
+  </section>
 
-<!-- UPS -->
-<div class="product-detail" id="ups">
-  <div class="pd-inner">
-    <div class="pd-back-bar">
-      <a href="#overview" class="pd-back"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 13l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>All Products</a>
-      <div class="pd-nav"><a href="#laptops">Laptops</a><a href="#smartphones">Phones</a><a href="#tablets">Tablets</a><a href="#desktops">Desktops</a><a href="#ups" class="active">UPS</a><a href="#powerbanks">Power Banks</a></div>
+  <!-- TABLETS -->
+  <section class="prod-section" id="tablets">
+    <div class="prod-section-head">
+      <span class="prod-section-label">03</span>
+      <h2 class="prod-section-title">Slate Tablets</h2>
     </div>
-    <span class="pd-eyebrow">Power Systems</span>
-    <h2 class="pd-title">Slate <em>UPS Systems</em></h2>
-    <p class="pd-lead">Power instability is not a minor inconvenience in Africa — it is a daily operational reality. Slate UPS Systems were designed with this truth at the core: intelligent protection, voice-based alerts, and aesthetics that respect your space.</p>
-    <span class="pd-section-label">Models</span>
-    <div class="pd-models-grid">
-      <div class="pd-model"><div class="pd-model-name">650VA</div><p class="pd-model-desc">Entry protection for workstations, routers, and point-of-sale systems. Compact, quiet, and effective for small offices and smart homes.</p></div>
-      <div class="pd-model"><div class="pd-model-name">1000VA</div><p class="pd-model-desc">Mid-range protection for desktop computers, networking equipment, and small server setups in CBT centres and offices.</p></div>
-      <div class="pd-model"><div class="pd-model-name">2000VA</div><p class="pd-model-desc">High-capacity protection for server rooms, large workstation clusters, and mission-critical enterprise environments.</p></div>
+    <div class="prod-grid g3 reveal">
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Pro</span><div class="prod-name">Slate Tab Pro 11</div><p class="prod-spec">11" 2K Display · 8GB RAM · 256GB · 4G LTE · Stylus + Keyboard</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Student</span><div class="prod-name">Slate Tab S 10</div><p class="prod-spec">10.5" FHD · 6GB RAM · 128GB · 4G LTE · Stylus · Long Battery</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Kids</span><div class="prod-name">Slate Tab Junior</div><p class="prod-spec">8" HD · 4GB RAM · 64GB · Rugged Case · Parental Controls</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
     </div>
-    <span class="pd-section-label">Key Features</span>
-    <div class="pd-benefits">
-      <div class="pd-benefit"><span class="pd-benefit-icon">🔊</span><div><span class="pd-benefit-title">Voice Alert System</span><p class="pd-benefit-desc">Intelligent voice notifications replace jarring beeping — more informative and less disruptive in office and home environments.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">⚡</span><div><span class="pd-benefit-title">Pre-Cutover Switching</span><p class="pd-benefit-desc">Automatic switchover activates before the generator starts — eliminating the dangerous gap that causes data loss.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">🏠</span><div><span class="pd-benefit-title">Décor-Conscious Design</span><p class="pd-benefit-desc">Styled to complement modern interiors — the first UPS that looks intentional rather than industrial.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">🌩️</span><div><span class="pd-benefit-title">Surge & Spike Protection</span><p class="pd-benefit-desc">Multi-stage suppression guards against voltage spikes common with generator and grid switching in African power infrastructure.</p></div></div>
-    </div>
-    <div class="pd-ideal"><span class="pd-ideal-label">Ideal For</span><div class="pd-ideal-pills"><span class="pd-ideal-pill">CBT Centres</span><span class="pd-ideal-pill">Offices</span><span class="pd-ideal-pill">Smart Homes</span><span class="pd-ideal-pill">Supermarkets</span><span class="pd-ideal-pill">Server Rooms</span><span class="pd-ideal-pill">Schools</span></div></div>
-    <div class="pd-cta-row"><a href="mailto:info@slateworld.io" class="btn-primary"><span>Enquire About UPS Systems</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-  </div>
-</div>
+  </section>
 
-<!-- POWER BANKS -->
-<div class="product-detail" id="powerbanks">
-  <div class="pd-inner">
-    <div class="pd-back-bar">
-      <a href="#overview" class="pd-back"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M7 13l-6-6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>All Products</a>
-      <div class="pd-nav"><a href="#laptops">Laptops</a><a href="#smartphones">Phones</a><a href="#tablets">Tablets</a><a href="#desktops">Desktops</a><a href="#ups">UPS</a><a href="#powerbanks" class="active">Power Banks</a></div>
+  <!-- DESKTOPS -->
+  <section class="prod-section" id="desktops">
+    <div class="prod-section-head">
+      <span class="prod-section-label">04</span>
+      <h2 class="prod-section-title">Slate Desktops</h2>
     </div>
-    <span class="pd-eyebrow">Portable Power</span>
-    <h2 class="pd-title">Slate <em>Power Banks</em></h2>
-    <p class="pd-lead">Never stranded. Never powerless. The Slate Power Bank range introduces smart reserve technology — an intelligent 10% emergency backup accessible via a dedicated booster button for when it truly matters.</p>
-    <span class="pd-section-label">Models</span>
-    <div class="pd-models-grid">
-      <div class="pd-model"><div class="pd-model-name">MIN — 10,000mAh</div><p class="pd-model-desc">The everyday companion. Slim, light, and fast enough to keep your phone and wearables topped up through a full working day.</p></div>
-      <div class="pd-model"><div class="pd-model-name">MAX — 20,000mAh</div><p class="pd-model-desc">Extended range for multi-device users. Charge a laptop, tablet, and phone simultaneously with intelligent power distribution.</p></div>
-      <div class="pd-model"><div class="pd-model-name">ULTRA — 30,000mAh</div><p class="pd-model-desc">Maximum capacity for field professionals, long-distance travellers, and environments with no reliable power access for extended periods.</p></div>
+    <div class="prod-grid g2 reveal">
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">All-in-One</span><div class="prod-name">Slate AiO 24</div><p class="prod-spec">Intel Core i5 · 8GB RAM · 256GB SSD · 24" FHD Touch · Built-in UPS</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Tower</span><div class="prod-name">Slate Tower Pro</div><p class="prod-spec">Intel Core i7 · 16GB RAM · 1TB SSD · Discrete GPU · Enterprise Grade</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
     </div>
-    <span class="pd-section-label">Key Features</span>
-    <div class="pd-benefits">
-      <div class="pd-benefit"><span class="pd-benefit-icon">🔒</span><div><span class="pd-benefit-title">Smart Reserve Technology</span><p class="pd-benefit-desc">10% emergency backup locked until needed — press the booster button when stranded and unlock the reserve that always has your back.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">⚡</span><div><span class="pd-benefit-title">65W Fast Charging</span><p class="pd-benefit-desc">Multi-protocol fast charge for the widest range of devices — laptops, phones, tablets, and earbuds at their maximum rated speed.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">🔌</span><div><span class="pd-benefit-title">Multi-Device Simultaneous</span><p class="pd-benefit-desc">Up to 4 devices charged simultaneously on MAX and ULTRA — intelligent power distribution ensures no device is starved of current.</p></div></div>
-      <div class="pd-benefit"><span class="pd-benefit-icon">✈️</span><div><span class="pd-benefit-title">Travel-Safe Certified</span><p class="pd-benefit-desc">All models comply with international aviation carry-on regulations — no surprises at airport security gates.</p></div></div>
+  </section>
+
+  <!-- UPS -->
+  <section class="prod-section" id="ups">
+    <div class="prod-section-head">
+      <span class="prod-section-label">05</span>
+      <h2 class="prod-section-title">UPS Systems</h2>
     </div>
-    <div class="pd-ideal"><span class="pd-ideal-label">Ideal For</span><div class="pd-ideal-pills"><span class="pd-ideal-pill">Business Travellers</span><span class="pd-ideal-pill">Students</span><span class="pd-ideal-pill">Field Engineers</span><span class="pd-ideal-pill">Digital Nomads</span><span class="pd-ideal-pill">Photographers</span><span class="pd-ideal-pill">Remote Workers</span></div></div>
-    <div class="pd-cta-row"><a href="mailto:info@slateworld.io" class="btn-primary"><span>Enquire About Power Banks</span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-  </div>
-</div>
+    <div class="prod-grid g3 reveal">
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Home</span><div class="prod-name">Slate UPS 1KVA</div><p class="prod-spec">1000VA / 600W · Pure Sine Wave · Auto-Voltage Regulation</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Office</span><div class="prod-name">Slate UPS 2KVA</div><p class="prod-spec">2000VA / 1400W · LCD Panel · Smart Energy Management</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Enterprise</span><div class="prod-name">Slate UPS 5KVA</div><p class="prod-spec">5000VA / 3500W · Parallel Capability · Remote Management</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POWER BANKS -->
+  <section class="prod-section" id="powerbanks">
+    <div class="prod-section-head">
+      <span class="prod-section-label">06</span>
+      <h2 class="prod-section-title">Power Banks</h2>
+    </div>
+    <div class="prod-grid g3 reveal">
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Pocket</span><div class="prod-name">Slate Charge 10</div><p class="prod-spec">10,000mAh · 22.5W Fast Charge · USB-C + USB-A · Slim Design</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Standard</span><div class="prod-name">Slate Charge 20</div><p class="prod-spec">20,000mAh · 65W PD · Laptop Compatible · 3 Output Ports</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-body"><span class="prod-cat">Heavy Duty</span><div class="prod-name">Slate Charge 40 Solar</div><p class="prod-spec">40,000mAh · Solar Recharge · 100W PD · Field-Grade Rugged</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
+      </div>
+    </div>
+  </section>
+
+</div></div>
 
 <!-- CTA -->
-<section id="cta">
-  <div class="cta-inner">
-    <div><span class="cta-eyebrow">Ready to begin?</span><h2 class="cta-title">Join Africa's technology<br>revolution today.</h2></div>
-    <div class="cta-actions">
-      <a href="contact.html" class="btn-dark">Get in Touch<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#D4AE58" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="https://slateworld.io" target="_blank" class="btn-outline-dark">Visit slateworld.io</a>
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-band-inner">
+      <div class="reveal">
+        <span class="label-tag white">Ready to order?</span>
+        <h2 class="cta-band-title" style="margin-top:.5rem">Order in bulk.<br><em>Pay in instalments.</em></h2>
+        <p class="cta-band-sub">Individual, bulk, or SDOI — we have a solution for you.</p>
+      </div>
+      <div class="cta-band-btns reveal d2">
+        <a href="contact.html" class="btn btn-gold">Get in Touch <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="service-hardware.html" class="btn btn-outline-white">Flexi-Pay Info</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer><div class="footer-inner">
-  <div class="footer-top">
-    <div>
-      <a href="index.html" class="nav-logo" style="display:inline-flex"><svg width="26" height="30" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#F2F0EC" opacity=".5"/><polygon points="12,2 20,2 12,10" fill="#111010"/><rect x="2" y="18" width="46" height="12" fill="#D4AE58" opacity=".6"/><polygon points="48,18 56,18 48,26" fill="#111010"/><rect x="12" y="34" width="46" height="12" fill="#D4AE58" opacity=".6"/><polygon points="12,34 20,34 12,42" fill="#111010"/><rect x="2" y="50" width="46" height="12" fill="#F2F0EC" opacity=".5"/><polygon points="48,50 56,50 48,58" fill="#111010"/></svg><span class="nav-wordmark" style="opacity:.5">Slate</span></a>
-      <p class="footer-brand-desc">Africa's leading homegrown technology company — designing, manufacturing, and distributing intelligent, durable, and elegantly crafted devices.</p>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand-logo">
+          <svg class="footer-brand-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="rgba(255,255,255,.6)"/><polygon points="12,2 20,2 12,10" fill="#0C0C0C"/><rect x="2" y="18" width="46" height="12" fill="#BF8A2E"/><polygon points="48,18 56,18 48,26" fill="#0C0C0C"/><rect x="12" y="34" width="46" height="12" fill="#BF8A2E"/><polygon points="12,34 20,34 12,42" fill="#0C0C0C"/><rect x="2" y="50" width="46" height="12" fill="rgba(255,255,255,.6)"/><polygon points="48,50 56,50 48,58" fill="#0C0C0C"/></svg>
+          <span class="footer-brand-name">SLATE<span class="dot">.</span></span>
+        </a>
+        <p class="footer-desc">Software development, technology solutions, and digital transformation. AI strategy, e-learning, custom software, and intelligent hardware for Africa and beyond.</p>
+        <p class="footer-reg">Slate Technologies Limited<br>Registered in Nigeria &amp; United Kingdom</p>
+      </div>
+      <div class="footer-col"><span class="footer-col-title">Products</span><ul><li><a href="#laptops">Slate Laptops</a></li><li><a href="#smartphones">Smartphones</a></li><li><a href="#tablets">Tablets</a></li><li><a href="#desktops">Desktops</a></li><li><a href="#ups">UPS Systems</a></li><li><a href="#powerbanks">Power Banks</a></li></ul></div>
+      <div class="footer-col"><span class="footer-col-title">Services</span><ul><li><a href="service-software.html">Custom Software</a></li><li><a href="service-transformation.html">Digital Transformation</a></li><li><a href="service-ai.html">AI Strategy</a></li><li><a href="service-elearning.html">E-Learning</a></li><li><a href="service-consulting.html">Consulting</a></li><li><a href="service-hardware.html">Buy Now, Pay Later</a></li><li></li></ul></div>
+      <div class="footer-col"><span class="footer-col-title">Company</span><ul><li><a href="index.html#about-stmt">About Slate</a></li><li><a href="index.html#mission">Mission &amp; Vision</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://slateworld.io" target="_blank">slateworld.io ↗</a></li></ul></div>
     </div>
-    <div><span class="footer-col-title">Products</span><ul class="footer-links"><li><a href="#laptops">Slate Laptops</a></li><li><a href="#smartphones">Slate Smartphones</a></li><li><a href="#tablets">Slate Tablets</a></li><li><a href="#desktops">Slate Desktops</a></li><li><a href="#ups">UPS Systems</a></li><li><a href="#powerbanks">Power Banks</a></li></ul></div>
-    <div><span class="footer-col-title">Services</span><ul class="footer-links"><li><a href="services.html#bnpl">Buy Now, Pay Later</a></li><li><a href="services.html#corporate">Corporate Solutions</a></li><li><a href="services.html#support">Maintenance & Support</a></li><li><a href="sdoi.html">SDOI Partnership</a></li></ul></div>
-    <div><span class="footer-col-title">Company</span><ul class="footer-links"><li><a href="index.html#about">About Slate</a></li><li><a href="index.html#mission">Mission & Vision</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="https://slateworld.io" target="_blank">slateworld.io</a></li></ul></div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Slate Technologies Limited. All rights reserved.</p>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Warranty</a></div>
+    </div>
   </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">© 2026 Slate Technology Ltd. All rights reserved. Registered in Nigeria & United Kingdom.</p>
-    <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Warranty</a></div>
-  </div>
-</div></footer>
+</footer>
 
 <script>
-const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing'),cur=document.getElementById('cursor');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
-(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;dot.style.left=mx+'px';dot.style.top=my+'px';ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('a,button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>cur.classList.add('cursor-expand'));
-  el.addEventListener('mouseleave',()=>cur.classList.remove('cursor-expand'));
-});
-const nav=document.getElementById('nav');
+const nav=document.getElementById('siteNav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// Hamburger menu
-const hamburger=document.getElementById('navHamburger');
-const mobileNav=document.getElementById('mobileNav');
-const mobileOverlay=document.getElementById('mobileNavOverlay');
-function toggleMenu(open){
-  hamburger.classList.toggle('open',open);
-  mobileNav.classList.toggle('open',open);
-  mobileOverlay.classList.toggle('open',open);
-  document.body.style.overflow=open?'hidden':'';
-}
-hamburger.addEventListener('click',()=>toggleMenu(!mobileNav.classList.contains('open')));
-mobileOverlay.addEventListener('click',()=>toggleMenu(false));
-document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
-
+const tog=document.getElementById('navToggle'),drw=document.getElementById('mobileDrawer'),ovl=document.getElementById('drawerOverlay');
+const open=o=>{tog.classList.toggle('open',o);drw.classList.toggle('open',o);ovl.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''};
+tog.addEventListener('click',()=>open(!drw.classList.contains('open')));
+ovl.addEventListener('click',()=>open(false));
+drw.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>open(false)));
+// Active nav on scroll
+const sections=document.querySelectorAll('.prod-section');
+const links=document.querySelectorAll('.pnav-link');
+new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=document.querySelector('.pnav-link[href="#'+e.target.id+'"]');if(a)a.classList.add('active')}})},{threshold:.4}).observe;
+sections.forEach(s=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=document.querySelector('.pnav-link[href="#'+e.target.id+'"]');if(a)a.classList.add('active')}})},{threshold:.35}).observe(s));
 </script>
 </body>
 </html>
