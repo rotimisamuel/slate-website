@@ -4,51 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Products — Slate</title>
+<meta name="description" content="Slate Technologies Limited — bespoke software, AI strategy, e-learning platforms, and intelligent hardware. Engineered in Africa, recognised globally.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-.prod-hero{background:var(--c-white);padding-top:clamp(6rem,12vw,10rem);padding-bottom:0;border-bottom:1px solid var(--c-border)}
-.prod-cat-nav{display:flex;margin-top:3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--c-border);scrollbar-width:none}
-.prod-cat-nav::-webkit-scrollbar{display:none}
-.pnav-link{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted);padding:.85rem 1.4rem;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;text-decoration:none;flex-shrink:0}
-.pnav-link:hover,.pnav-link.active{color:var(--c-black);border-bottom-color:var(--c-gold)}
-.prod-section{padding:clamp(4rem,7vw,7rem) 0;border-bottom:1px solid var(--c-border)}
-.prod-section:last-child{border-bottom:none}
-.prod-section-head{margin-bottom:2.5rem}
-.prod-section-label{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.2em;text-transform:uppercase;color:var(--c-gold);display:block;margin-bottom:.4rem}
-.prod-section-title{font-family:var(--f-display);font-size:clamp(2rem,4vw,3.5rem);line-height:.93;letter-spacing:.01em;text-transform:uppercase;color:var(--c-black)}
-.prod-grid{display:grid;gap:1.5rem}
-.g3{grid-template-columns:repeat(3,1fr)}
-.g2{grid-template-columns:repeat(2,1fr)}
-/* Card — overflow hidden on wrapper, NOT on card itself so transform works */
-.prod-card{border:1px solid var(--c-border);background:var(--c-white);display:flex;flex-direction:column;transition:border-color .25s,transform .25s,box-shadow .25s}
-.prod-card:hover{border-color:var(--c-gold);transform:translateY(-4px);box-shadow:0 10px 36px rgba(191,138,46,.12)}
-/* Image wrapper handles overflow so scale doesn't bleed */
-.prod-card:hover .prod-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
-.prod-cat{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c-gold);display:block;margin-bottom:.4rem}
-.prod-name{font-family:var(--f-display);font-size:clamp(1.1rem,1.8vw,1.4rem);letter-spacing:.01em;text-transform:uppercase;color:var(--c-black);line-height:1.1;margin-bottom:.5rem}
-.prod-spec{font-size:.8rem;color:var(--c-muted);line-height:1.62;margin-bottom:1.2rem;flex:1}
-@media(max-width:900px){.g3,.g2{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.g3,.g2{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
-
 <nav class="site-nav" id="siteNav">
   <div class="nav-bar">
     <a href="index.html" class="nav-brand">
-      <svg class="nav-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="#0B1C33"/><polygon points="12,2 20,2 12,10" fill="#fff"/><rect x="2" y="18" width="46" height="12" fill="#BF8A2E"/><polygon points="48,18 56,18 48,26" fill="#fff"/><rect x="12" y="34" width="46" height="12" fill="#BF8A2E"/><polygon points="12,34 20,34 12,42" fill="#fff"/><rect x="2" y="50" width="46" height="12" fill="#0B1C33"/><polygon points="48,50 56,50 48,58" fill="#fff"/></svg>
+      <svg class="nav-mark" viewBox="0 0 60 68" fill="none" width="40" height="44">
+  <rect x="12" y="2" width="46" height="12" fill="#0B1C33"/><polygon points="12,2 20,2 12,10" fill="#fff"/>
+  <rect x="2" y="18" width="46" height="12" fill="#BF8A2E"/><polygon points="48,18 56,18 48,26" fill="#fff"/>
+  <rect x="12" y="34" width="46" height="12" fill="#BF8A2E"/><polygon points="12,34 20,34 12,42" fill="#fff"/>
+  <rect x="2" y="50" width="46" height="12" fill="#0B1C33"/><polygon points="48,50 56,50 48,58" fill="#fff"/>
+</svg>
       <span class="nav-wordmark">SLATE<span class="dot">.</span></span>
     </a>
     <nav class="nav-links">
-      <a href="index.html" >Home</a>
+      <a href="index.html">Home</a>
       <a href="products.html" class="active">Products</a>
-      <a href="services.html" >Services</a>
-      <a href="contact.html" >Contact</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
       <a href="contact.html" class="nav-cta-btn">Get Started</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -64,13 +44,12 @@
   <a href="contact.html" class="btn btn-black" style="margin-top:2rem;width:100%;justify-content:center">Get Started</a>
 </div>
 <div class="drawer-overlay" id="drawerOverlay"></div>
-
-<div class="prod-hero">
+<div class="page-hero" style="padding-bottom:0">
   <div class="wrap">
     <span class="label-tag gold">Hardware Solutions</span>
-    <h1 style="font-family:var(--f-display);font-size:clamp(3rem,7vw,7rem);line-height:.93;letter-spacing:.01em;text-transform:uppercase;color:var(--c-black);margin-top:.5rem;max-width:800px">Devices built for Africa.<br><em style="font-family:var(--f-serif);font-style:italic;text-transform:none;color:var(--c-gold)">Built for the world.</em></h1>
-    <p style="font-size:var(--t-body);color:var(--c-muted);max-width:560px;margin-top:1.2rem;line-height:1.8">Engineered for African infrastructure and climatic realities, meeting global performance standards — accessible through our Flexi-Pay ownership model.</p>
-    <nav class="prod-cat-nav">
+    <h1 class="page-hero-title">Devices built for Africa.<br><em>Built for the world.</em></h1>
+    <p class="page-hero-sub">Engineered for African infrastructure and climatic realities, meeting global performance standards — accessible through our Flexi-Pay ownership model.</p>
+    <nav class="prod-cat-nav" style="display:flex;margin-top:3rem;overflow-x:auto;border-bottom:1px solid var(--c-border)">
       <a href="#laptops" class="pnav-link active">Laptops</a>
       <a href="#smartphones" class="pnav-link">Smartphones</a>
       <a href="#tablets" class="pnav-link">Tablets</a>
@@ -80,162 +59,349 @@
     </nav>
   </div>
 </div>
-
+<style>
+.pnav-link{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:0.14em;text-transform:uppercase;color:var(--c-muted);padding:0.95rem 1.4rem;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;text-decoration:none;flex-shrink:0}
+.pnav-link:hover,.pnav-link.active{color:var(--c-black);border-bottom-color:var(--c-gold)}
+.prod-section{padding:clamp(4rem,7vw,7rem) 0;border-bottom:1px solid var(--c-border)}
+.prod-section:last-child{border-bottom:none}
+.prod-section-head{margin-bottom:3rem;display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
+.prod-section-label{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:0.2em;text-transform:uppercase;color:var(--c-gold);display:block;margin-bottom:0.4rem}
+.prod-section-title{font-family:var(--f-display);font-size:clamp(2.2rem,4.5vw,4rem);line-height:0.93;letter-spacing:0.005em;text-transform:uppercase;color:var(--c-black)}
+.prod-grid{display:grid;gap:1.5rem}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.prod-body{padding:1.6rem;display:flex;flex-direction:column;flex:1}
+.prod-cat{font-family:var(--f-mono);font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--c-gold);display:block;margin-bottom:0.5rem}
+.prod-name{font-family:var(--f-display);font-size:clamp(1.2rem,1.8vw,1.5rem);letter-spacing:0.01em;text-transform:uppercase;color:var(--c-black);line-height:1.05;margin-bottom:0.6rem}
+.prod-spec{font-size:0.85rem;color:var(--c-muted);line-height:1.65;margin-bottom:1.4rem;flex:1}
+@media(max-width:900px){.g3,.g2{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.g3,.g2{grid-template-columns:1fr}}
+</style>
 <div style="background:var(--c-white)"><div class="wrap">
-
-  <!-- LAPTOPS -->
-  <section class="prod-section" id="laptops">
-    <div class="prod-section-head">
-      <span class="prod-section-label">01</span>
-      <h2 class="prod-section-title">Slate Laptops</h2>
-    </div>
-    <div class="prod-grid g3 reveal">
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Professional</span><div class="prod-name">Slate Pro 15</div><p class="prod-spec">Intel Core i7 · 16GB RAM · 512GB SSD · 15.6" FHD · Dustproof Build</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Business</span><div class="prod-name">Slate Business 14</div><p class="prod-spec">Intel Core i5 · 8GB RAM · 256GB SSD · 14" FHD · Long Battery Life</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Student</span><div class="prod-name">Slate Student 13</div><p class="prod-spec">Intel Core i3 · 8GB RAM · 256GB SSD · 13.3" · Flexi-Pay Eligible</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SMARTPHONES -->
-  <section class="prod-section" id="smartphones">
-    <div class="prod-section-head">
-      <span class="prod-section-label">02</span>
-      <h2 class="prod-section-title">Slate Smartphones</h2>
-    </div>
-    <div class="prod-grid g3 reveal">
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Flagship</span><div class="prod-name">Slate X1 Pro</div><p class="prod-spec">5G · 12GB RAM · 256GB · AI Triple Camera · 6.7" AMOLED Display</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Mid-Range</span><div class="prod-name">Slate A5</div><p class="prod-spec">4G · 8GB RAM · 128GB · 48MP Camera · 5000mAh Battery</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Essential</span><div class="prod-name">Slate E3</div><p class="prod-spec">4G · 4GB RAM · 64GB · Dual SIM · 4500mAh · Rugged Build</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TABLETS -->
-  <section class="prod-section" id="tablets">
-    <div class="prod-section-head">
-      <span class="prod-section-label">03</span>
-      <h2 class="prod-section-title">Slate Tablets</h2>
-    </div>
-    <div class="prod-grid g3 reveal">
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Pro</span><div class="prod-name">Slate Tab Pro 11</div><p class="prod-spec">11" 2K Display · 8GB RAM · 256GB · 4G LTE · Stylus + Keyboard</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Student</span><div class="prod-name">Slate Tab S 10</div><p class="prod-spec">10.5" FHD · 6GB RAM · 128GB · 4G LTE · Stylus · Long Battery</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Kids</span><div class="prod-name">Slate Tab Junior</div><p class="prod-spec">8" HD · 4GB RAM · 64GB · Rugged Case · Parental Controls</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DESKTOPS -->
-  <section class="prod-section" id="desktops">
-    <div class="prod-section-head">
-      <span class="prod-section-label">04</span>
-      <h2 class="prod-section-title">Slate Desktops</h2>
-    </div>
-    <div class="prod-grid g2 reveal">
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">All-in-One</span><div class="prod-name">Slate AiO 24</div><p class="prod-spec">Intel Core i5 · 8GB RAM · 256GB SSD · 24" FHD Touch · Built-in UPS</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Tower</span><div class="prod-name">Slate Tower Pro</div><p class="prod-spec">Intel Core i7 · 16GB RAM · 1TB SSD · Discrete GPU · Enterprise Grade</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- UPS -->
-  <section class="prod-section" id="ups">
-    <div class="prod-section-head">
-      <span class="prod-section-label">05</span>
-      <h2 class="prod-section-title">UPS Systems</h2>
-    </div>
-    <div class="prod-grid g3 reveal">
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Home</span><div class="prod-name">Slate UPS 1KVA</div><p class="prod-spec">1000VA / 600W · Pure Sine Wave · Auto-Voltage Regulation</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Office</span><div class="prod-name">Slate UPS 2KVA</div><p class="prod-spec">2000VA / 1400W · LCD Panel · Smart Energy Management</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Enterprise</span><div class="prod-name">Slate UPS 5KVA</div><p class="prod-spec">5000VA / 3500W · Parallel Capability · Remote Management</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- POWER BANKS -->
-  <section class="prod-section" id="powerbanks">
-    <div class="prod-section-head">
-      <span class="prod-section-label">06</span>
-      <h2 class="prod-section-title">Power Banks</h2>
-    </div>
-    <div class="prod-grid g3 reveal">
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Pocket</span><div class="prod-name">Slate Charge 10</div><p class="prod-spec">10,000mAh · 22.5W Fast Charge · USB-C + USB-A · Slim Design</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Standard</span><div class="prod-name">Slate Charge 20</div><p class="prod-spec">20,000mAh · 65W PD · Laptop Compatible · 3 Output Ports</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-      <div class="prod-card">
-        <div class="prod-body"><span class="prod-cat">Heavy Duty</span><div class="prod-name">Slate Charge 40 Solar</div><p class="prod-spec">40,000mAh · Solar Recharge · 100W PD · Field-Grade Rugged</p><a href="contact.html" class="btn btn-outline" style="font-size:.64rem;padding:.65rem 1.2rem;align-self:flex-start">Enquire →</a></div>
-      </div>
-    </div>
-  </section>
-
+<section class="prod-section" id="laptops">
+  <div class="prod-section-head reveal"><div><span class="prod-section-label">01 / Range</span><h2 class="prod-section-title">Slate Laptops</h2></div></div>
+  <div class="prod-grid g3 reveal d1"><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="lpg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1A1918"/><stop offset="100%" stop-color="#0B1C33"/></linearGradient></defs>
+  <rect x="50" y="50" width="220" height="140" rx="6" fill="url(#lpg)"/>
+  <rect x="60" y="60" width="200" height="115" rx="2" fill="#0C0C0C"/>
+  <rect x="68" y="68" width="184" height="99" fill="#1F1D1A"/>
+  <rect x="78" y="78" width="60" height="6" fill="#BF8A2E"/>
+  <rect x="78" y="92" width="100" height="3" fill="#6A6661"/>
+  <rect x="78" y="100" width="80" height="3" fill="#6A6661"/>
+  <rect x="78" y="115" width="40" height="40" fill="#0B1C33"/>
+  <rect x="128" y="115" width="40" height="40" fill="#BF8A2E" opacity="0.4"/>
+  <rect x="178" y="115" width="40" height="40" fill="#0B1C33" opacity="0.6"/>
+  <path d="M 30 190 L 290 190 L 280 210 L 40 210 Z" fill="#1F1D1A"/>
+  <rect x="135" y="190" width="50" height="6" rx="3" fill="#0C0C0C"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Professional</span><div class="prod-name">Slate Pro 15</div><p class="prod-spec">Intel Core i7 · 16GB RAM · 512GB SSD · 15.6″ FHD · Dustproof Build</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="lpg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1A1918"/><stop offset="100%" stop-color="#0B1C33"/></linearGradient></defs>
+  <rect x="50" y="50" width="220" height="140" rx="6" fill="url(#lpg)"/>
+  <rect x="60" y="60" width="200" height="115" rx="2" fill="#0C0C0C"/>
+  <rect x="68" y="68" width="184" height="99" fill="#1F1D1A"/>
+  <rect x="78" y="78" width="60" height="6" fill="#BF8A2E"/>
+  <rect x="78" y="92" width="100" height="3" fill="#6A6661"/>
+  <rect x="78" y="100" width="80" height="3" fill="#6A6661"/>
+  <rect x="78" y="115" width="40" height="40" fill="#0B1C33"/>
+  <rect x="128" y="115" width="40" height="40" fill="#BF8A2E" opacity="0.4"/>
+  <rect x="178" y="115" width="40" height="40" fill="#0B1C33" opacity="0.6"/>
+  <path d="M 30 190 L 290 190 L 280 210 L 40 210 Z" fill="#1F1D1A"/>
+  <rect x="135" y="190" width="50" height="6" rx="3" fill="#0C0C0C"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Business</span><div class="prod-name">Slate Business 14</div><p class="prod-spec">Intel Core i5 · 8GB RAM · 256GB SSD · 14″ FHD · Long Battery Life</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="lpg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1A1918"/><stop offset="100%" stop-color="#0B1C33"/></linearGradient></defs>
+  <rect x="50" y="50" width="220" height="140" rx="6" fill="url(#lpg)"/>
+  <rect x="60" y="60" width="200" height="115" rx="2" fill="#0C0C0C"/>
+  <rect x="68" y="68" width="184" height="99" fill="#1F1D1A"/>
+  <rect x="78" y="78" width="60" height="6" fill="#BF8A2E"/>
+  <rect x="78" y="92" width="100" height="3" fill="#6A6661"/>
+  <rect x="78" y="100" width="80" height="3" fill="#6A6661"/>
+  <rect x="78" y="115" width="40" height="40" fill="#0B1C33"/>
+  <rect x="128" y="115" width="40" height="40" fill="#BF8A2E" opacity="0.4"/>
+  <rect x="178" y="115" width="40" height="40" fill="#0B1C33" opacity="0.6"/>
+  <path d="M 30 190 L 290 190 L 280 210 L 40 210 Z" fill="#1F1D1A"/>
+  <rect x="135" y="190" width="50" height="6" rx="3" fill="#0C0C0C"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Student</span><div class="prod-name">Slate Student 13</div><p class="prod-spec">Intel Core i3 · 8GB RAM · 256GB SSD · 13.3″ · Flexi-Pay Eligible</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+</section>
+<section class="prod-section" id="smartphones">
+  <div class="prod-section-head reveal"><div><span class="prod-section-label">02 / Range</span><h2 class="prod-section-title">Slate Smartphones</h2></div></div>
+  <div class="prod-grid g3 reveal d1"><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="phg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1F1D1A"/><stop offset="100%" stop-color="#0B1C33"/></linearGradient></defs>
+  <rect x="55" y="20" width="90" height="240" rx="14" fill="url(#phg)"/>
+  <rect x="60" y="28" width="80" height="224" rx="10" fill="#0C0C0C"/>
+  <rect x="65" y="35" width="70" height="210" rx="6" fill="#1F1D1A"/>
+  <rect x="72" y="48" width="56" height="6" fill="#BF8A2E"/>
+  <rect x="72" y="62" width="40" height="3" fill="#6A6661"/>
+  <rect x="72" y="80" width="56" height="40" fill="#0B1C33"/>
+  <circle cx="85" cy="100" r="6" fill="#BF8A2E"/>
+  <rect x="72" y="130" width="26" height="26" fill="#BF8A2E" opacity="0.5"/>
+  <rect x="102" y="130" width="26" height="26" fill="#0B1C33"/>
+  <rect x="72" y="162" width="26" height="26" fill="#0B1C33"/>
+  <rect x="102" y="162" width="26" height="26" fill="#BF8A2E" opacity="0.5"/>
+  <rect x="72" y="200" width="56" height="34" fill="#0B1C33" opacity="0.6"/>
+  <circle cx="100" cy="245" r="3" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Flagship</span><div class="prod-name">Slate X1 Pro</div><p class="prod-spec">5G · 12GB RAM · 256GB · AI Triple Camera · 6.7″ AMOLED Display</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="phg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1F1D1A"/><stop offset="100%" stop-color="#0B1C33"/></linearGradient></defs>
+  <rect x="55" y="20" width="90" height="240" rx="14" fill="url(#phg)"/>
+  <rect x="60" y="28" width="80" height="224" rx="10" fill="#0C0C0C"/>
+  <rect x="65" y="35" width="70" height="210" rx="6" fill="#1F1D1A"/>
+  <rect x="72" y="48" width="56" height="6" fill="#BF8A2E"/>
+  <rect x="72" y="62" width="40" height="3" fill="#6A6661"/>
+  <rect x="72" y="80" width="56" height="40" fill="#0B1C33"/>
+  <circle cx="85" cy="100" r="6" fill="#BF8A2E"/>
+  <rect x="72" y="130" width="26" height="26" fill="#BF8A2E" opacity="0.5"/>
+  <rect x="102" y="130" width="26" height="26" fill="#0B1C33"/>
+  <rect x="72" y="162" width="26" height="26" fill="#0B1C33"/>
+  <rect x="102" y="162" width="26" height="26" fill="#BF8A2E" opacity="0.5"/>
+  <rect x="72" y="200" width="56" height="34" fill="#0B1C33" opacity="0.6"/>
+  <circle cx="100" cy="245" r="3" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Mid-Range</span><div class="prod-name">Slate A5</div><p class="prod-spec">4G · 8GB RAM · 128GB · 48MP Camera · 5000mAh Battery</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs><linearGradient id="phg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1F1D1A"/><stop offset="100%" stop-color="#0B1C33"/></linearGradient></defs>
+  <rect x="55" y="20" width="90" height="240" rx="14" fill="url(#phg)"/>
+  <rect x="60" y="28" width="80" height="224" rx="10" fill="#0C0C0C"/>
+  <rect x="65" y="35" width="70" height="210" rx="6" fill="#1F1D1A"/>
+  <rect x="72" y="48" width="56" height="6" fill="#BF8A2E"/>
+  <rect x="72" y="62" width="40" height="3" fill="#6A6661"/>
+  <rect x="72" y="80" width="56" height="40" fill="#0B1C33"/>
+  <circle cx="85" cy="100" r="6" fill="#BF8A2E"/>
+  <rect x="72" y="130" width="26" height="26" fill="#BF8A2E" opacity="0.5"/>
+  <rect x="102" y="130" width="26" height="26" fill="#0B1C33"/>
+  <rect x="72" y="162" width="26" height="26" fill="#0B1C33"/>
+  <rect x="102" y="162" width="26" height="26" fill="#BF8A2E" opacity="0.5"/>
+  <rect x="72" y="200" width="56" height="34" fill="#0B1C33" opacity="0.6"/>
+  <circle cx="100" cy="245" r="3" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Essential</span><div class="prod-name">Slate E3</div><p class="prod-spec">4G · 4GB RAM · 64GB · Dual SIM · 4500mAh · Rugged Build</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+</section>
+<section class="prod-section" id="tablets">
+  <div class="prod-section-head reveal"><div><span class="prod-section-label">03 / Range</span><h2 class="prod-section-title">Slate Tablets</h2></div></div>
+  <div class="prod-grid g3 reveal d1"><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="30" y="20" width="220" height="180" rx="10" fill="#1F1D1A"/>
+  <rect x="40" y="30" width="200" height="160" rx="4" fill="#0C0C0C"/>
+  <rect x="48" y="38" width="184" height="144" fill="#1F1D1A"/>
+  <rect x="58" y="48" width="50" height="6" fill="#BF8A2E"/>
+  <rect x="58" y="62" width="80" height="3" fill="#6A6661"/>
+  <rect x="58" y="78" width="80" height="50" fill="#0B1C33"/>
+  <rect x="148" y="78" width="80" height="50" fill="#BF8A2E" opacity="0.4"/>
+  <rect x="58" y="138" width="80" height="36" fill="#0B1C33" opacity="0.6"/>
+  <rect x="148" y="138" width="80" height="36" fill="#1A1918"/>
+  <circle cx="244" cy="110" r="3" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Pro</span><div class="prod-name">Slate Tab Pro 11</div><p class="prod-spec">11″ 2K Display · 8GB RAM · 256GB · 4G LTE · Stylus + Keyboard</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="30" y="20" width="220" height="180" rx="10" fill="#1F1D1A"/>
+  <rect x="40" y="30" width="200" height="160" rx="4" fill="#0C0C0C"/>
+  <rect x="48" y="38" width="184" height="144" fill="#1F1D1A"/>
+  <rect x="58" y="48" width="50" height="6" fill="#BF8A2E"/>
+  <rect x="58" y="62" width="80" height="3" fill="#6A6661"/>
+  <rect x="58" y="78" width="80" height="50" fill="#0B1C33"/>
+  <rect x="148" y="78" width="80" height="50" fill="#BF8A2E" opacity="0.4"/>
+  <rect x="58" y="138" width="80" height="36" fill="#0B1C33" opacity="0.6"/>
+  <rect x="148" y="138" width="80" height="36" fill="#1A1918"/>
+  <circle cx="244" cy="110" r="3" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Student</span><div class="prod-name">Slate Tab S 10</div><p class="prod-spec">10.5″ FHD · 6GB RAM · 128GB · 4G LTE · Stylus · Long Battery</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="30" y="20" width="220" height="180" rx="10" fill="#1F1D1A"/>
+  <rect x="40" y="30" width="200" height="160" rx="4" fill="#0C0C0C"/>
+  <rect x="48" y="38" width="184" height="144" fill="#1F1D1A"/>
+  <rect x="58" y="48" width="50" height="6" fill="#BF8A2E"/>
+  <rect x="58" y="62" width="80" height="3" fill="#6A6661"/>
+  <rect x="58" y="78" width="80" height="50" fill="#0B1C33"/>
+  <rect x="148" y="78" width="80" height="50" fill="#BF8A2E" opacity="0.4"/>
+  <rect x="58" y="138" width="80" height="36" fill="#0B1C33" opacity="0.6"/>
+  <rect x="148" y="138" width="80" height="36" fill="#1A1918"/>
+  <circle cx="244" cy="110" r="3" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Kids</span><div class="prod-name">Slate Tab Junior</div><p class="prod-spec">8″ HD · 4GB RAM · 64GB · Rugged Case · Parental Controls</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+</section>
+<section class="prod-section" id="desktops">
+  <div class="prod-section-head reveal"><div><span class="prod-section-label">04 / Range</span><h2 class="prod-section-title">Slate Desktops</h2></div></div>
+  <div class="prod-grid g2 reveal d1"><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="40" y="30" width="240" height="150" rx="6" fill="#1F1D1A"/>
+  <rect x="50" y="40" width="220" height="125" rx="2" fill="#0C0C0C"/>
+  <rect x="58" y="48" width="204" height="109" fill="#1F1D1A"/>
+  <rect x="68" y="58" width="60" height="6" fill="#BF8A2E"/>
+  <rect x="68" y="72" width="100" height="3" fill="#6A6661"/>
+  <rect x="68" y="86" width="50" height="50" fill="#0B1C33"/>
+  <rect x="128" y="86" width="50" height="50" fill="#BF8A2E" opacity="0.4"/>
+  <rect x="188" y="86" width="64" height="50" fill="#0B1C33" opacity="0.6"/>
+  <rect x="68" y="142" width="184" height="10" fill="#1A1918"/>
+  <rect x="140" y="180" width="40" height="20" fill="#1F1D1A"/>
+  <rect x="100" y="200" width="120" height="8" rx="2" fill="#1F1D1A"/>
+</svg></div><div class="prod-body"><span class="prod-cat">All-in-One</span><div class="prod-name">Slate AiO 24</div><p class="prod-spec">Intel Core i5 · 8GB RAM · 256GB SSD · 24″ FHD Touch · Built-in UPS</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="40" y="30" width="240" height="150" rx="6" fill="#1F1D1A"/>
+  <rect x="50" y="40" width="220" height="125" rx="2" fill="#0C0C0C"/>
+  <rect x="58" y="48" width="204" height="109" fill="#1F1D1A"/>
+  <rect x="68" y="58" width="60" height="6" fill="#BF8A2E"/>
+  <rect x="68" y="72" width="100" height="3" fill="#6A6661"/>
+  <rect x="68" y="86" width="50" height="50" fill="#0B1C33"/>
+  <rect x="128" y="86" width="50" height="50" fill="#BF8A2E" opacity="0.4"/>
+  <rect x="188" y="86" width="64" height="50" fill="#0B1C33" opacity="0.6"/>
+  <rect x="68" y="142" width="184" height="10" fill="#1A1918"/>
+  <rect x="140" y="180" width="40" height="20" fill="#1F1D1A"/>
+  <rect x="100" y="200" width="120" height="8" rx="2" fill="#1F1D1A"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Tower</span><div class="prod-name">Slate Tower Pro</div><p class="prod-spec">Intel Core i7 · 16GB RAM · 1TB SSD · Discrete GPU · Enterprise Grade</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+</section>
+<section class="prod-section" id="ups">
+  <div class="prod-section-head reveal"><div><span class="prod-section-label">05 / Range</span><h2 class="prod-section-title">UPS Systems</h2></div></div>
+  <div class="prod-grid g3 reveal d1"><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="50" y="30" width="140" height="220" rx="6" fill="#1F1D1A"/>
+  <rect x="58" y="38" width="124" height="204" fill="#0C0C0C"/>
+  <rect x="68" y="50" width="104" height="40" fill="#1F1D1A"/>
+  <text x="120" y="76" text-anchor="middle" fill="#BF8A2E" font-family="monospace" font-size="14" font-weight="bold">SLATE</text>
+  <rect x="68" y="100" width="104" height="60" fill="#0B1C33"/>
+  <text x="120" y="125" text-anchor="middle" fill="#BF8A2E" font-family="monospace" font-size="11">ONLINE</text>
+  <rect x="80" y="135" width="80" height="6" fill="#BF8A2E"/>
+  <rect x="80" y="145" width="60" height="3" fill="#9B6E20"/>
+  <circle cx="90" cy="180" r="6" fill="#BF8A2E"/>
+  <circle cx="120" cy="180" r="6" fill="#6A6661"/>
+  <circle cx="150" cy="180" r="6" fill="#6A6661"/>
+  <rect x="68" y="200" width="104" height="32" fill="#1A1918"/>
+  <rect x="78" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+  <rect x="108" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+  <rect x="138" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Home</span><div class="prod-name">Slate UPS 1KVA</div><p class="prod-spec">1000VA / 600W · Pure Sine Wave · Auto-Voltage Regulation</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="50" y="30" width="140" height="220" rx="6" fill="#1F1D1A"/>
+  <rect x="58" y="38" width="124" height="204" fill="#0C0C0C"/>
+  <rect x="68" y="50" width="104" height="40" fill="#1F1D1A"/>
+  <text x="120" y="76" text-anchor="middle" fill="#BF8A2E" font-family="monospace" font-size="14" font-weight="bold">SLATE</text>
+  <rect x="68" y="100" width="104" height="60" fill="#0B1C33"/>
+  <text x="120" y="125" text-anchor="middle" fill="#BF8A2E" font-family="monospace" font-size="11">ONLINE</text>
+  <rect x="80" y="135" width="80" height="6" fill="#BF8A2E"/>
+  <rect x="80" y="145" width="60" height="3" fill="#9B6E20"/>
+  <circle cx="90" cy="180" r="6" fill="#BF8A2E"/>
+  <circle cx="120" cy="180" r="6" fill="#6A6661"/>
+  <circle cx="150" cy="180" r="6" fill="#6A6661"/>
+  <rect x="68" y="200" width="104" height="32" fill="#1A1918"/>
+  <rect x="78" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+  <rect x="108" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+  <rect x="138" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Office</span><div class="prod-name">Slate UPS 2KVA</div><p class="prod-spec">2000VA / 1400W · LCD Panel · Smart Energy Management</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="50" y="30" width="140" height="220" rx="6" fill="#1F1D1A"/>
+  <rect x="58" y="38" width="124" height="204" fill="#0C0C0C"/>
+  <rect x="68" y="50" width="104" height="40" fill="#1F1D1A"/>
+  <text x="120" y="76" text-anchor="middle" fill="#BF8A2E" font-family="monospace" font-size="14" font-weight="bold">SLATE</text>
+  <rect x="68" y="100" width="104" height="60" fill="#0B1C33"/>
+  <text x="120" y="125" text-anchor="middle" fill="#BF8A2E" font-family="monospace" font-size="11">ONLINE</text>
+  <rect x="80" y="135" width="80" height="6" fill="#BF8A2E"/>
+  <rect x="80" y="145" width="60" height="3" fill="#9B6E20"/>
+  <circle cx="90" cy="180" r="6" fill="#BF8A2E"/>
+  <circle cx="120" cy="180" r="6" fill="#6A6661"/>
+  <circle cx="150" cy="180" r="6" fill="#6A6661"/>
+  <rect x="68" y="200" width="104" height="32" fill="#1A1918"/>
+  <rect x="78" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+  <rect x="108" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+  <rect x="138" y="210" width="20" height="14" rx="2" fill="#0B1C33"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Enterprise</span><div class="prod-name">Slate UPS 5KVA</div><p class="prod-spec">5000VA / 3500W · Parallel Capability · Remote Management</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+</section>
+<section class="prod-section" id="powerbanks">
+  <div class="prod-section-head reveal"><div><span class="prod-section-label">06 / Range</span><h2 class="prod-section-title">Power Banks</h2></div></div>
+  <div class="prod-grid g3 reveal d1"><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="30" y="60" width="220" height="100" rx="14" fill="#1F1D1A"/>
+  <rect x="40" y="68" width="200" height="84" rx="8" fill="#0C0C0C"/>
+  <rect x="55" y="80" width="60" height="60" fill="#1F1D1A"/>
+  <rect x="65" y="95" width="40" height="6" fill="#BF8A2E"/>
+  <rect x="65" y="108" width="30" height="3" fill="#6A6661"/>
+  <rect x="65" y="118" width="20" height="3" fill="#6A6661"/>
+  <rect x="135" y="98" width="80" height="24" fill="#0B1C33"/>
+  <rect x="145" y="106" width="60" height="8" fill="#BF8A2E"/>
+  <circle cx="225" cy="110" r="6" fill="#BF8A2E"/>
+  <rect x="120" y="138" width="6" height="8" fill="#6A6661"/>
+  <rect x="135" y="138" width="6" height="8" fill="#6A6661"/>
+  <rect x="150" y="138" width="6" height="8" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Pocket</span><div class="prod-name">Slate Charge 10</div><p class="prod-spec">10,000mAh · 22.5W Fast Charge · USB-C + USB-A · Slim Design</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="30" y="60" width="220" height="100" rx="14" fill="#1F1D1A"/>
+  <rect x="40" y="68" width="200" height="84" rx="8" fill="#0C0C0C"/>
+  <rect x="55" y="80" width="60" height="60" fill="#1F1D1A"/>
+  <rect x="65" y="95" width="40" height="6" fill="#BF8A2E"/>
+  <rect x="65" y="108" width="30" height="3" fill="#6A6661"/>
+  <rect x="65" y="118" width="20" height="3" fill="#6A6661"/>
+  <rect x="135" y="98" width="80" height="24" fill="#0B1C33"/>
+  <rect x="145" y="106" width="60" height="8" fill="#BF8A2E"/>
+  <circle cx="225" cy="110" r="6" fill="#BF8A2E"/>
+  <rect x="120" y="138" width="6" height="8" fill="#6A6661"/>
+  <rect x="135" y="138" width="6" height="8" fill="#6A6661"/>
+  <rect x="150" y="138" width="6" height="8" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Standard</span><div class="prod-name">Slate Charge 20</div><p class="prod-spec">20,000mAh · 65W PD · Laptop Compatible · 3 Output Ports</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div><div class="prod-card-v2 reveal"><div class="prod-img-wrap"><svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="30" y="60" width="220" height="100" rx="14" fill="#1F1D1A"/>
+  <rect x="40" y="68" width="200" height="84" rx="8" fill="#0C0C0C"/>
+  <rect x="55" y="80" width="60" height="60" fill="#1F1D1A"/>
+  <rect x="65" y="95" width="40" height="6" fill="#BF8A2E"/>
+  <rect x="65" y="108" width="30" height="3" fill="#6A6661"/>
+  <rect x="65" y="118" width="20" height="3" fill="#6A6661"/>
+  <rect x="135" y="98" width="80" height="24" fill="#0B1C33"/>
+  <rect x="145" y="106" width="60" height="8" fill="#BF8A2E"/>
+  <circle cx="225" cy="110" r="6" fill="#BF8A2E"/>
+  <rect x="120" y="138" width="6" height="8" fill="#6A6661"/>
+  <rect x="135" y="138" width="6" height="8" fill="#6A6661"/>
+  <rect x="150" y="138" width="6" height="8" fill="#6A6661"/>
+</svg></div><div class="prod-body"><span class="prod-cat">Heavy Duty</span><div class="prod-name">Slate Charge 40 Solar</div><p class="prod-spec">40,000mAh · Solar Recharge · 100W PD · Field-Grade Rugged</p><a href="contact.html" class="btn btn-outline" style="font-size:0.66rem;padding:0.7rem 1.2rem;align-self:flex-start">Enquire <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></div></div>
+</section>
 </div></div>
-
-<!-- CTA -->
 <section class="cta-band">
   <div class="wrap">
     <div class="cta-band-inner">
       <div class="reveal">
-        <span class="label-tag white">Ready to order?</span>
-        <h2 class="cta-band-title" style="margin-top:.5rem">Order in bulk.<br><em>Pay in instalments.</em></h2>
-        <p class="cta-band-sub">Individual, bulk, or SDOI — we have a solution for you.</p>
+        <span class="label-tag white">Ready to Begin?</span>
+        <h2 class="cta-band-title" style="margin-top:0.6rem">Let's build something<br><em>remarkable together.</em></h2>
+        <p class="cta-band-sub">Talk to our team about your project — no obligation, no jargon. We respond within one business day.</p>
       </div>
       <div class="cta-band-btns reveal d2">
         <a href="contact.html" class="btn btn-gold">Get in Touch <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="service-hardware.html" class="btn btn-outline-white">Flexi-Pay Info</a>
+        <a href="services.html" class="btn btn-outline-white">View Services</a>
       </div>
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
       <div>
         <a href="index.html" class="footer-brand-logo">
-          <svg class="footer-brand-mark" viewBox="0 0 60 68" fill="none"><rect x="12" y="2" width="46" height="12" fill="rgba(255,255,255,.6)"/><polygon points="12,2 20,2 12,10" fill="#0C0C0C"/><rect x="2" y="18" width="46" height="12" fill="#BF8A2E"/><polygon points="48,18 56,18 48,26" fill="#0C0C0C"/><rect x="12" y="34" width="46" height="12" fill="#BF8A2E"/><polygon points="12,34 20,34 12,42" fill="#0C0C0C"/><rect x="2" y="50" width="46" height="12" fill="rgba(255,255,255,.6)"/><polygon points="48,50 56,50 48,58" fill="#0C0C0C"/></svg>
+          <svg class="footer-brand-mark" viewBox="0 0 60 68" fill="none">
+  <rect x="12" y="2" width="46" height="12" fill="rgba(255,255,255,.6)"/><polygon points="12,2 20,2 12,10" fill="#1F1D1A"/>
+  <rect x="2" y="18" width="46" height="12" fill="#BF8A2E"/><polygon points="48,18 56,18 48,26" fill="#1F1D1A"/>
+  <rect x="12" y="34" width="46" height="12" fill="#BF8A2E"/><polygon points="12,34 20,34 12,42" fill="#1F1D1A"/>
+  <rect x="2" y="50" width="46" height="12" fill="rgba(255,255,255,.6)"/><polygon points="48,50 56,50 48,58" fill="#1F1D1A"/>
+</svg>
           <span class="footer-brand-name">SLATE<span class="dot">.</span></span>
         </a>
         <p class="footer-desc">Software development, technology solutions, and digital transformation. AI strategy, e-learning, custom software, and intelligent hardware for Africa and beyond.</p>
         <p class="footer-reg">Slate Technologies Limited<br>Registered in Nigeria &amp; United Kingdom</p>
       </div>
-      <div class="footer-col"><span class="footer-col-title">Products</span><ul><li><a href="#laptops">Slate Laptops</a></li><li><a href="#smartphones">Smartphones</a></li><li><a href="#tablets">Tablets</a></li><li><a href="#desktops">Desktops</a></li><li><a href="#ups">UPS Systems</a></li><li><a href="#powerbanks">Power Banks</a></li></ul></div>
-      <div class="footer-col"><span class="footer-col-title">Services</span><ul><li><a href="service-software.html">Custom Software</a></li><li><a href="service-transformation.html">Digital Transformation</a></li><li><a href="service-ai.html">AI Strategy</a></li><li><a href="service-elearning.html">E-Learning</a></li><li><a href="service-consulting.html">Consulting</a></li><li><a href="service-hardware.html">Buy Now, Pay Later</a></li><li></li></ul></div>
-      <div class="footer-col"><span class="footer-col-title">Company</span><ul><li><a href="index.html#about-stmt">About Slate</a></li><li><a href="index.html#mission">Mission &amp; Vision</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://slateworld.io" target="_blank">slateworld.io ↗</a></li></ul></div>
+      <div class="footer-col">
+        <span class="footer-col-title">Products</span>
+        <ul>
+          <li><a href="products.html#laptops">Slate Laptops</a></li>
+          <li><a href="products.html#smartphones">Smartphones</a></li>
+          <li><a href="products.html#tablets">Tablets</a></li>
+          <li><a href="products.html#desktops">Desktops</a></li>
+          <li><a href="products.html#ups">UPS Systems</a></li>
+          <li><a href="products.html#powerbanks">Power Banks</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Services</span>
+        <ul>
+          <li><a href="service-software.html">Custom Software</a></li>
+          <li><a href="service-transformation.html">Digital Transformation</a></li>
+          <li><a href="service-ai.html">AI Strategy</a></li>
+          <li><a href="service-elearning.html">E-Learning</a></li>
+          <li><a href="service-consulting.html">Consulting</a></li>
+          <li><a href="service-hardware.html">Hardware &amp; Flexi-Pay</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Company</span>
+        <ul>
+          <li><a href="index.html#about-stmt">About Slate</a></li>
+          <li><a href="index.html#mission">Mission &amp; Vision</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="https://slateworld.io" target="_blank">slateworld.io ↗</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 Slate Technologies Limited. All rights reserved.</p>
-      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Warranty</a></div>
+      <div class="footer-legal">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Warranty</a>
+      </div>
     </div>
   </div>
 </footer>
-
 <script>
 const nav=document.getElementById('siteNav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
@@ -246,11 +412,8 @@ const open=o=>{tog.classList.toggle('open',o);drw.classList.toggle('open',o);ovl
 tog.addEventListener('click',()=>open(!drw.classList.contains('open')));
 ovl.addEventListener('click',()=>open(false));
 drw.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>open(false)));
-// Active nav on scroll
-const sections=document.querySelectorAll('.prod-section');
-const links=document.querySelectorAll('.pnav-link');
-new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=document.querySelector('.pnav-link[href="#'+e.target.id+'"]');if(a)a.classList.add('active')}})},{threshold:.4}).observe;
-sections.forEach(s=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=document.querySelector('.pnav-link[href="#'+e.target.id+'"]');if(a)a.classList.add('active')}})},{threshold:.35}).observe(s));
+const sections=document.querySelectorAll('.prod-section'),links=document.querySelectorAll('.pnav-link');
+sections.forEach(s=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=document.querySelector('.pnav-link[href="#'+e.target.id+'"]');if(a)a.classList.add('active')}})},{threshold:.35,rootMargin:'-100px 0px -50% 0px'}).observe(s));
 </script>
 </body>
 </html>
