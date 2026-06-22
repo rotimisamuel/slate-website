@@ -71,9 +71,10 @@ export default function Quote() {
     text.split(' ').map((word, i) => (
       <span key={i} className="quote-word" style={{
         display: 'inline-block',
+        marginRight: '0.28em',
         color: highlight ? 'var(--color-primary)' : undefined,
       }}>
-        {word}{' '}
+        {word}
       </span>
     ))
 
