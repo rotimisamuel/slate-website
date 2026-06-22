@@ -110,6 +110,7 @@ function ServiceBlock({ s, index }: { s: typeof services[0]; index: number }) {
   return (
     <div
       ref={blockRef}
+      className="rsp-stack"
       style={{
         display: 'grid',
         gridTemplateColumns: '0.85fr 1.5fr',
@@ -120,7 +121,7 @@ function ServiceBlock({ s, index }: { s: typeof services[0]; index: number }) {
       }}
     >
       {/* Sticky sidebar */}
-      <div ref={sidebarRef} style={{ position: 'sticky', top: 108 }}>
+      <div ref={sidebarRef} className="rsp-unstick" style={{ position: 'sticky', top: 108 }}>
         <div style={{ fontSize: 56, fontWeight: 700, lineHeight: 1, color: 'var(--color-primary)', letterSpacing: '-0.03em', marginBottom: 20 }}>
           {s.num}
         </div>
@@ -148,7 +149,7 @@ function ServiceBlock({ s, index }: { s: typeof services[0]; index: number }) {
 
       {/* Cards + extras */}
       <div ref={contentRef}>
-        <div style={{
+        <div className="rsp-cols-1-xs" style={{
           display: 'grid', gridTemplateColumns: '1fr 1fr',
           gap: 1, background: 'var(--color-hairline)', border: '1px solid var(--color-hairline)',
         }}>
@@ -211,7 +212,7 @@ export default function ServicesPage() {
 
       {/* Hero */}
       <section ref={heroRef} style={{ background: '#000', color: '#fff' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px' }}>
+        <div className="rsp-pad" style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px' }}>
           <div className="hero-el" style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-primary)', marginBottom: 20 }}>
             What we offer
           </div>
@@ -225,7 +226,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Service blocks */}
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '24px 32px 32px' }}>
+      <div className="rsp-pad-x" style={{ maxWidth: 1280, margin: '0 auto', padding: '24px 32px 32px' }}>
         {services.map((s, i) => (
           <ServiceBlock key={s.num} s={s} index={i} />
         ))}
