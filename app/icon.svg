@@ -1,0 +1,16 @@
+<svg viewBox="0 0 60 64" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Black background -->
+  <rect width="60" height="64" fill="#000000"/>
+  <!-- Bar 1: white -->
+  <rect x="13" y="2" width="45" height="11" fill="#ffffff"/>
+  <polygon points="13,2 22,2 13,11" fill="#000000"/>
+  <!-- Bar 2: green -->
+  <rect x="2" y="19" width="45" height="11" fill="#76b900"/>
+  <polygon points="47,19 56,19 47,28" fill="#000000"/>
+  <!-- Bar 3: green -->
+  <rect x="13" y="36" width="45" height="11" fill="#76b900"/>
+  <polygon points="13,36 22,36 13,45" fill="#000000"/>
+  <!-- Bar 4: white -->
+  <rect x="2" y="53" width="45" height="11" fill="#ffffff"/>
+  <polygon points="47,53 56,53 47,62" fill="#000000"/>
+</svg>
