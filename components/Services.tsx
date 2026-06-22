@@ -70,6 +70,7 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
+      className="rsp-pad"
       style={{
         maxWidth: 1280,
         margin: '0 auto',
@@ -77,14 +78,14 @@ export default function Services() {
         fontFamily: 'var(--font-brand)',
       }}
     >
-      <div style={{
+      <div className="rsp-stack" style={{
         display: 'grid',
         gridTemplateColumns: '0.85fr 1.5fr',
         gap: 64,
         alignItems: 'start',
       }}>
         {/* Sticky sidebar */}
-        <div ref={headingRef} style={{ position: 'sticky', top: 110 }}>
+        <div className="rsp-unstick" ref={headingRef} style={{ position: 'sticky', top: 110 }}>
           <div style={{
             fontSize: 14,
             fontWeight: 700,
@@ -145,6 +146,7 @@ export default function Services() {
         {/* Service grid */}
         <div
           ref={gridRef}
+          className="rsp-cols-1-xs"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',

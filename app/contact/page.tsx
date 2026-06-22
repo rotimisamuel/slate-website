@@ -50,7 +50,7 @@ export default function ContactPage() {
 
       {/* Hero */}
       <section ref={heroRef} style={{ background: '#000', color: '#fff' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px' }}>
+        <div className="rsp-pad" style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px' }}>
           <div className="hero-el" style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-primary)', marginBottom: 20 }}>
             Get in touch
           </div>
@@ -64,11 +64,11 @@ export default function ContactPage() {
       </section>
 
       {/* Offices */}
-      <section ref={officesRef} style={{ maxWidth: 1280, margin: '0 auto', padding: '80px 32px' }}>
+      <section ref={officesRef} className="rsp-pad" style={{ maxWidth: 1280, margin: '0 auto', padding: '80px 32px' }}>
         <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-primary)', marginBottom: 28 }}>
           Global offices
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+        <div className="rsp-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
           {offices.map(o => (
             <div
               key={o.code}
@@ -111,8 +111,8 @@ export default function ContactPage() {
 
       {/* Form */}
       <section style={{ background: 'var(--color-surface-soft)', borderTop: '1px solid var(--color-hairline)', borderBottom: '1px solid var(--color-hairline)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px' }}>
-          <div ref={formRef} style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 64, alignItems: 'start' }}>
+        <div className="rsp-pad" style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px' }}>
+          <div ref={formRef} className="rsp-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 64, alignItems: 'start' }}>
             {/* Left copy */}
             <div>
               <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-primary)', marginBottom: 16 }}>
@@ -141,7 +141,7 @@ export default function ContactPage() {
               onSubmit={e => { e.preventDefault(); setSent(true) }}
               style={{ background: '#fff', padding: 36, border: '1px solid var(--color-hairline)', borderRadius: 2 }}
             >
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              <div className="rsp-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                 {[{ label: 'Name', type: 'text', required: true }, { label: 'Organisation', type: 'text', required: false }].map(f => (
                   <div key={f.label}>
                     <label style={{ display: 'block', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-mute)', marginBottom: 8 }}>{f.label}</label>

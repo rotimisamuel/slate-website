@@ -306,6 +306,7 @@ export default function Partnership() {
     <section
       id="partnership"
       ref={sectionRef}
+      className="rsp-pad-x"
       style={{
         maxWidth: 1280,
         margin: '0 auto',
@@ -316,6 +317,7 @@ export default function Partnership() {
       {/* Header */}
       <div
         ref={headerRef}
+        className="rsp-stack"
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
@@ -356,7 +358,7 @@ export default function Partnership() {
       </div>
 
       {/* Row 1 */}
-      <div style={{
+      <div className="rsp-stack" style={{
         display: 'grid',
         gridTemplateColumns: '0.9fr 1.1fr',
         gap: 48,
@@ -422,7 +424,7 @@ export default function Partnership() {
       </div>
 
       {/* Row 2 */}
-      <div style={{
+      <div className="rsp-stack" style={{
         display: 'grid',
         gridTemplateColumns: '1.1fr 0.9fr',
         gap: 48,

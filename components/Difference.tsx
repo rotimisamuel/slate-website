@@ -211,6 +211,7 @@ export default function Difference() {
     <section
       id="difference"
       ref={sectionRef}
+      className="rsp-pad"
       style={{
         background: '#000',
         color: '#fff',
@@ -250,7 +251,7 @@ export default function Difference() {
           </p>
         </div>
 
-        <div style={{
+        <div className="rsp-stack" style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: 48,

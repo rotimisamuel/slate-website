@@ -174,3 +174,40 @@ a { color: inherit; }
   white-space: nowrap;
   border-width: 0;
 }
+
+/* ============================================================
+   RESPONSIVE — mobile-first breakpoints
+   ============================================================ */
+
+/* Desktop nav / mobile toggle defaults */
+.nav-mobile-btn  { display: none; }
+.nav-mobile-menu { display: none; flex-direction: column; }
+.nav-mobile-menu.open { display: flex; }
+
+@media (max-width: 768px) {
+  /* Nav */
+  .nav-desktop    { display: none !important; }
+  .nav-mobile-btn { display: flex !important; }
+
+  /* Grid utilities */
+  .rsp-stack    { grid-template-columns: 1fr !important; }
+  .rsp-cols-2   { grid-template-columns: 1fr 1fr !important; }
+  .rsp-unstick  { position: static !important; }
+
+  /* Section padding reduction */
+  .rsp-pad  { padding: 56px 20px !important; }
+  .rsp-pad-x { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* Footer 2-col on tablet/mobile */
+  .footer-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* Products col override */
+  .rsp-product-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+@media (max-width: 480px) {
+  /* Single col on small phones */
+  .rsp-cols-1-xs    { grid-template-columns: 1fr !important; }
+  .footer-grid      { grid-template-columns: 1fr !important; }
+  .rsp-product-grid { grid-template-columns: 1fr !important; }
+}

@@ -82,7 +82,7 @@ export default function FAQ() {
         fontFamily: 'var(--font-brand)',
       }}
     >
-      <div style={{
+      <div className="rsp-stack" style={{
         display: 'grid',
         gridTemplateColumns: '0.8fr 1.4fr',
         gap: 64,

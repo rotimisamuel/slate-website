@@ -80,9 +80,10 @@ export default function Footer() {
       ref={footerRef}
       style={{ background: '#000', color: '#fff', overflow: 'hidden', fontFamily: "'Inter', Arial, sans-serif" }}
     >
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '80px 32px 0' }}>
+      <div className="rsp-pad-x" style={{ maxWidth: 1280, margin: '0 auto', padding: '80px 32px 0' }}>
         <div
           ref={gridRef}
+          className="footer-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1.6fr 1fr 1fr 1fr',

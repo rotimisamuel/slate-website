@@ -83,7 +83,7 @@ function ProductRange({ r }: { r: typeof ranges[0] }) {
           {r.title}
         </h2>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: r.cols, gap: 24 }}>
+      <div className="rsp-product-grid" style={{ display: 'grid', gridTemplateColumns: r.cols, gap: 24 }}>
         {r.products.map((p, i) => (
           <div
             key={i}
@@ -174,7 +174,7 @@ export default function ProductsPage() {
 
       {/* Hero */}
       <section ref={heroRef} style={{ background: '#000', color: '#fff' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px 0' }}>
+        <div className="rsp-pad-x" style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px 0' }}>
           <div className="hero-el" style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-primary)', marginBottom: 20 }}>
             Hardware solutions
           </div>
@@ -211,7 +211,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Product ranges */}
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 32px 0' }}>
+      <div className="rsp-pad-x" style={{ maxWidth: 1280, margin: '0 auto', padding: '32px 32px 0' }}>
         {ranges.map(r => <ProductRange key={r.id} r={r} />)}
       </div>
 

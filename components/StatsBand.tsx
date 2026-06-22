@@ -65,6 +65,7 @@ export default function StatsBand() {
     >
       <div
         ref={cardsRef}
+        className="rsp-cols-2"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',

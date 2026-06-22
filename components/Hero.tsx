@@ -202,7 +202,7 @@ export default function Hero() {
       }} />
 
       {/* Content */}
-      <div style={{
+      <div className="rsp-pad-x" style={{
         position: 'relative',
         maxWidth: 1280,
         margin: '0 auto',
@@ -242,7 +242,7 @@ export default function Hero() {
         </div>
 
         {/* Two-column layout */}
-        <div style={{
+        <div className="rsp-stack" style={{
           display: 'grid',
           gridTemplateColumns: '1.5fr 1fr',
           gap: 48,

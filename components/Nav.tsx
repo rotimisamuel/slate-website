@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -29,14 +29,13 @@ const links = [
 
 export default function Nav({ active = 'home' }: { active?: string }) {
   const navRef = useRef<HTMLElement>(null)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Translate-only entrance — guard null for SSR / fast navigation
       if (navRef.current) {
         gsap.from(navRef.current, { y: -20, duration: 0.5, ease: 'power2.out', clearProps: 'transform' })
       }
-
       ScrollTrigger.create({
         start: 'top -60',
         onUpdate: (self) => {
@@ -50,9 +49,11 @@ export default function Nav({ active = 'home' }: { active?: string }) {
         },
       })
     }, navRef)
-
     return () => ctx.revert()
   }, [])
+
+  // Close mobile menu on route change
+  useEffect(() => { setMenuOpen(false) }, [active])
 
   return (
     <header
@@ -70,12 +71,13 @@ export default function Nav({ active = 'home' }: { active?: string }) {
       <nav style={{
         maxWidth: 1280,
         margin: '0 auto',
-        padding: '18px 32px',
+        padding: '18px 24px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         gap: 24,
       }}>
+        {/* Logo */}
         <Link
           href="/"
           style={{
@@ -94,7 +96,8 @@ export default function Nav({ active = 'home' }: { active?: string }) {
           Slate<span style={{ color: '#76b900' }}>.</span>
         </Link>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+        {/* Desktop links */}
+        <div className="nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
           {links.map(({ href, label, key }) => (
             <Link
               key={key}
@@ -135,7 +138,99 @@ export default function Nav({ active = 'home' }: { active?: string }) {
             Get Started <span aria-hidden="true">→</span>
           </Link>
         </div>
+
+        {/* Hamburger button — mobile only */}
+        <button
+          className="nav-mobile-btn"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 40,
+            height: 40,
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+            flexShrink: 0,
+          }}
+        >
+          <span style={{ display: 'block', position: 'relative', width: 22, height: 14 }}>
+            <span style={{
+              display: 'block', position: 'absolute', left: 0, width: '100%', height: 2,
+              background: '#fff', borderRadius: 1,
+              top: menuOpen ? '50%' : 0,
+              transform: menuOpen ? 'translateY(-50%) rotate(45deg)' : 'none',
+              transition: 'top 0.2s, transform 0.2s',
+            }} />
+            <span style={{
+              display: 'block', position: 'absolute', left: 0, width: '100%', height: 2,
+              background: '#fff', borderRadius: 1,
+              top: '50%', transform: 'translateY(-50%)',
+              opacity: menuOpen ? 0 : 1,
+              transition: 'opacity 0.15s',
+            }} />
+            <span style={{
+              display: 'block', position: 'absolute', left: 0, width: '100%', height: 2,
+              background: '#fff', borderRadius: 1,
+              bottom: menuOpen ? '50%' : 0,
+              transform: menuOpen ? 'translateY(50%) rotate(-45deg)' : 'none',
+              transition: 'bottom 0.2s, transform 0.2s',
+            }} />
+          </span>
+        </button>
       </nav>
+
+      {/* Mobile dropdown menu */}
+      <div
+        className={`nav-mobile-menu${menuOpen ? ' open' : ''}`}
+        style={{
+          background: '#000',
+          borderTop: '1px solid #5e5e5e',
+          padding: '0 24px 24px',
+          gap: 0,
+        }}
+      >
+        {links.map(({ href, label, key }) => (
+          <Link
+            key={key}
+            href={href}
+            onClick={() => setMenuOpen(false)}
+            style={{
+              display: 'block',
+              padding: '16px 0',
+              borderBottom: '1px solid #222',
+              color: active === key ? '#76b900' : 'rgba(255,255,255,0.85)',
+              textDecoration: 'none',
+              fontSize: 17,
+              fontWeight: 700,
+            }}
+          >
+            {label}
+          </Link>
+        ))}
+        <Link
+          href="/contact"
+          onClick={() => setMenuOpen(false)}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 8,
+            marginTop: 20,
+            height: 46,
+            padding: '0 24px',
+            background: '#76b900',
+            color: '#000',
+            fontWeight: 700,
+            fontSize: 15,
+            textDecoration: 'none',
+            borderRadius: 2,
+          }}
+        >
+          Get Started →
+        </Link>
+      </div>
     </header>
   )
 }

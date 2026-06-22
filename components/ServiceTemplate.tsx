@@ -97,11 +97,11 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
       </section>
 
       {/* ── BUILD SECTION ── */}
-      <section ref={buildRef} style={{ maxWidth: 1280, margin: '0 auto', padding: '96px 32px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 56, alignItems: 'start' }}>
+      <section ref={buildRef} className="rsp-pad" style={{ maxWidth: 1280, margin: '0 auto', padding: '96px 32px' }}>
+        <div className="rsp-stack" style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 56, alignItems: 'start' }}>
 
           {/* Sticky sidebar */}
-          <div style={{ position: 'sticky', top: 108 }}>
+          <div className="rsp-unstick" style={{ position: 'sticky', top: 108 }}>
             <h2 style={{ margin: '0 0 20px', fontSize: 'clamp(30px, 3.4vw, 40px)', fontWeight: 700, lineHeight: 1.08, letterSpacing: '-0.02em', color: '#000' }}>
               {p.buildTitle}
             </h2>
@@ -129,7 +129,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
           {/* Right column */}
           <div>
             {/* Card grid — white cards, 1px gray gap */}
-            <div style={{
+            <div className="rsp-cols-1-xs" style={{
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
               gap: '1px',
@@ -212,7 +212,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
       {/* ── PRINCIPLES ── */}
       {hasPrinciples && (
         <section ref={princRef} style={{ backgroundColor: '#f7f7f7', borderTop: '1px solid #cccccc', borderBottom: '1px solid #cccccc' }}>
-          <div style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px' }}>
+          <div className="rsp-pad" style={{ maxWidth: 1280, margin: '0 auto', padding: '88px 32px' }}>
             <div style={{ maxWidth: 720, marginBottom: 48 }}>
               <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#76b900', marginBottom: 14 }}>
                 {p.principlesLabel}
@@ -221,7 +221,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
                 {p.principlesTitle}
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', backgroundColor: '#cccccc', border: '1px solid #cccccc' }}>
+            <div className="rsp-cols-1-xs" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', backgroundColor: '#cccccc', border: '1px solid #cccccc' }}>
               {p.principles!.map((pr, i) => (
                 <div
                   key={i}
@@ -243,7 +243,7 @@ export default function ServiceTemplate(p: ServiceTemplateProps) {
         <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#757575', marginBottom: 24 }}>
           All services
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', backgroundColor: '#cccccc', border: '1px solid #cccccc' }}>
+        <div className="rsp-cols-2 rsp-cols-1-xs" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', backgroundColor: '#cccccc', border: '1px solid #cccccc' }}>
           {allServices.map(r => {
             const isCurrent = r.n === p.num
             return (
