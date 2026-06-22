@@ -98,7 +98,6 @@ function ParticleCanvas() {
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
-  const badgeRef = useRef<HTMLDivElement>(null)
   const line1Ref = useRef<HTMLSpanElement>(null)
   const line2Ref = useRef<HTMLSpanElement>(null)
   const line3Ref = useRef<HTMLSpanElement>(null)
@@ -112,7 +111,6 @@ export default function Hero() {
       const tl = gsap.timeline({ delay: 0.2, defaults: { ease: 'power3.out' } })
 
       tl.from(overlayRef.current, { opacity: 0, duration: 1.2, clearProps: 'opacity' })
-        .from(badgeRef.current, { y: -20, opacity: 0, duration: 0.6, clearProps: 'opacity,transform' }, '-=0.8')
         .from([line1Ref.current, line2Ref.current, line3Ref.current], {
           y: 80, opacity: 0, duration: 0.9, stagger: 0.12, ease: 'power4.out', clearProps: 'opacity,transform',
         }, '-=0.4')
@@ -209,37 +207,6 @@ export default function Hero() {
         padding: '80px 32px 64px',
         width: '100%',
       }}>
-        {/* Badge */}
-        <div
-          ref={badgeRef}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 10,
-            border: '1px solid var(--color-hairline-strong)',
-            padding: '7px 14px',
-            borderRadius: 2,
-            marginBottom: 56,
-          }}
-        >
-          <span style={{
-            width: 8,
-            height: 8,
-            borderRadius: '50%',
-            background: 'var(--color-primary)',
-            boxShadow: '0 0 0 4px rgba(118,185,0,0.25)',
-            flexShrink: 0,
-          }} />
-          <span style={{
-            fontSize: 11,
-            fontWeight: 700,
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.85)',
-          }}>
-            Available for new engagements
-          </span>
-        </div>
 
         {/* Two-column layout */}
         <div className="rsp-stack" style={{
