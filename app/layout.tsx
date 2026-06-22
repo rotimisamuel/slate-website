@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: 'Slate — We build. We scale. We transform.',
   description: 'Slate Technologies Limited — custom software, AI strategy, e-learning platforms, and intelligent hardware. Engineered for African realities, delivered to global standard.',
   keywords: ['software development', 'AI strategy', 'e-learning', 'digital transformation', 'Nigeria', 'UK', 'technology consulting'],
+  icons: { icon: '/favicon.svg' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
